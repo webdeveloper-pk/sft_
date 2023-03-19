@@ -48,10 +48,10 @@ const Features = () => {
         />
       </div>
       <div className="uppercase text-light-green text-3xl lg:text-[40px] features-title homepage-container mx-auto px-6 md:px-8">
-        <h1 className="text-light-green">
+        <h1 className="text-light-green flex flex-col items-center justify-center">
           SCALING KEY
           <br />
-          FEATURES
+          <div className="mt-2">FEATURES</div>
         </h1>
       </div>
       <div className="w-full mt-6 md:mt-32 xl:mt-56 pl-0 md:pl-16 xl:pl-24 2xl:mt-72 homepage-container mx-auto  px-6 md:px-8">
@@ -79,9 +79,9 @@ const Features = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-between mt-[130px] md:mt-[200px] lg:mt-[150px] xl:mt-[180px] ">
+      <div className="w-full flex justify-between mt-[130px] md:mt-[200px] lg:mt-[150px] xl:mt-[180px]">
         <div className="flex w-[0%] md:w-[50%]"></div>
-        <div className="w-[100%] md:w-[40%] lg:w-[50%] pb-12 md:pb-36 xl:pb-44 mt-24 2xl:pb-56 2xl:mt-36">
+        <div className="w-[100%] md:w-[40%] lg:w-[50%] pb-12 md:pb-36 xl:pb-44 mt-24 2xl:pb-56 2xl:mt-36 flex justify-center">
           <p className="text-light-green font-bold text-sm w-[100%] md:w-[90%] lg:w-[70%] xl:w-[50%] 2xl:w-[40%]">
             It is important that the trader's account balance is greater than
             the initial account balance (in profit) at the time of scaling.

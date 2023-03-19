@@ -6,6 +6,7 @@
   margin: 0 auto;
   padding: 0;
   background-color: #efefef;
+  scroll-behavior: smooth;
 }
 
 .body-container {
@@ -466,6 +467,7 @@ p {
 .stats1 {
   position: relative;
   transition: all 0.95s;
+  overflow: hidden;
 }
 
 .stats1 .stats2 {

@@ -7,8 +7,8 @@ const ContactNavbar = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
-      <nav className="text-black px-6 md:px-12 lg:px-16 header">
-        <div className="mx-auto lg:flex justify-between lg:items-center py-6 uppercase side-pages-container">
+      <nav className="text-black header">
+        <div className="mx-auto lg:flex justify-between lg:items-center py-6 uppercase side-pages-container px-6 md:px-6">
           <div>
             <div className="flex-row flex justify-between items-center w-full">
               <a href="/">

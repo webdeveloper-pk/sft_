@@ -3,17 +3,17 @@ import logo from "../../assets/images/logo.png";
 
 const Footer = () => {
   return (
-    <footer class="px-6 md:px-12 lg:px-16 pt-12 md:pt-14 pb-32 md:pb-40 relative bg-black">
+    <footer class="px-6 md:px-8 pt-12 md:pt-14 pb-32 md:pb-40 relative bg-black">
       <div className="footer-gorila">
         <img src={require("../../assets/images/gorila-footer.png")} alt="" />
       </div>
       <a
         href="/"
-        className="mb-14 flex justify-center md:justify-start lg:pl-8 side-pages-container mx-auto"
+        className="mb-14 flex justify-center md:justify-start lg:pl-8 side-pages-container mx-auto px-6 md:px-6 "
       >
         <img src={logo} alt="logo" width="130px" height="auto" />
       </a>
-      <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4 lg:pl-8 side-pages-container mx-auto">
+      <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4 lg:pl-8 side-pages-container mx-auto px-6 md:px-6">
         <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4">
           <nav className="list-none mb-10">
             <div className="mb-10">
