@@ -1,0 +1,2 @@
+*.discover-video filter=lfs diff=lfs merge=lfs -text
+src/assets/videos/discover-video.mp4 filter=lfs diff=lfs merge=lfs -text
