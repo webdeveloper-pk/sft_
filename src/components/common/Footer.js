@@ -3,8 +3,10 @@ import logo from "../../assets/images/logo.png";
 
 const Footer = () => {
   return (
-    <footer class="px-6 md:px-12 lg:px-16 pt-12 md:pt-14 pb-32 md:pb-40 relative footer bg-black">
-      <img src={require("../../assets/images/gorila-footer.png")} alt="" />
+    <footer class="px-6 md:px-12 lg:px-16 pt-12 md:pt-14 pb-32 md:pb-40 relative bg-black">
+      <div className="footer-gorila">
+        <img src={require("../../assets/images/gorila-footer.png")} alt="" />
+      </div>
       <a
         href="/"
         className="mb-14 flex justify-center md:justify-start lg:pl-8 side-pages-container mx-auto"
