@@ -4,7 +4,10 @@ import discoverBg1 from "../assets/images/discover-bg1.png";
 
 const DiscoverSFT = () => {
   return (
-    <section class="pt-12 px-6 md:px-8 bg-lightest-white-bg homepage-container mx-auto">
+    <section
+      class="pt-12 px-6 md:px-8 bg-lightest-white-bg homepage-container mx-auto"
+      id="objectives"
+    >
       <div class="mx-auto flex flex-col lg:flex-row items-start gap-y-8 gap-x-6">
         <div className="w-full lg:w-1/2 flex flex-col text-left">
           <h1 className="text-2xl md:text-[28px] mb-4 font-bold uppercase">

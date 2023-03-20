@@ -65,7 +65,9 @@ const Working = () => {
           </div>
         </div>
         <div>
-          <HomepageButton buttonText="get started" goText="start" />
+          <a href="#challenge">
+            <HomepageButton buttonText="get started" goText="start" />
+          </a>
         </div>
       </div>
     </section>

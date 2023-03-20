@@ -22,12 +22,14 @@ const Hero = () => {
             successful SFT trader.
           </p>
           <div className="flex justify-center">
-            <button
-              type="submit"
-              className="blink-me text-base text-light-white bg-light-green py-1.5 lg:py-2 2xl:py-3 px-8 rounded-full uppercase font-bold border border-light-green"
-            >
-              Get started
-            </button>
+            <a href="#challenge">
+              <button
+                type="submit"
+                className="blink-me text-base text-light-white bg-light-green py-1.5 lg:py-2 2xl:py-3 px-8 rounded-full uppercase font-bold border border-light-green"
+              >
+                Get started
+              </button>
+            </a>
           </div>
         </div>
       </div>

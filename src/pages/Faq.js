@@ -14,7 +14,7 @@ const Faq = () => {
   return (
     <div className="bg-medium-gray">
       <ContactNavbar />
-      <div className="layout-bg pb-[200px] lg:pb-[300px] xl:pb-[360px]">
+      <div className="layout-bg pb-[200px] lg:pb-[300px] xl:pb-[360px] side-pages-container mx-auto px-6 md:px-6">
         <div className="bg-black ">
           <div className="bg-black flex flex-col md:flex-row justify-between gap-y-4 px-6 md:px-8 lg:px-16">
             <div className="w-full md:w-[70%] xl:w-[55%] py-12 pl-0 md:pl-12 xl:pl-28">

@@ -29,8 +29,8 @@ const TextWithImage2 = () => {
           <img alt="video" src={textimage2} />
         </div>
       </div>
-      <div className="uppercase text-light-green text-3xl md:text-[40px] mt-12 block xl:hidden">
-        <h1 className="text-light-green ">
+      <div className="uppercase text-light-green text-3xl md:text-[40px] mt-12 block md:hidden">
+        <h1 className="text-light-green">
           SCALING KEY
           <br />
           FEATURES

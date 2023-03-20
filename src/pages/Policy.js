@@ -8,9 +8,11 @@ const Policy = () => {
     <div className="bg-medium-gray">
       <ContactNavbar />
       <div className="policy-bg px-6 md:px-8 lg:px-16 pb-[200px] lg:pb-[300px] xl:pb-[360px]">
-        <h1 className="text-black text-2xl lg:text-3xl font-bold uppercase pb-2 border-b border-lighter-gray">
-          PRIVACY <span className="text-light-green">policy</span>
-        </h1>
+        <div className="side-pages-container mx-auto px-6 md:px-6">
+          <h1 className="text-black text-2xl lg:text-3xl font-bold uppercase pb-2 border-b border-lighter-gray">
+            PRIVACY <span className="text-light-green">policy</span>
+          </h1>
+        </div>
         <div className="flex justify-center my-8">
           <ButtonFilled
             buttonText="Terms & conditions"
@@ -19,7 +21,7 @@ const Policy = () => {
             paddingX="px-4 md:px-10 lg:px-12"
           />
         </div>
-        <div className="flex flex-col md:flex-row justify-start gap-x-6 lg:gap-x-12 gap-y-3 items-start pl-0 lg:pl-8">
+        <div className="flex flex-col md:flex-row justify-start gap-x-6 lg:gap-x-12 gap-y-3 items-start pl-0 lg:pl-8 side-pages-container mx-auto px-6 md:px-6">
           <p className="text-sm uppercase text-lighter-gray font-semibold mt-1">
             WELCOME TO SFT.COM
           </p>
@@ -28,11 +30,11 @@ const Policy = () => {
             (hereafter referred to as the “Policy”) explains how the Company
           </p>
         </div>
-        <div className="text-base md:text-lg lg:text-xl text-black font-bold mt-3 mb-8 pl-0 lg:pl-8">
+        <div className="text-base md:text-lg lg:text-xl text-black font-bold mt-3 mb-8 pl-0 lg:pl-8 side-pages-container mx-auto px-6 md:px-6">
           collects information about You, how it is used, kept, and disclosed
           when You visit the Website.
         </div>
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row side-pages-container mx-auto px-6 md:px-6">
           <div className="w-full md:w-[50%] border-t md:border-r md:border-b border-lighter-gray py-8 md:px-8">
             <p className="text-xs font-semibold text-black">
               You hereby consent to the Processing of Your Personal Data and
@@ -64,7 +66,7 @@ const Policy = () => {
             </p>
           </div>
         </div>
-        <div className="border-b border-lighter-gray py-6 md:px-8">
+        <div className="border-b border-lighter-gray py-6 md:px-8 side-pages-container mx-auto px-6 md:px-6">
           <h1 className="text-lg uppercase text-light-green font-bold mb-3">
             1. Definition
           </h1>
@@ -130,7 +132,7 @@ const Policy = () => {
             </li>
           </ul>
         </div>
-        <div className="border-b border-lighter-gray py-6 md:px-8">
+        <div className="border-b border-lighter-gray py-6 md:px-8 side-pages-container mx-auto px-6 md:px-6">
           <h1 className="text-lg uppercase text-light-green font-bold mb-3">
             2. ABOUT SFT
           </h1>
@@ -148,7 +150,7 @@ const Policy = () => {
             level of satisfaction for Our customers and their users.
           </p>
         </div>
-        <div className="py-6 md:px-8">
+        <div className="py-6 md:px-8 side-pages-container mx-auto px-6 md:px-6">
           <h1 className="text-lg uppercase text-light-green font-bold mb-3">
             3. USER’s RIGHTS
           </h1>

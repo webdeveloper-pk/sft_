@@ -20,7 +20,7 @@ const Challenge = () => {
   };
   return (
     <section class="px-6 md:px-8 py-12 bg-lightest-white-bg text-lighter-black homepage-container mx-auto">
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-2" id="challenge">
         <div
           className="uppercase font-bold text-2xl md:text-[26px]"
           data-aos="zoom-in-down"

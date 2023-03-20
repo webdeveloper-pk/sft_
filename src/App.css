@@ -204,7 +204,7 @@ p {
   visibility: hidden;
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 767px) {
   .features-title {
     visibility: visible;
   }
@@ -426,7 +426,7 @@ p {
 }
 
 #button-7:hover a {
-  left: 120%;
+  left: 123%;
 }
 
 /* button styling */

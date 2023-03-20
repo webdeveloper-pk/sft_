@@ -48,7 +48,7 @@ const Features = () => {
         />
       </div>
       <div className="uppercase text-light-green text-3xl lg:text-[40px] features-title homepage-container mx-auto px-6 md:px-8">
-        <h1 className="text-light-green flex flex-col items-center justify-center">
+        <h1 className="text-light-green flex flex-col items-end justify-center">
           SCALING KEY
           <br />
           <div className="mt-2">FEATURES</div>

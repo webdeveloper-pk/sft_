@@ -94,7 +94,7 @@ const FooterHomepage = () => {
             <nav className="list-none mb-10">
               <li>
                 <a
-                  href="/"
+                  href="#challenge"
                   className="text-lighter-gray hover:text-white text-sm"
                 >
                   Evaluation Process
@@ -102,7 +102,7 @@ const FooterHomepage = () => {
               </li>
               <li>
                 <a
-                  href="/"
+                  href="#objectives"
                   className="text-lighter-gray hover:text-white text-sm"
                 >
                   Trading Objectives
@@ -110,7 +110,7 @@ const FooterHomepage = () => {
               </li>
               <li>
                 <a
-                  href="/"
+                  href="#challenge"
                   className="text-lighter-gray hover:text-white text-sm"
                 >
                   Why our SFT Challenge?
@@ -118,7 +118,7 @@ const FooterHomepage = () => {
               </li>
               <li>
                 <a
-                  href="/"
+                  href="#testimonial"
                   className="text-lighter-gray hover:text-white text-sm"
                 >
                   Testimonials
@@ -126,7 +126,7 @@ const FooterHomepage = () => {
               </li>
               <li>
                 <a
-                  href="/"
+                  href="#scaling"
                   className="text-lighter-gray hover:text-white text-sm"
                 >
                   Scaling Plan
@@ -150,7 +150,7 @@ const FooterHomepage = () => {
               </li>
               <li>
                 <a
-                  href="/"
+                  href="/policy"
                   className="text-lighter-gray hover:text-white text-sm"
                 >
                   Terms & Conditions
