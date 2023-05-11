@@ -3,13 +3,13 @@ import HomepageButton from "./common/HomepageButton";
 import Phase from "./common/Phase";
 import workbg1 from "../assets/images/work-bg1.png";
 import workbg2 from "../assets/images/work-bg2.png";
-import workbg3 from "../assets/images/work-bg3.png";
+// import workbg3 from "../assets/images/work-bg3.png";
 import workbg4 from "../assets/images/work-bg4.png";
-import workbg5 from "../assets/images/work-bg5.png";
+// import workbg5 from "../assets/images/work-bg5.png";
 
 const Working = () => {
   return (
-    <section class="px-2 md:px-8 py-32 lg:py-[200px] text-light-black working-bg relative">
+    <section class="px-2 md:px-8 py-32 lg:py-[160px] text-light-black working-bg relative">
       <div className="absolute bottom-[-100px] left-0">
         <img src={workbg1} alt="dots" width="500px" height="auto" />
       </div>
@@ -44,7 +44,7 @@ const Working = () => {
             <div>
               <Phase
                 phase="PHASE 2"
-                title="SFT CHALLENGE"
+                title="SFT VERIFICATION"
                 description="If you succeed in phase #1, you can access phase 2, the validation phase, during which you will be asked to repeat your performance (with some slight modifications)."
                 value="66"
               />

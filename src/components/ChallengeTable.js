@@ -18,7 +18,7 @@ const Table = ({ currency }) => {
                         data-aos-duration="3000"
                         data-aos-once="true"
                       >
-                        <div className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] border border-2 border-white rounded-full px-2 py-2 border-r-dark-green"></div>
+                        <div className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] border border-2 border-dark-green rounded-full px-2 py-2 border-r-white"></div>
                         <span className="ml-1 md:ml-2">step 1</span>
                       </button>
                       <p
@@ -39,7 +39,7 @@ const Table = ({ currency }) => {
                         data-aos-duration="3000"
                         data-aos-once="true"
                       >
-                        <div className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] border border-2 border-white rounded-full px-2 py-2 border-r-dark-green border-b-dark-green"></div>
+                        <div className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] border border-2 border-dark-green rounded-full px-2 py-2 border-r-white border-b-white"></div>
                         <span className="ml-1 md:ml-2">step 2</span>
                       </button>
                       <p
@@ -48,7 +48,7 @@ const Table = ({ currency }) => {
                         data-aos-duration="3000"
                         data-aos-once="true"
                       >
-                        SFT challenge
+                        Sft Verification
                       </p>
                     </div>
                   </th>
@@ -60,7 +60,7 @@ const Table = ({ currency }) => {
                         data-aos-duration="3000"
                         data-aos-once="true"
                       >
-                        <div className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] border border-2 border-white rounded-full px-2 py-2 border-r-dark-green border-b-dark-green border-l-dark-green border-t-dark-green"></div>
+                        <div className="w-[15px] h-[15px] lg:w-[20px] lg:h-[20px] border border-2 border-dark-green rounded-full px-2 py-2 border-r-white border-b-white border-l-white border-t-white"></div>
                         <span className="ml-1 md:ml-2">step 3</span>
                       </button>
                       <p

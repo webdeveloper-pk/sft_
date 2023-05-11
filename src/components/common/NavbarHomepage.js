@@ -7,10 +7,10 @@ const NavbarHomepage = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
-      <nav className="text-light-white px-6 md:px-8 header homepage-container mx-auto">
+      <nav className="text-light-white px-2 md:px-8 header homepage-container mx-auto">
         <div className="mx-auto lg:flex justify-between lg:items-center py-6 uppercase">
           <div>
-            <div className="flex-row flex justify-between items-center w-full -mt-3">
+            <div className="flex-row flex justify-between items-center w-full -mt-3 ml-2 md:ml-0">
               <a href="/">
                 <img src={logo} alt="logo" width="100px" height="auto" />
               </a>
@@ -98,7 +98,7 @@ const NavbarHomepage = () => {
                   <Link to="/login">
                     <button
                       onClick={() => setNavbar(!navbar)}
-                      className="login text-light-black bg-light-white border border-light-white hover:border-light-green hover:bg-light-green hover:text-light-white py-1.5 2xl:py-3 px-8 rounded-full uppercase"
+                      className="login text-light-black bg-light-white border border-light-white hover:border-light-green hover:text-light-white py-1.5 2xl:py-3 px-8 rounded-full uppercase"
                     >
                       <span className="log">Login</span>
                     </button>

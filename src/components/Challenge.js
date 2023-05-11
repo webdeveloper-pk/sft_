@@ -8,7 +8,6 @@ import cad from "../assets/images/cad.png";
 import aud from "../assets/images/aud.png";
 import chf from "../assets/images/chf.png";
 import ChallengeTable from "./ChallengeTable";
-import HomepageButton from "./common/HomepageButton";
 import Currency from "./common/Currency";
 import ChallengeButton from "./common/ChallengeButton";
 
@@ -60,8 +59,8 @@ const Challenge = () => {
               <Currency
                 flag={<img src={eur} alt="EUR" width={22} height={22} />}
                 currency="EUR"
-                bg="bg-lighter-gray"
-                border="border-lighter-gray"
+                bg="bg-bg-green1"
+                border="border-bg-green1"
               />
             </div>
 
@@ -73,8 +72,8 @@ const Challenge = () => {
               <Currency
                 flag={<img src={gbp} alt="GBP" width={22} height={22} />}
                 currency="GBP"
-                bg="bg-lighter-gray"
-                border="border-lighter-gray"
+                bg="bg-bg-green1"
+                border="border-bg-green1"
               />
             </div>
 
@@ -86,8 +85,8 @@ const Challenge = () => {
               <Currency
                 flag={<img src={czech} alt="EUR" width={22} height={22} />}
                 currency="EUR"
-                bg="bg-lighter-gray"
-                border="border-lighter-gray"
+                bg="bg-bg-green1"
+                border="border-bg-green1"
               />
             </div>
 
@@ -99,8 +98,8 @@ const Challenge = () => {
               <Currency
                 flag={<img src={cad} alt="CAD" width={22} height={22} />}
                 currency="CAD"
-                bg="bg-lighter-gray"
-                border="border-lighter-gray"
+                bg="bg-bg-green1"
+                border="border-bg-green1"
               />
             </div>
 
@@ -112,8 +111,8 @@ const Challenge = () => {
               <Currency
                 flag={<img src={aud} alt="AUD" width={22} height={22} />}
                 currency="AUD"
-                bg="bg-lighter-gray"
-                border="border-lighter-gray"
+                bg="bg-bg-green1"
+                border="border-bg-green1"
               />
             </div>
 
@@ -125,8 +124,8 @@ const Challenge = () => {
               <Currency
                 flag={<img src={chf} alt="CHF" width={22} height={22} />}
                 currency="CHF"
-                bg="bg-lighter-gray"
-                border="border-lighter-gray"
+                bg="bg-bg-green1"
+                border="border-bg-green1"
               />
             </div>
           </div>
@@ -161,8 +160,8 @@ const Challenge = () => {
               >
                 <ChallengeButton
                   text="Normal"
-                  bgColor="bg-lighter-gray"
-                  borderColor="border-lighter-gray"
+                  bgColor="bg-bg-green1"
+                  borderColor="border-bg-green1"
                 />
               </div>
             </div>
@@ -184,7 +183,7 @@ const Challenge = () => {
               >
                 <div className="challenge-tooltip">
                   {/* <Tooltip title="1st challenge" color="#01c887"> */}
-                  <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-lighter-gray border border-lighter-gray hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
+                  <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
                     <span onClick={() => onSubmithandler("10k")}>$10k</span>
                   </button>
                   {/* </Tooltip> */}
@@ -197,7 +196,7 @@ const Challenge = () => {
               >
                 <div className="challenge-tooltip">
                   {/* <Tooltip title="1st challenge" color="#01c887"> */}
-                  <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-lighter-gray border border-lighter-gray hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
+                  <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
                     <span onClick={() => onSubmithandler("25k")}>$25k</span>
                   </button>
                   {/* </Tooltip> */}
@@ -210,7 +209,7 @@ const Challenge = () => {
               >
                 <div className="challenge-tooltip">
                   {/* <Tooltip title="1st challenge" color="#01c887"> */}
-                  <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-lighter-gray border border-lighter-gray hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
+                  <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
                     <span onClick={() => onSubmithandler("50k")}>$50k</span>
                   </button>
                   {/* </Tooltip> */}
@@ -224,7 +223,7 @@ const Challenge = () => {
               >
                 <div className="challenge-tooltip">
                   <Tooltip title="1st challenge" color="#01c887">
-                    <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-lighter-gray border border-lighter-gray hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
+                    <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
                       <span onClick={() => onSubmithandler("100k")}>$100k</span>
                     </button>
                   </Tooltip>
@@ -238,7 +237,7 @@ const Challenge = () => {
               >
                 <div className="challenge-tooltip">
                   <Tooltip title="2nd challenge" color="#01c887">
-                    <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-lighter-gray border border-lighter-gray hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
+                    <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
                       <span onClick={() => onSubmithandler("200k")}>$200k</span>
                     </button>
                   </Tooltip>
@@ -252,7 +251,7 @@ const Challenge = () => {
               >
                 <div className="challenge-tooltip">
                   <Tooltip title="3rd challenge" color="#01c887">
-                    <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-lighter-gray border border-lighter-gray hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
+                    <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
                       <span onClick={() => onSubmithandler("500k")}>$500k</span>
                     </button>
                   </Tooltip>
@@ -275,8 +274,13 @@ const Challenge = () => {
         <div>
           <ChallengeTable currency={currency} />
         </div>
-        <div className="mt-2 flex flex-row justify-center">
-          <HomepageButton buttonText="start challenge" goText="Start" />
+        <div className="mt-6 lg:mt-2 flex flex-row justify-center">
+          <button
+            type="submit"
+            className="blink-me text-base text-light-white bg-light-green py-1.5 lg:py-2 2xl:py-3 px-8 rounded-full uppercase font-bold border border-light-green"
+          >
+            start challenge
+          </button>
         </div>
       </div>
     </section>

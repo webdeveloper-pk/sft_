@@ -8,7 +8,7 @@ import featuresbg4 from "../assets/images/features-bg4.png";
 const Features = () => {
   return (
     <section
-      class="px-6 md:px-8 pb-8 xl:mt-0 text-light-black features-bg relative"
+      class="px-6 md:px-8 pb-8 xl:-mt-[40px] text-light-black features-bg relative"
       id="scaling"
     >
       <div className="absolute left-0 bottom-0">
@@ -54,7 +54,7 @@ const Features = () => {
           <div className="mt-2">FEATURES</div>
         </h1>
       </div>
-      <div className="w-full mt-6 md:mt-32 xl:mt-56 pl-0 md:pl-16 xl:pl-24 2xl:mt-72 homepage-container mx-auto  px-6 md:px-8">
+      <div className="w-full mt-6 md:mt-32 xl:mt-56 2xl:mt-52 pl-0 md:pl-16 xl:pl-24 px-6 md:px-8 homepage-container mx-auto">
         <div className="w-full md:w-[55%] lg:w-[40%] xl:w-[30%]">
           <p className="text-light-green font-bold text-base">
             Capital increases on the SFT challenge take place in four-month
@@ -70,7 +70,7 @@ const Features = () => {
       </div>
       <div>
         <div className="homepage-container mx-auto px-6 md:px-8 relative">
-          <div className="absolute mt-[10%] md:-mt-[5%] lg:-mt-[15%] xl:-mt-[20%] left-0">
+          <div className="absolute mt-[10%] md:-mt-[5%] lg:-mt-[15%] xl:-mt-[20%] left-0 flex justify-center">
             <img
               src={chart}
               alt="chart"
@@ -79,10 +79,11 @@ const Features = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-between mt-[130px] md:mt-[200px] lg:mt-[150px] xl:mt-[180px]">
+      <div className="w-full flex justify-between mt-[130px] md:mt-[200px] lg:mt-[150px] xl:mt-[70px] xl:ml-12">
         <div className="flex w-[0%] md:w-[50%]"></div>
-        <div className="w-[100%] md:w-[40%] lg:w-[50%] pb-12 md:pb-36 xl:pb-44 mt-24 2xl:pb-56 2xl:mt-36 flex justify-center">
-          <p className="text-light-green font-bold text-sm w-[100%] md:w-[90%] lg:w-[70%] xl:w-[50%] 2xl:w-[40%]">
+        <div className="w-[100%] md:w-[40%] lg:w-[50%] pb-12 md:pb-36 xl:pb-44 mt-24 2xl:pb-56 2xl:mt-20 flex justify-center">
+          {/* <p className="hidden xl:block text-transparent font-bold text-sm w-[100%] md:w-[90%] lg:w-[70%] xl:w-[50%] 2xl:w-[40%]"></p> */}
+          <p className="text-light-green font-bold text-xs md:text-sm w-[100%] md:w-[90%] lg:w-[70%] xl:w-[50%] 2xl:w-[40%]">
             It is important that the trader's account balance is greater than
             the initial account balance (in profit) at the time of scaling.
           </p>

@@ -47,14 +47,14 @@ const Phase = ({ value, phase, title, description }) => {
           labelFontSize="16px"
           valueFontSize="24px"
         />
-        <div className="absolute top-20 left-0 pl-12 md:-mt-4 lg:-mt-2 xl:-mt-2 w-[90%] z-50">
-          <p className="uppercase text-light-green font-bold w-[100%] text-left text-sm">
+        <div className="absolute top-20 left-0 pl-8 md:pl-12 md:-mt-4 lg:-mt-2 xl:-mt-2 w-[90%] z-50">
+          <p className="uppercase text-light-green font-bold w-[100%] text-center md:text-left text-sm">
             {phase}
           </p>
-          <p className="uppercase text-light-green text-xl w-[100%] text-left text-base md:text-lg xl:text-xl">
+          <p className="uppercase text-light-green text-xl w-[100%] text-center md:text-left text-base md:text-lg xl:text-xl">
             {title}
           </p>
-          <p className="mt-3 text-xs text-white w-[100%] text-left">
+          <p className="mt-3 text-xs text-white w-[100%] text-center md:text-left">
             {description}
           </p>
         </div>
