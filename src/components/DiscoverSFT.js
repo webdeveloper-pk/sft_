@@ -147,18 +147,19 @@ const DiscoverSFT = () => {
               />
             </video>
           </Modal>
-          <img
-            src={intro}
-            alt="intro"
-            onClick={showModal}
-            className="hover:cursor-pointer"
-          />
-          <div className="absolute mt-1.5 z-50">
+          <div className="flex justify-center">
+            <img
+              src={intro}
+              alt="intro"
+              onClick={showModal}
+              className="hover:cursor-pointer w-[100%] md:w-[70%] lg:w-[100%]"
+            />
+          </div>
+          <div className="absolute mt-1.5 z-50 md:left-[15%] lg:left-[0%]">
             <img
               src={discoverBg1}
               alt="reflection"
-              width="100%"
-              height="auto"
+              className="w-[100%] md:w-[82%] lg:w-[100%]"
             />
           </div>
         </div>

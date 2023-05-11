@@ -42,7 +42,6 @@ const Phase = ({ value, phase, title, description }) => {
           hideKnob
           min={0}
           max={100}
-          // width={295}
           knobDraggable={false}
           labelFontSize="16px"
           valueFontSize="24px"
