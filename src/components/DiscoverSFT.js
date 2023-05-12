@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Modal } from "antd";
-// import discoverVideo from "../assets/videos/discover-video.mp4";
 import discoverBg1 from "../assets/images/discover-bg1.png";
 import intro from "../assets/images/discover-image.png";
 
 const DiscoverSFT = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [readMore, setReadMore] = useState(false);
-  const url = `https://storage.cloud.google.com/success-fund-bucket/discover-video1.mp4`;
+
+  const videoRef = useRef(null);
+
+  const url = `https://storage.googleapis.com/success-fund-bucket/discover-video1.mp4`;
+
   const showModal = () => {
-    setIsModalOpen(true);
+    setTimeout(() => {
+      setIsModalOpen(true);
+    }, 1200);
   };
   const handleOk = () => {
     setIsModalOpen(false);
@@ -17,6 +22,15 @@ const DiscoverSFT = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+    if (!isModalOpen) {
+      // Modal is closed, so stop the video
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
+    }
+  }, [isModalOpen]);
 
   const extraContent = (
     <div>
@@ -135,9 +149,9 @@ const DiscoverSFT = () => {
             footer={null}
             title="sft"
             centered
-            width={"80%"}
+            width={"80vw"}
           >
-            <video controls>
+            <video controls ref={videoRef}>
               <source
                 src={`${url}#t=0.1`}
                 type="video/mp4"

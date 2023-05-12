@@ -8,15 +8,24 @@ import cad from "../assets/images/cad.png";
 import aud from "../assets/images/aud.png";
 import chf from "../assets/images/chf.png";
 import ChallengeTable from "./ChallengeTable";
-import Currency from "./common/Currency";
-import ChallengeButton from "./common/ChallengeButton";
 
 const Challenge = () => {
   const [currency, setCurrency] = useState("10k");
+  const [mode, setMode] = useState("10k");
+  const [country, setCountry] = useState("10k");
 
   const onSubmithandler = (text) => {
     setCurrency(text);
   };
+
+  const onModeHandler = (text) => {
+    setMode(text);
+  };
+
+  const onCurrencyHandler = (text) => {
+    setCountry(text);
+  };
+
   return (
     <section class="px-6 md:px-8 py-12 bg-lightest-white-bg text-lighter-black homepage-container mx-auto">
       <div className="flex flex-col gap-y-2" id="challenge">
@@ -44,24 +53,20 @@ const Challenge = () => {
               data-aos-once="true"
               data-aos-duration="3000"
             >
-              <Currency
-                flag={<img src={usa} alt="USA" width={22} height={22} />}
-                currency="USD"
-                bg="bg-light-green"
-                border="border-light-green"
-              />
+              <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm">
+                <img src={usa} alt="USA" width={22} height={22} />
+                <span onClick={() => onCurrencyHandler("USD")}>USD</span>
+              </button>
             </div>
             <div
               data-aos="zoom-in"
               data-aos-once="true"
               data-aos-duration="3000"
             >
-              <Currency
-                flag={<img src={eur} alt="EUR" width={22} height={22} />}
-                currency="EUR"
-                bg="bg-bg-green1"
-                border="border-bg-green1"
-              />
+              <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm">
+                <img src={eur} alt="EUR" width={22} height={22} />
+                <span onClick={() => onCurrencyHandler("EUR")}>EUR</span>
+              </button>
             </div>
 
             <div
@@ -69,12 +74,10 @@ const Challenge = () => {
               data-aos-once="true"
               data-aos-duration="3000"
             >
-              <Currency
-                flag={<img src={gbp} alt="GBP" width={22} height={22} />}
-                currency="GBP"
-                bg="bg-bg-green1"
-                border="border-bg-green1"
-              />
+              <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm">
+                <img src={gbp} alt="GBP" width={22} height={22} />
+                <span onClick={() => onCurrencyHandler("GBP")}>GBP</span>
+              </button>
             </div>
 
             <div
@@ -82,12 +85,10 @@ const Challenge = () => {
               data-aos-once="true"
               data-aos-duration="3000"
             >
-              <Currency
-                flag={<img src={czech} alt="EUR" width={22} height={22} />}
-                currency="EUR"
-                bg="bg-bg-green1"
-                border="border-bg-green1"
-              />
+              <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm">
+                <img src={czech} alt="EUR" width={22} height={22} />
+                <span onClick={() => onCurrencyHandler("EUR")}>EUR</span>
+              </button>
             </div>
 
             <div
@@ -95,12 +96,10 @@ const Challenge = () => {
               data-aos-once="true"
               data-aos-duration="3000"
             >
-              <Currency
-                flag={<img src={cad} alt="CAD" width={22} height={22} />}
-                currency="CAD"
-                bg="bg-bg-green1"
-                border="border-bg-green1"
-              />
+              <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm">
+                <img src={cad} alt="CAD" width={22} height={22} />
+                <span onClick={() => onCurrencyHandler("CAD")}>CAD</span>
+              </button>
             </div>
 
             <div
@@ -108,12 +107,10 @@ const Challenge = () => {
               data-aos-once="true"
               data-aos-duration="3000"
             >
-              <Currency
-                flag={<img src={aud} alt="AUD" width={22} height={22} />}
-                currency="AUD"
-                bg="bg-bg-green1"
-                border="border-bg-green1"
-              />
+              <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm">
+                <img src={aud} alt="AUD" width={22} height={22} />
+                <span onClick={() => onCurrencyHandler("AUD")}>AUD</span>
+              </button>
             </div>
 
             <div
@@ -121,12 +118,10 @@ const Challenge = () => {
               data-aos-once="true"
               data-aos-duration="3000"
             >
-              <Currency
-                flag={<img src={chf} alt="CHF" width={22} height={22} />}
-                currency="CHF"
-                bg="bg-bg-green1"
-                border="border-bg-green1"
-              />
+              <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm">
+                <img src={chf} alt="CHF" width={22} height={22} />
+                <span onClick={() => onCurrencyHandler("CHF")}>CHF</span>
+              </button>
             </div>
           </div>
         </div>
@@ -146,23 +141,20 @@ const Challenge = () => {
                 data-aos-once="true"
                 data-aos-duration="3000"
               >
-                <ChallengeButton
-                  text="Aggressive"
-                  bgColor="bg-light-green"
-                  borderColor="border-light-green"
-                />
+                <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
+                  <span onClick={() => onModeHandler("aggressive")}>
+                    Aggressive
+                  </span>
+                </button>
               </div>
-
               <div
                 data-aos="zoom-in"
                 data-aos-once="true"
                 data-aos-duration="3000"
               >
-                <ChallengeButton
-                  text="Normal"
-                  bgColor="bg-bg-green1"
-                  borderColor="border-bg-green1"
-                />
+                <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm">
+                  <span onClick={() => onModeHandler("normal")}>Normal</span>
+                </button>
               </div>
             </div>
           </div>
@@ -272,7 +264,7 @@ const Challenge = () => {
           </div>
         </div>
         <div>
-          <ChallengeTable currency={currency} />
+          <ChallengeTable currency={currency} mode={mode} country={country} />
         </div>
         <div className="mt-6 lg:mt-2 flex flex-row justify-center">
           <button

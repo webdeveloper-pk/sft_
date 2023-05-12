@@ -1,6 +1,6 @@
 import React from "react";
 
-const Table = ({ currency }) => {
+const Table = ({ currency, mode, country }) => {
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8 mt-6">
@@ -128,35 +128,71 @@ const Table = ({ currency }) => {
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center">
                     {(() => {
                       if (currency === "10k") {
+                        if (mode === "aggressive") {
+                          return "$1000";
+                        }
                         return "$500";
                       } else if (currency === "25k") {
+                        if (mode === "aggressive") {
+                          return "$2500";
+                        }
                         return "$1250";
                       } else if (currency === "50k") {
+                        if (mode === "aggressive") {
+                          return "$5k";
+                        }
                         return "$2500";
                       } else if (currency === "100k") {
+                        if (mode === "aggressive") {
+                          return "$10k";
+                        }
                         return "$5k";
                       } else if (currency === "200k") {
+                        if (mode === "aggressive") {
+                          return "$20k";
+                        }
                         return "$10k";
                       } else if (currency === "500k") {
+                        if (mode === "aggressive") {
+                          return "$50k";
+                        }
                         return "$25k";
                       } else {
                         return "$500";
                       }
                     })()}
                   </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green2 text-center">
+                  <td className="text-[13px] font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green2 text-center">
                     {(() => {
                       if (currency === "10k") {
+                        if (mode === "aggressive") {
+                          return "$1000";
+                        }
                         return "$500";
                       } else if (currency === "25k") {
+                        if (mode === "aggressive") {
+                          return "$2500";
+                        }
                         return "$1250";
                       } else if (currency === "50k") {
+                        if (mode === "aggressive") {
+                          return "$5k";
+                        }
                         return "$2500";
                       } else if (currency === "100k") {
+                        if (mode === "aggressive") {
+                          return "$10k";
+                        }
                         return "$5k";
                       } else if (currency === "200k") {
+                        if (mode === "aggressive") {
+                          return "$20k";
+                        }
                         return "$10k";
                       } else if (currency === "500k") {
+                        if (mode === "aggressive") {
+                          return "$50k";
+                        }
                         return "$25k";
                       } else {
                         return "$500";
@@ -164,7 +200,41 @@ const Table = ({ currency }) => {
                     })()}
                   </td>
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center">
-                    $500
+                    {(() => {
+                      if (currency === "10k") {
+                        if (mode === "aggressive") {
+                          return "$1000";
+                        }
+                        return "$500";
+                      } else if (currency === "25k") {
+                        if (mode === "aggressive") {
+                          return "$2500";
+                        }
+                        return "$1250";
+                      } else if (currency === "50k") {
+                        if (mode === "aggressive") {
+                          return "$5k";
+                        }
+                        return "$2500";
+                      } else if (currency === "100k") {
+                        if (mode === "aggressive") {
+                          return "$10k";
+                        }
+                        return "$5k";
+                      } else if (currency === "200k") {
+                        if (mode === "aggressive") {
+                          return "$20k";
+                        }
+                        return "$10k";
+                      } else if (currency === "500k") {
+                        if (mode === "aggressive") {
+                          return "$50k";
+                        }
+                        return "$25k";
+                      } else {
+                        return "$500";
+                      }
+                    })()}
                   </td>
                 </tr>
                 <tr>
@@ -179,16 +249,34 @@ const Table = ({ currency }) => {
                   <td className="text-[13px]  font-light px-16 lg:px-0  py-3 whitespace-nowrap bg-bg-green1 text-center">
                     {(() => {
                       if (currency === "10k") {
+                        if (mode === "aggressive") {
+                          return "$2000";
+                        }
                         return "$1000";
                       } else if (currency === "25k") {
+                        if (mode === "aggressive") {
+                          return "$5k";
+                        }
                         return "$2500";
                       } else if (currency === "50k") {
-                        return "$5000";
+                        if (mode === "aggressive") {
+                          return "$10k";
+                        }
+                        return "$5k";
                       } else if (currency === "100k") {
+                        if (mode === "aggressive") {
+                          return "$20k";
+                        }
                         return "$10k";
                       } else if (currency === "200k") {
+                        if (mode === "aggressive") {
+                          return "$40k";
+                        }
                         return "$20k";
                       } else if (currency === "500k") {
+                        if (mode === "aggressive") {
+                          return "$100k";
+                        }
                         return "$50k";
                       } else {
                         return "$1000";
@@ -198,16 +286,34 @@ const Table = ({ currency }) => {
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green2 text-center">
                     {(() => {
                       if (currency === "10k") {
+                        if (mode === "aggressive") {
+                          return "$2000";
+                        }
                         return "$1000";
                       } else if (currency === "25k") {
+                        if (mode === "aggressive") {
+                          return "$5k";
+                        }
                         return "$2500";
                       } else if (currency === "50k") {
-                        return "$5000";
+                        if (mode === "aggressive") {
+                          return "$10k";
+                        }
+                        return "$5k";
                       } else if (currency === "100k") {
+                        if (mode === "aggressive") {
+                          return "$20k";
+                        }
                         return "$10k";
                       } else if (currency === "200k") {
+                        if (mode === "aggressive") {
+                          return "$40k";
+                        }
                         return "$20k";
                       } else if (currency === "500k") {
+                        if (mode === "aggressive") {
+                          return "$100k";
+                        }
                         return "$50k";
                       } else {
                         return "$1000";
@@ -215,7 +321,41 @@ const Table = ({ currency }) => {
                     })()}
                   </td>
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center">
-                    $1,000
+                    {(() => {
+                      if (currency === "10k") {
+                        if (mode === "aggressive") {
+                          return "$2000";
+                        }
+                        return "$1000";
+                      } else if (currency === "25k") {
+                        if (mode === "aggressive") {
+                          return "$5k";
+                        }
+                        return "$2500";
+                      } else if (currency === "50k") {
+                        if (mode === "aggressive") {
+                          return "$10k";
+                        }
+                        return "$5k";
+                      } else if (currency === "100k") {
+                        if (mode === "aggressive") {
+                          return "$20k";
+                        }
+                        return "$10k";
+                      } else if (currency === "200k") {
+                        if (mode === "aggressive") {
+                          return "$40k";
+                        }
+                        return "$20k";
+                      } else if (currency === "500k") {
+                        if (mode === "aggressive") {
+                          return "$100k";
+                        }
+                        return "$50k";
+                      } else {
+                        return "$1000";
+                      }
+                    })()}
                   </td>
                 </tr>
                 <tr>
@@ -230,16 +370,34 @@ const Table = ({ currency }) => {
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center">
                     {(() => {
                       if (currency === "10k") {
+                        if (mode === "aggressive") {
+                          return "$1400";
+                        }
                         return "$700";
                       } else if (currency === "25k") {
+                        if (mode === "aggressive") {
+                          return "$3500";
+                        }
                         return "$1750";
                       } else if (currency === "50k") {
+                        if (mode === "aggressive") {
+                          return "$7k";
+                        }
                         return "$3500";
                       } else if (currency === "100k") {
+                        if (mode === "aggressive") {
+                          return "$14k";
+                        }
                         return "$7k";
                       } else if (currency === "200k") {
+                        if (mode === "aggressive") {
+                          return "$28k";
+                        }
                         return "$14k";
                       } else if (currency === "500k") {
+                        if (mode === "aggressive") {
+                          return "$70k";
+                        }
                         return "$35k";
                       } else {
                         return "$700";
@@ -249,16 +407,34 @@ const Table = ({ currency }) => {
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green2 text-center">
                     {(() => {
                       if (currency === "10k") {
+                        if (mode === "aggressive") {
+                          return "$1000";
+                        }
                         return "$500";
                       } else if (currency === "25k") {
+                        if (mode === "aggressive") {
+                          return "$2500";
+                        }
                         return "$1250";
                       } else if (currency === "50k") {
+                        if (mode === "aggressive") {
+                          return "$5k";
+                        }
                         return "$2500";
                       } else if (currency === "100k") {
+                        if (mode === "aggressive") {
+                          return "$10k";
+                        }
                         return "$5k";
                       } else if (currency === "200k") {
+                        if (mode === "aggressive") {
+                          return "$20k";
+                        }
                         return "$10k";
                       } else if (currency === "500k") {
+                        if (mode === "aggressive") {
+                          return "$50k";
+                        }
                         return "$25k";
                       } else {
                         return "$500";
