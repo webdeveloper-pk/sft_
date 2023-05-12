@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Modal } from "antd";
-import discoverVideo from "../assets/videos/discover-video.mp4";
+// import discoverVideo from "../assets/videos/discover-video.mp4";
 import discoverBg1 from "../assets/images/discover-bg1.png";
 import intro from "../assets/images/discover-image.png";
 
 const DiscoverSFT = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [readMore, setReadMore] = useState(false);
-
+  const url = `https://storage.cloud.google.com/success-fund-bucket/discover-video1.mp4`;
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -139,7 +139,7 @@ const DiscoverSFT = () => {
           >
             <video controls>
               <source
-                src={`${discoverVideo}#t=0.1`}
+                src={`${url}#t=0.1`}
                 type="video/mp4"
                 className="mb-6"
                 width="100vw"
