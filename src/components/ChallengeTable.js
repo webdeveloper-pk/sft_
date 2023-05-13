@@ -477,6 +477,37 @@ const Table = ({ currency, mode, country }) => {
                   </td>
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center"></td>
                 </tr>
+                <tr>
+                  <td
+                    className="text-[13px] font-bold px-8 whitespace-nowrap bg-gradient-to-b from-bg-gray1 to-bg-gray2"
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                    data-aos-once="true"
+                  >
+                    prize
+                  </td>
+                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center">
+                    {(() => {
+                      if (currency === "10k") {
+                        return "X$";
+                      } else if (currency === "25k") {
+                        return "X$ ($)";
+                      } else if (currency === "50k") {
+                        return "X$";
+                      } else if (currency === "100k") {
+                        return "X$";
+                      } else if (currency === "200k") {
+                        return "$X";
+                      } else if (currency === "500k") {
+                        return "X$";
+                      } else {
+                        return "X$";
+                      }
+                    })()}
+                  </td>
+                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green2 text-center"></td>
+                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center"></td>
+                </tr>
               </tbody>
             </table>
           </div>

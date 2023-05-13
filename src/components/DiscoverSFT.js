@@ -149,7 +149,7 @@ const DiscoverSFT = () => {
             footer={null}
             title="sft"
             centered
-            width={"80vw"}
+            width={"90vw"}
           >
             <video controls ref={videoRef}>
               <source
