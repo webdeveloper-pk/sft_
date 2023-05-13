@@ -1,6 +1,392 @@
 import React from "react";
 
 const Table = ({ currency, mode, country }) => {
+  const arrData = [
+    {
+      aggressive: [
+        {
+          maxDailyLoss: {
+            "10k": [
+              {
+                usd: [1000, 1000, 1000],
+                eur: [914, 914, 914],
+                gbp: [803, 803, 803],
+                cad: [1365, 1365, 1365],
+                aud: [1506, 1506, 1506],
+                chf: [898, 898, 898],
+              },
+            ],
+            "25k": [
+              {
+                usd: [2500, 2500, 2500],
+                eur: [2285, 2285, 2285],
+                gbp: [2008, 2008, 2008],
+                cad: [3414, 3414, 3414],
+                aud: [3765, 3765, 3765],
+                chf: [2246, 2246, 2246],
+              },
+            ],
+            "50k": [
+              {
+                usd: [5000, 5000, 5000],
+                eur: [4570, 4570, 4570],
+                gbp: [4016, 4016, 4016],
+                cad: [6828, 6828, 6828],
+                aud: [7530, 7530, 7530],
+                chf: [4493, 4493, 4493],
+              },
+            ],
+            "100k": [
+              {
+                usd: [10000, 10000, 10000],
+                eur: [9141, 9141, 9141],
+                gbp: [8033, 8033, 8033],
+                cad: [13656, 13656, 13656],
+                aud: [15060, 15060, 15060],
+                chf: [8986, 8986, 8986],
+              },
+            ],
+            "200k": [
+              {
+                usd: [20000, 20000, 20000],
+                eur: [18282, 18282, 18282],
+                gbp: [16066, 16066, 16066],
+                cad: [27313, 27313, 27313],
+                aud: [30121, 30121, 30121],
+                chf: [17973, 17973, 17973],
+              },
+            ],
+            "500k": [
+              {
+                usd: [50000, 50000, 50000],
+                eur: [45705, 45705, 45705],
+                gbp: [40167, 40167, 40167],
+                cad: [68282, 68282, 68282],
+                aud: [75302, 75302, 75302],
+                chf: [44934, 44934, 44934],
+              },
+            ],
+          },
+          maxLoss: {
+            "10k": [
+              {
+                usd: [2000, 2000, 2000],
+                eur: [1828, 1828, 1828],
+                gbp: [1606, 1606, 1606],
+                cad: [2731, 2731, 2731],
+                aud: [3012, 3012, 3012],
+                chf: [1797, 1797, 1797],
+              },
+            ],
+            "25k": [
+              {
+                usd: [5000, 5000, 5000],
+                eur: [4570, 4570, 4570],
+                gbp: [4016, 4016, 4016],
+                cad: [6828, 6828, 6828],
+                aud: [7530, 7530, 7530],
+                chf: [2246, 2246, 2246],
+              },
+            ],
+            "50k": [
+              {
+                usd: [10000, 10000, 10000],
+                eur: [9141, 9141, 9141],
+                gbp: [8033, 8033, 8033],
+                cad: [13656, 13656, 13656],
+                aud: [15060, 15060, 15060],
+                chf: [8986, 8986, 8986],
+              },
+            ],
+            "100k": [
+              {
+                usd: [20000, 20000, 20000],
+                eur: [18282, 18282, 18282],
+                gbp: [16066, 16066, 16066],
+                cad: [27313, 27313, 27313],
+                aud: [30121, 30121, 30121],
+                chf: [17973, 17973, 17973],
+              },
+            ],
+            "200k": [
+              {
+                usd: [40000, 40000, 40000],
+                eur: [36564, 36564, 36564],
+                gbp: [32133, 32133, 32133],
+                cad: [54626, 54626, 54626],
+                aud: [60242, 60242, 60242],
+                chf: [35947, 35947, 35947],
+              },
+            ],
+            "500k": [
+              {
+                usd: [100000, 100000, 100000],
+                eur: [91410, 91410, 91410],
+                gbp: [80334, 80334, 80334],
+                cad: [136565, 136565, 136565],
+                aud: [150605, 150605, 150605],
+                chf: [89869, 89869, 89869],
+              },
+            ],
+          },
+          profitTarget: {
+            "10k": [
+              {
+                usd: [1400, 1000],
+                eur: [1279, 914],
+                gbp: [1124, 803],
+                cad: [1911, 1365],
+                aud: [2108, 1506],
+                chf: [1258, 898],
+              },
+            ],
+            "25k": [
+              {
+                usd: [3500, 2500],
+                eur: [3199, 2285],
+                gbp: [2811, 2008],
+                cad: [4779, 3414],
+                aud: [5271, 3765],
+                chf: [3145, 2246],
+              },
+            ],
+            "50k": [
+              {
+                usd: [7000, 5000],
+                eur: [6398, 4570],
+                gbp: [5623, 4016],
+                cad: [9559, 6828],
+                aud: [10542, 7530],
+                chf: [6290, 4493],
+              },
+            ],
+            "100k": [
+              {
+                usd: [14000, 10000],
+                eur: [12797, 9141],
+                gbp: [11246, 8033],
+                cad: [19119, 13656],
+                aud: [21084, 15060],
+                chf: [12581, 8986],
+              },
+            ],
+            "200k": [
+              {
+                usd: [28000, 20000],
+                eur: [25594, 18282],
+                gbp: [22493, 16066],
+                cad: [38238, 27313],
+                aud: [42169, 30121],
+                chf: [25163, 17973],
+              },
+            ],
+            "500k": [
+              {
+                usd: [70000, 50000],
+                eur: [63987, 45705],
+                gbp: [56233, 40167],
+                cad: [95595, 68282],
+                aud: [105423, 75302],
+                chf: [62908, 62908],
+              },
+            ],
+          },
+        },
+      ],
+      normal: [
+        {
+          maxDailyLoss: {
+            "10k": [
+              {
+                usd: [500, 500, 500],
+                eur: [457, 457, 457],
+                gbp: [401, 401, 401],
+                cad: [682, 682, 682],
+                aud: [753, 753, 753],
+                chf: [449, 449, 449],
+              },
+            ],
+            "25k": [
+              {
+                usd: [1250, 1250, 1250],
+                eur: [1142, 1142, 1142],
+                gbp: [1004, 1004, 1004],
+                cad: [1707, 1707, 1707],
+                aud: [1882, 1882, 1882],
+                chf: [1250, 1250, 1250],
+              },
+            ],
+
+            "50k": [
+              {
+                usd: [2500, 2500, 2500],
+                eur: [2285, 2285, 2285],
+                gbp: [2008, 2008, 2008],
+                cad: [3414, 3414, 3414],
+                aud: [3765, 3765, 3765],
+                chf: [2246, 2246, 2246],
+              },
+            ],
+            "100k": [
+              {
+                usd: [5000, 5000, 5000],
+                eur: [4570, 4570, 4570],
+                gbp: [4016, 4016, 4016],
+                cad: [6828, 6828, 6828],
+                aud: [7530, 7530, 7530],
+                chf: [2246, 2246, 2246],
+              },
+            ],
+            "200k": [
+              {
+                usd: [10000, 10000, 10000],
+                eur: [9141, 9141, 9141],
+                gbp: [8033, 8033, 8033],
+                cad: [13656, 13656, 13656],
+                aud: [15060, 15060, 15060],
+                chf: [8986, 8986, 8986],
+              },
+            ],
+            "500k": [
+              {
+                usd: [25000, 25000, 25000],
+                eur: [22852, 22852, 22852],
+                gbp: [20083, 20083, 20083],
+                cad: [34141, 34141, 34141],
+                aud: [37651, 37651, 37651],
+                chf: [22467, 22467, 22467],
+              },
+            ],
+          },
+          maxLoss: {
+            "10k": [
+              {
+                usd: [1000, 1000, 1000],
+                eur: [914, 914, 914],
+                gbp: [803, 803, 803],
+                cad: [1365, 1365, 1365],
+                aud: [1506, 1506, 1506],
+                chf: [898, 898, 898],
+              },
+            ],
+            "25k": [
+              {
+                usd: [2500, 2500, 2500],
+                eur: [2285, 2285, 2285],
+                gbp: [2008, 2008, 2008],
+                cad: [3414, 3414, 3414],
+                aud: [3765, 3765, 3765],
+                chf: [2246, 2246, 2246],
+              },
+            ],
+            "50k": [
+              {
+                usd: [5000, 5000, 5000],
+                eur: [4570, 4570, 4570],
+                gbp: [4016, 4016, 4016],
+                cad: [6828, 6828, 6828],
+                aud: [7530, 7530, 7530],
+                chf: [2246, 2246, 2246],
+              },
+            ],
+            "100k": [
+              {
+                usd: [10000, 10000, 10000],
+                eur: [9141, 9141, 9141],
+                gbp: [8033, 8033, 8033],
+                cad: [500, 500, 500],
+                aud: [15060, 15060, 15060],
+                chf: [8986, 8986, 8986],
+              },
+            ],
+            "200k": [
+              {
+                usd: [20000, 20000, 20000],
+                eur: [18282, 18282, 18282],
+                gbp: [16066, 16066, 16066],
+                cad: [13656, 13656, 13656],
+                aud: [30121, 30121, 30121],
+                chf: [17973, 17973, 17973],
+              },
+            ],
+            "500k": [
+              {
+                usd: [50000, 50000, 50000],
+                eur: [45705, 45705, 45705],
+                gbp: [40167, 40167, 40167],
+                cad: [68282, 68282, 68282],
+                aud: [75302, 75302, 75302],
+                chf: [44934, 44934, 44934],
+              },
+            ],
+          },
+          profitTarget: {
+            "10k": [
+              {
+                usd: [700, 500],
+                eur: [639, 457],
+                gbp: [562, 401],
+                cad: [955, 682],
+                aud: [1054, 753],
+                chf: [629, 449],
+              },
+            ],
+            "25k": [
+              {
+                usd: [1750, 1250],
+                eur: [1599, 1142],
+                gbp: [1405, 1004],
+                cad: [2389, 1707],
+                aud: [2635, 1882],
+                chf: [1572, 1123],
+              },
+            ],
+            "50k": [
+              {
+                usd: [3500, 2500],
+                eur: [3199, 2285],
+                gbp: [2811, 2008],
+                cad: [4779, 3414],
+                aud: [5271, 3765],
+                chf: [3145, 2246],
+              },
+            ],
+            "100k": [
+              {
+                usd: [7000, 5000],
+                eur: [6398, 4570],
+                gbp: [5623, 4016],
+                cad: [9559, 6828],
+                aud: [10542, 7530],
+                chf: [6290, 4493],
+              },
+            ],
+            "200k": [
+              {
+                usd: [14000, 10000],
+                eur: [12797, 9141],
+                gbp: [11246, 8033],
+                cad: [19119, 13656],
+                aud: [21084, 15060],
+                chf: [12581, 8986],
+              },
+            ],
+            "500k": [
+              {
+                usd: [35000, 25000],
+                eur: [31993, 22852],
+                gbp: [28116, 20083],
+                cad: [47797, 34141],
+                aud: [52711, 37651],
+                chf: [31454, 22467],
+              },
+            ],
+          },
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8 mt-6">
@@ -125,117 +511,45 @@ const Table = ({ currency, mode, country }) => {
                   >
                     Max. daily loss
                   </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center">
-                    {(() => {
-                      if (currency === "10k") {
-                        if (mode === "aggressive") {
-                          return "$1000";
-                        }
-                        return "$500";
-                      } else if (currency === "25k") {
-                        if (mode === "aggressive") {
-                          return "$2500";
-                        }
-                        return "$1250";
-                      } else if (currency === "50k") {
-                        if (mode === "aggressive") {
-                          return "$5k";
-                        }
-                        return "$2500";
-                      } else if (currency === "100k") {
-                        if (mode === "aggressive") {
-                          return "$10k";
-                        }
-                        return "$5k";
-                      } else if (currency === "200k") {
-                        if (mode === "aggressive") {
-                          return "$20k";
-                        }
-                        return "$10k";
-                      } else if (currency === "500k") {
-                        if (mode === "aggressive") {
-                          return "$50k";
-                        }
-                        return "$25k";
-                      } else {
-                        return "$500";
-                      }
-                    })()}
-                  </td>
-                  <td className="text-[13px] font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green2 text-center">
-                    {(() => {
-                      if (currency === "10k") {
-                        if (mode === "aggressive") {
-                          return "$1000";
-                        }
-                        return "$500";
-                      } else if (currency === "25k") {
-                        if (mode === "aggressive") {
-                          return "$2500";
-                        }
-                        return "$1250";
-                      } else if (currency === "50k") {
-                        if (mode === "aggressive") {
-                          return "$5k";
-                        }
-                        return "$2500";
-                      } else if (currency === "100k") {
-                        if (mode === "aggressive") {
-                          return "$10k";
-                        }
-                        return "$5k";
-                      } else if (currency === "200k") {
-                        if (mode === "aggressive") {
-                          return "$20k";
-                        }
-                        return "$10k";
-                      } else if (currency === "500k") {
-                        if (mode === "aggressive") {
-                          return "$50k";
-                        }
-                        return "$25k";
-                      } else {
-                        return "$500";
-                      }
-                    })()}
-                  </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center">
-                    {(() => {
-                      if (currency === "10k") {
-                        if (mode === "aggressive") {
-                          return "$1000";
-                        }
-                        return "$500";
-                      } else if (currency === "25k") {
-                        if (mode === "aggressive") {
-                          return "$2500";
-                        }
-                        return "$1250";
-                      } else if (currency === "50k") {
-                        if (mode === "aggressive") {
-                          return "$5k";
-                        }
-                        return "$2500";
-                      } else if (currency === "100k") {
-                        if (mode === "aggressive") {
-                          return "$10k";
-                        }
-                        return "$5k";
-                      } else if (currency === "200k") {
-                        if (mode === "aggressive") {
-                          return "$20k";
-                        }
-                        return "$10k";
-                      } else if (currency === "500k") {
-                        if (mode === "aggressive") {
-                          return "$50k";
-                        }
-                        return "$25k";
-                      } else {
-                        return "$500";
-                      }
-                    })()}
-                  </td>
+                  {arrData[0][mode][0].maxDailyLoss[currency][0][country].map(
+                    (value, index) => {
+                      return (
+                        <td
+                          className={`text-[13px] font-light px-16 lg:px-0 py-3 whitespace-nowrap text-center ${(() => {
+                            if (index === 0) {
+                              return "bg-bg-green1";
+                            } else if (index === 1) {
+                              return "bg-bg-green2";
+                            } else {
+                              return "bg-bg-green3";
+                            }
+                          })()}
+                        }`}
+                        >
+                          <span>
+                            {(() => {
+                              if (country === "usd") {
+                                return "$";
+                              } else if (country === "eur") {
+                                return "€";
+                              } else if (country === "gbp") {
+                                return "£";
+                              } else if (country === "cad") {
+                                return "CA$";
+                              } else if (country === "aud") {
+                                return "A$";
+                              } else if (country === "chf") {
+                                return "₣";
+                              } else {
+                                return "$";
+                              }
+                            })()}
+                          </span>{" "}
+                          {value}
+                        </td>
+                      );
+                    }
+                  )}
                 </tr>
                 <tr>
                   <td
@@ -246,117 +560,45 @@ const Table = ({ currency, mode, country }) => {
                   >
                     Max. loss
                   </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0  py-3 whitespace-nowrap bg-bg-green1 text-center">
-                    {(() => {
-                      if (currency === "10k") {
-                        if (mode === "aggressive") {
-                          return "$2000";
-                        }
-                        return "$1000";
-                      } else if (currency === "25k") {
-                        if (mode === "aggressive") {
-                          return "$5k";
-                        }
-                        return "$2500";
-                      } else if (currency === "50k") {
-                        if (mode === "aggressive") {
-                          return "$10k";
-                        }
-                        return "$5k";
-                      } else if (currency === "100k") {
-                        if (mode === "aggressive") {
-                          return "$20k";
-                        }
-                        return "$10k";
-                      } else if (currency === "200k") {
-                        if (mode === "aggressive") {
-                          return "$40k";
-                        }
-                        return "$20k";
-                      } else if (currency === "500k") {
-                        if (mode === "aggressive") {
-                          return "$100k";
-                        }
-                        return "$50k";
-                      } else {
-                        return "$1000";
-                      }
-                    })()}
-                  </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green2 text-center">
-                    {(() => {
-                      if (currency === "10k") {
-                        if (mode === "aggressive") {
-                          return "$2000";
-                        }
-                        return "$1000";
-                      } else if (currency === "25k") {
-                        if (mode === "aggressive") {
-                          return "$5k";
-                        }
-                        return "$2500";
-                      } else if (currency === "50k") {
-                        if (mode === "aggressive") {
-                          return "$10k";
-                        }
-                        return "$5k";
-                      } else if (currency === "100k") {
-                        if (mode === "aggressive") {
-                          return "$20k";
-                        }
-                        return "$10k";
-                      } else if (currency === "200k") {
-                        if (mode === "aggressive") {
-                          return "$40k";
-                        }
-                        return "$20k";
-                      } else if (currency === "500k") {
-                        if (mode === "aggressive") {
-                          return "$100k";
-                        }
-                        return "$50k";
-                      } else {
-                        return "$1000";
-                      }
-                    })()}
-                  </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center">
-                    {(() => {
-                      if (currency === "10k") {
-                        if (mode === "aggressive") {
-                          return "$2000";
-                        }
-                        return "$1000";
-                      } else if (currency === "25k") {
-                        if (mode === "aggressive") {
-                          return "$5k";
-                        }
-                        return "$2500";
-                      } else if (currency === "50k") {
-                        if (mode === "aggressive") {
-                          return "$10k";
-                        }
-                        return "$5k";
-                      } else if (currency === "100k") {
-                        if (mode === "aggressive") {
-                          return "$20k";
-                        }
-                        return "$10k";
-                      } else if (currency === "200k") {
-                        if (mode === "aggressive") {
-                          return "$40k";
-                        }
-                        return "$20k";
-                      } else if (currency === "500k") {
-                        if (mode === "aggressive") {
-                          return "$100k";
-                        }
-                        return "$50k";
-                      } else {
-                        return "$1000";
-                      }
-                    })()}
-                  </td>
+                  {arrData[0][mode][0].maxLoss[currency][0][country].map(
+                    (value, index) => {
+                      return (
+                        <td
+                          className={`text-[13px] font-light px-16 lg:px-0 py-3 whitespace-nowrap text-center ${(() => {
+                            if (index === 0) {
+                              return "bg-bg-green1";
+                            } else if (index === 1) {
+                              return "bg-bg-green2";
+                            } else {
+                              return "bg-bg-green3";
+                            }
+                          })()}
+                        }`}
+                        >
+                          <span>
+                            {(() => {
+                              if (country === "usd") {
+                                return "$";
+                              } else if (country === "eur") {
+                                return "€";
+                              } else if (country === "gbp") {
+                                return "£";
+                              } else if (country === "cad") {
+                                return "CA$";
+                              } else if (country === "aud") {
+                                return "A$";
+                              } else if (country === "chf") {
+                                return "₣";
+                              } else {
+                                return "$";
+                              }
+                            })()}
+                          </span>{" "}
+                          {value}
+                        </td>
+                      );
+                    }
+                  )}
                 </tr>
                 <tr>
                   <td
@@ -367,80 +609,38 @@ const Table = ({ currency, mode, country }) => {
                   >
                     profit target
                   </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center">
-                    {(() => {
-                      if (currency === "10k") {
-                        if (mode === "aggressive") {
-                          return "$1400";
-                        }
-                        return "$700";
-                      } else if (currency === "25k") {
-                        if (mode === "aggressive") {
-                          return "$3500";
-                        }
-                        return "$1750";
-                      } else if (currency === "50k") {
-                        if (mode === "aggressive") {
-                          return "$7k";
-                        }
-                        return "$3500";
-                      } else if (currency === "100k") {
-                        if (mode === "aggressive") {
-                          return "$14k";
-                        }
-                        return "$7k";
-                      } else if (currency === "200k") {
-                        if (mode === "aggressive") {
-                          return "$28k";
-                        }
-                        return "$14k";
-                      } else if (currency === "500k") {
-                        if (mode === "aggressive") {
-                          return "$70k";
-                        }
-                        return "$35k";
-                      } else {
-                        return "$700";
-                      }
-                    })()}
-                  </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green2 text-center">
-                    {(() => {
-                      if (currency === "10k") {
-                        if (mode === "aggressive") {
-                          return "$1000";
-                        }
-                        return "$500";
-                      } else if (currency === "25k") {
-                        if (mode === "aggressive") {
-                          return "$2500";
-                        }
-                        return "$1250";
-                      } else if (currency === "50k") {
-                        if (mode === "aggressive") {
-                          return "$5k";
-                        }
-                        return "$2500";
-                      } else if (currency === "100k") {
-                        if (mode === "aggressive") {
-                          return "$10k";
-                        }
-                        return "$5k";
-                      } else if (currency === "200k") {
-                        if (mode === "aggressive") {
-                          return "$20k";
-                        }
-                        return "$10k";
-                      } else if (currency === "500k") {
-                        if (mode === "aggressive") {
-                          return "$50k";
-                        }
-                        return "$25k";
-                      } else {
-                        return "$500";
-                      }
-                    })()}
-                  </td>
+                  {arrData[0][mode][0].profitTarget[currency][0][country].map(
+                    (value, index) => {
+                      return (
+                        <td
+                          className={`text-[13px] font-light px-16 lg:px-0 py-3 whitespace-nowrap text-center ${
+                            index === 0 ? "bg-bg-green1" : "bg-bg-green2"
+                          }`}
+                        >
+                          <span>
+                            {(() => {
+                              if (country === "usd") {
+                                return "$";
+                              } else if (country === "eur") {
+                                return "€";
+                              } else if (country === "gbp") {
+                                return "£";
+                              } else if (country === "cad") {
+                                return "CA$";
+                              } else if (country === "aud") {
+                                return "A$";
+                              } else if (country === "chf") {
+                                return "₣";
+                              } else {
+                                return "$";
+                              }
+                            })()}
+                          </span>{" "}
+                          {value}
+                        </td>
+                      );
+                    }
+                  )}
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center"></td>
                 </tr>
                 <tr>
@@ -461,12 +661,7 @@ const Table = ({ currency, mode, country }) => {
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center"></td>
                 </tr>
                 <tr>
-                  <td
-                    className="text-[13px]  font-bold px-8 whitespace-nowrap bg-gradient-to-b from-bg-gray1 to-bg-gray2"
-                    data-aos="fade-up"
-                    data-aos-duration="2000"
-                    data-aos-once="true"
-                  >
+                  <td className="text-[13px]  font-bold px-8 whitespace-nowrap bg-gradient-to-b from-bg-gray1 to-bg-gray2">
                     refundable fee
                   </td>
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center">
@@ -478,12 +673,7 @@ const Table = ({ currency, mode, country }) => {
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center"></td>
                 </tr>
                 <tr>
-                  <td
-                    className="text-[13px] font-bold px-8 whitespace-nowrap bg-gradient-to-b from-bg-gray1 to-bg-gray2"
-                    data-aos="fade-up"
-                    data-aos-duration="2000"
-                    data-aos-once="true"
-                  >
+                  <td className="text-[13px] font-bold px-8 whitespace-nowrap bg-gradient-to-b from-bg-gray1 to-bg-gray2">
                     prize
                   </td>
                   <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center">
