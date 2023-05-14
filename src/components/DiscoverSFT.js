@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Modal } from "antd";
 import discoverBg1 from "../assets/images/discover-bg1.png";
-import intro from "../assets/images/discover-image.png";
+import intro from "../assets/images/discover-image2.png";
 
 const DiscoverSFT = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -149,7 +149,7 @@ const DiscoverSFT = () => {
             footer={null}
             title="sft"
             centered
-            width={"90vw"}
+            width={"100vw"}
           >
             <video controls ref={videoRef}>
               <source
@@ -173,7 +173,7 @@ const DiscoverSFT = () => {
             <img
               src={discoverBg1}
               alt="reflection"
-              className="w-[100%] md:w-[82%] lg:w-[100%]"
+              className="w-[100%] md:w-[85%] lg:w-[100%]"
             />
           </div>
         </div>

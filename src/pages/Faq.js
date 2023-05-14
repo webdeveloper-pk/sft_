@@ -122,7 +122,7 @@ const Faq = () => {
                   </h1>
                   <p className="text-xs md:text-sm lowercase font-semibold">
                     We are located in Dubai. We can be contacted at :
-                    <span className="text-light-green">
+                    <span className="text-light-green pl-1">
                       contact@successfundtrader.com
                     </span>
                     . You can also reach us on social networks [insert link

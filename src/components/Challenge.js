@@ -54,7 +54,7 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
                 onClick={() => onCurrencyHandler("usd")}
               >
                 <img src={usa} alt="USA" width={22} height={22} />
@@ -67,7 +67,7 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
                 onClick={() => onCurrencyHandler("eur")}
               >
                 <img src={eur} alt="EUR" width={22} height={22} />
@@ -81,7 +81,7 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
                 onClick={() => onCurrencyHandler("gbp")}
               >
                 <img src={gbp} alt="GBP" width={22} height={22} />
@@ -93,7 +93,7 @@ const Challenge = () => {
               data-aos-once="true"
               data-aos-duration="3000"
             >
-              <button className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm">
+              <button className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm">
                 <img src={czech} alt="EUR" width={22} height={22} />
                 <span onClick={() => onCurrencyHandler("EUR")}>EUR</span>
               </button>
@@ -104,7 +104,7 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
                 onClick={() => onCurrencyHandler("cad")}
               >
                 <img src={cad} alt="CAD" width={22} height={22} />
@@ -118,7 +118,7 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
                 onClick={() => onCurrencyHandler("aud")}
               >
                 <img src={aud} alt="AUD" width={22} height={22} />
@@ -132,7 +132,7 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
                 onClick={() => onCurrencyHandler("chf")}
               >
                 <img src={chf} alt="CHF" width={22} height={22} />
@@ -158,7 +158,7 @@ const Challenge = () => {
                 data-aos-duration="3000"
               >
                 <button
-                  className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                  className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
                   onClick={() => onModeHandler("aggressive")}
                 >
                   <span>Aggressive</span>
@@ -170,7 +170,7 @@ const Challenge = () => {
                 data-aos-duration="3000"
               >
                 <button
-                  className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                  className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
                   onClick={() => onModeHandler("normal")}
                 >
                   <span>Normal</span>
@@ -196,7 +196,7 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   {/* <Tooltip title="1st challenge" color="#01c887"> */}
                   <button
-                    className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                    className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
                     onClick={() => onSubmithandler("10k")}
                   >
                     <span>$10k</span>
@@ -212,7 +212,7 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   {/* <Tooltip title="1st challenge" color="#01c887"> */}
                   <button
-                    className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                    className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
                     onClick={() => onSubmithandler("25k")}
                   >
                     <span>$25k</span>
@@ -228,7 +228,7 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   {/* <Tooltip title="1st challenge" color="#01c887"> */}
                   <button
-                    className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                    className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
                     onClick={() => onSubmithandler("50k")}
                   >
                     <span>$50k</span>
@@ -245,7 +245,7 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   <Tooltip title="1st challenge" color="#01c887">
                     <button
-                      className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                      className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
                       onClick={() => onSubmithandler("100k")}
                     >
                       <span>$100k</span>
@@ -262,7 +262,7 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   <Tooltip title="2nd challenge" color="#01c887">
                     <button
-                      className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                      className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
                       onClick={() => onSubmithandler("200k")}
                     >
                       <span>$200k</span>
@@ -279,7 +279,7 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   <Tooltip title="3rd challenge" color="#01c887">
                     <button
-                      className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-bg-green1 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                      className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
                       onClick={() => onSubmithandler("500k")}
                     >
                       <span>$500k</span>
@@ -290,7 +290,7 @@ const Challenge = () => {
 
               <span className="lg:ml-2">
                 <button
-                  className="flex justify-center items-center gap-x-1.5 text-lightest-white-bg bg-light-pink border border-light-pink hover:bg-transparent hover:border-light-pink hover:text-light-pink active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 uppercase font-bold rounded-full text-sm"
+                  className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green2 hover:bg-bg-green3 hover:border-bg-green3 active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 uppercase font-bold rounded-full text-sm"
                   data-aos="fade-up"
                   data-aos-duration="3000"
                   data-aos-once="true"

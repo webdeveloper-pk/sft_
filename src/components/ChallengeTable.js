@@ -674,9 +674,12 @@ const Table = ({ currency, mode, country }) => {
                 </tr>
                 <tr>
                   <td className="text-[13px] font-bold px-8 whitespace-nowrap bg-gradient-to-b from-bg-gray1 to-bg-gray2">
-                    prize
+                    price
                   </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center">
+                  <td
+                    colspan="3"
+                    className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center"
+                  >
                     {(() => {
                       if (currency === "10k") {
                         return "X$";
@@ -695,8 +698,6 @@ const Table = ({ currency, mode, country }) => {
                       }
                     })()}
                   </td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green2 text-center"></td>
-                  <td className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green3 text-center"></td>
                 </tr>
               </tbody>
             </table>

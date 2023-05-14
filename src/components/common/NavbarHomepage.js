@@ -1,7 +1,42 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { DownOutlined } from "@ant-design/icons";
+import { Dropdown } from "antd";
 import logo from "../../assets/images/logo.png";
 import gbp from "../../assets/images/gbp.png";
+
+const items = [
+  {
+    label: <div>FR</div>,
+    key: "fr",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "ES",
+    key: "es",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "OF",
+    key: "of",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "IT",
+    key: "it",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "NV",
+    key: "nv",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "CZ",
+    key: "cz",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+];
 
 const NavbarHomepage = () => {
   const [navbar, setNavbar] = useState(false);
@@ -104,17 +139,29 @@ const NavbarHomepage = () => {
                     </button>
                   </Link>
                 </li>
+                <li className="hover:cursor-pointer hover:text-white mt-4 lg:mt-0">
+                  <Link to="/signup">
+                    <button
+                      onClick={() => setNavbar(!navbar)}
+                      className="register text-light-black bg-light-green border border-light-green hover:border-light-white hover:text-light-white py-1.5 2xl:py-3 px-8 rounded-full uppercase"
+                    >
+                      <span className="reg">Register</span>
+                    </button>
+                  </Link>
+                </li>
                 <li className="hover:cursor-pointer hover:text-white">
-                  <a
-                    href="/"
-                    onClick={() => setNavbar(!navbar)}
-                    className="flex flex-row gap-x-3 items-center"
-                  >
-                    <span style={{ color: "#f2f2f2" }}>Eng</span>
-                    <span>
-                      <img src={gbp} alt="eng" width={22} height={22} />
-                    </span>
-                  </a>
+                  <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
+                    <a
+                      onClick={(e) => e.preventDefault()}
+                      className="text-light-white hover:text-light-white flex items-center pr-[20px]"
+                    >
+                      <img src={gbp} alt="gbp" className="w-[16px]" />
+                      <span className="pl-3 pr-4">ENG</span>
+                      <span className="mt-[1.5px] text-[12px]">
+                        <DownOutlined />
+                      </span>
+                    </a>
+                  </Dropdown>
                 </li>
               </ul>
             </div>

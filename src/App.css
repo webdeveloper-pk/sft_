@@ -520,7 +520,7 @@ p {
 }
 
 .login:hover {
-  color: #fff;
+  color: #000000;
 }
 
 .login:hover:after {
@@ -538,6 +538,37 @@ p {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.register {
+  position: relative;
+  transition: all 0.95s;
+}
+
+.register .reg {
+  position: relative;
+  z-index: 2;
+}
+
+.register:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #01c887;
+  transition: all 0.35s;
+}
+
+.register:hover {
+  color: black;
+}
+
+.register:hover:after {
+  width: 100%;
+  border-radius: 50px;
+  background-color: white;
 }
 
 /*  login and signup */
@@ -991,4 +1022,8 @@ p {
 
 .ant-modal-close-x {
   color: #ffffff;
+}
+
+.custom-dropdown {
+  background-color: red;
 }

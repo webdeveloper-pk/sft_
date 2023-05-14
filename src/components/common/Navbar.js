@@ -1,9 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { DownOutlined } from "@ant-design/icons";
+import { Dropdown } from "antd";
 import logo from "../../assets/images/navbar-black-logo.png";
 import menu from "../../assets/images/navbar-menu-icon.png";
 import userIcon from "../../assets/images/navbar-user-icon.png";
 import dropdownIcon from "../../assets/images/navbar-dropdown-icon.png";
+
+const items = [
+  {
+    label: <a href="/information">Personal Information</a>,
+    key: "personalinformation",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: <a href="/affiliateportal">Affiliate portal</a>,
+    key: "affiliateportal",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: <a href="/orders">Account orders</a>,
+    key: "orders",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+];
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -75,7 +95,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="hover:cursor-pointer hover:text-white">
-                  <a
+                  {/* <a
                     href="/"
                     onClick={() => setNavbar(!navbar)}
                     className="flex flex-row gap-x-3 items-center"
@@ -91,7 +111,27 @@ const Navbar = () => {
                         height={8}
                       />
                     </span>
-                  </a>
+                  </a> */}
+                  <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
+                    <a
+                      onClick={(e) => e.preventDefault()}
+                      className="text-black hover:text-black flex items-center pr-[20px]"
+                    >
+                      <img
+                        src={userIcon}
+                        alt="gbp"
+                        className="w-[30px] h-[32px]"
+                      />
+                      <span className="mt-[1.5px] text-[12px] pl-[10px]">
+                        <img
+                          src={dropdownIcon}
+                          alt="dropdown"
+                          width={8}
+                          height={8}
+                        />
+                      </span>
+                    </a>
+                  </Dropdown>
                 </li>
               </ul>
             </div>
