@@ -54,7 +54,9 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2 px-3 rounded-full text-sm ${
+                  country === "usd" ? "bg-bg-green3" : "bg-bg-green2"
+                }`}
                 onClick={() => onCurrencyHandler("usd")}
               >
                 <img src={usa} alt="USA" width={22} height={22} />
@@ -67,7 +69,9 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2 px-3 rounded-full text-sm ${
+                  country === "eur" ? "bg-bg-green3" : "bg-bg-green2"
+                }`}
                 onClick={() => onCurrencyHandler("eur")}
               >
                 <img src={eur} alt="EUR" width={22} height={22} />
@@ -81,7 +85,9 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2 px-3 rounded-full text-sm ${
+                  country === "gbp" ? "bg-bg-green3" : "bg-bg-green2"
+                }`}
                 onClick={() => onCurrencyHandler("gbp")}
               >
                 <img src={gbp} alt="GBP" width={22} height={22} />
@@ -104,7 +110,9 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2 px-3 rounded-full text-sm ${
+                  country === "cad" ? "bg-bg-green3" : "bg-bg-green2"
+                }`}
                 onClick={() => onCurrencyHandler("cad")}
               >
                 <img src={cad} alt="CAD" width={22} height={22} />
@@ -118,7 +126,9 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2 px-3 rounded-full text-sm ${
+                  country === "aud" ? "bg-bg-green3" : "bg-bg-green2"
+                }`}
                 onClick={() => onCurrencyHandler("aud")}
               >
                 <img src={aud} alt="AUD" width={22} height={22} />
@@ -132,7 +142,9 @@ const Challenge = () => {
               data-aos-duration="3000"
             >
               <button
-                className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2 px-3 rounded-full text-sm"
+                className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2 px-3 rounded-full text-sm ${
+                  country === "chf" ? "bg-bg-green3" : "bg-bg-green2"
+                }`}
                 onClick={() => onCurrencyHandler("chf")}
               >
                 <img src={chf} alt="CHF" width={22} height={22} />
@@ -158,7 +170,8 @@ const Challenge = () => {
                 data-aos-duration="3000"
               >
                 <button
-                  className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                  className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm 
+                  ${mode === "aggressive" ? "bg-bg-green3" : "bg-bg-green2"}`}
                   onClick={() => onModeHandler("aggressive")}
                 >
                   <span>Aggressive</span>
@@ -170,7 +183,8 @@ const Challenge = () => {
                 data-aos-duration="3000"
               >
                 <button
-                  className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                  className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm 
+                   ${mode === "normal" ? "bg-bg-green3" : "bg-bg-green2"}`}
                   onClick={() => onModeHandler("normal")}
                 >
                   <span>Normal</span>
@@ -196,7 +210,8 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   {/* <Tooltip title="1st challenge" color="#01c887"> */}
                   <button
-                    className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                    className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm
+                    ${currency === "10k" ? "bg-bg-green3" : "bg-bg-green2"}`}
                     onClick={() => onSubmithandler("10k")}
                   >
                     <span>$10k</span>
@@ -212,7 +227,8 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   {/* <Tooltip title="1st challenge" color="#01c887"> */}
                   <button
-                    className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                    className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm
+                   ${currency === "25k" ? "bg-bg-green3" : "bg-bg-green2"}`}
                     onClick={() => onSubmithandler("25k")}
                   >
                     <span>$25k</span>
@@ -228,7 +244,8 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   {/* <Tooltip title="1st challenge" color="#01c887"> */}
                   <button
-                    className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                    className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm
+                       ${currency === "50k" ? "bg-bg-green3" : "bg-bg-green2"}`}
                     onClick={() => onSubmithandler("50k")}
                   >
                     <span>$50k</span>
@@ -245,7 +262,10 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   <Tooltip title="1st challenge" color="#01c887">
                     <button
-                      className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                      className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm
+                         ${
+                           currency === "100k" ? "bg-bg-green3" : "bg-bg-green2"
+                         }`}
                       onClick={() => onSubmithandler("100k")}
                     >
                       <span>$100k</span>
@@ -262,7 +282,10 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   <Tooltip title="2nd challenge" color="#01c887">
                     <button
-                      className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                      className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm
+                         ${
+                           currency === "200k" ? "bg-bg-green3" : "bg-bg-green2"
+                         }`}
                       onClick={() => onSubmithandler("200k")}
                     >
                       <span>$200k</span>
@@ -279,7 +302,10 @@ const Challenge = () => {
                 <div className="challenge-tooltip">
                   <Tooltip title="3rd challenge" color="#01c887">
                     <button
-                      className="flex justify-center items-center gap-x-1.5 text-lighter-black bg-bg-green2 border border-bg-green1 hover:bg-light-green hover:border-light-green active:bg-light-green focus:bg-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm"
+                      className={`flex justify-center items-center gap-x-1.5 text-lighter-black border border-bg-green1 hover:bg-light-green hover:border-light-green py-2.5 2xl:py-3 px-3 rounded-full text-sm
+                        ${
+                          currency === "500k" ? "bg-bg-green3" : "bg-bg-green2"
+                        }`}
                       onClick={() => onSubmithandler("500k")}
                     >
                       <span>$500k</span>

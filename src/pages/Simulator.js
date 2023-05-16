@@ -22,7 +22,7 @@ const Simulator = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10">
@@ -165,7 +165,7 @@ const Simulator = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

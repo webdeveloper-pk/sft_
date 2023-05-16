@@ -1,13 +1,13 @@
 import React from "react";
 import { Button } from "antd";
 import WithdrawTable from "../components/WithdrawTable";
-import Footer from "../components/common/Footer";
-import Navbar from "../components/common/Navbar";
+// import Footer from "../components/common/Footer";
+// import Navbar from "../components/common/Navbar";
 
 const Withdrawals = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10">
@@ -55,7 +55,7 @@ const Withdrawals = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

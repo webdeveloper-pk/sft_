@@ -4,13 +4,13 @@ import dropdown from "../assets/images/order-dropdown-icon.png";
 import arrowDown from "../assets/images/order-arrow-down.png";
 import sort from "../assets/images/order-sort-icon.png";
 import sadface from "../assets/images/order-face-icon.png";
-import Navbar from "../components/common/Navbar";
-import Footer from "../components/common/Footer";
+// import Navbar from "../components/common/Navbar";
+// import Footer from "../components/common/Footer";
 
 const Orders = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
         <div className="min-h-screen">
           <div className="flex flex-col md:flex-row justify-between items-center gap-y-4 pt-10">
@@ -73,7 +73,7 @@ const Orders = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

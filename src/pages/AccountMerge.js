@@ -1,12 +1,12 @@
 import React from "react";
 import ButtonFilled from "../components/common/ButtonFilled";
-import Footer from "../components/common/Footer";
-import Navbar from "../components/common/Navbar";
+// import Footer from "../components/common/Footer";
+// import Navbar from "../components/common/Navbar";
 
 const AccountMerge = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10">
@@ -68,7 +68,7 @@ const AccountMerge = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

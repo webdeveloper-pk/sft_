@@ -1,7 +1,7 @@
 import React from "react";
 import DownloadCard from "../components/DownloadCard";
-import Footer from "../components/common/Footer";
-import Navbar from "../components/common/Navbar";
+// import Footer from "../components/common/Footer";
+// import Navbar from "../components/common/Navbar";
 import meta4 from "../assets/images/downloads-meta-trader4.png";
 import meta5 from "../assets/images/downloads-meta-trader5.png";
 import metaC from "../assets/images/downloads-c-trader.png";
@@ -9,7 +9,7 @@ import metaC from "../assets/images/downloads-c-trader.png";
 const Downloads = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10">
@@ -67,7 +67,7 @@ const Downloads = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

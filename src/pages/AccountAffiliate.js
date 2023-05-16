@@ -12,7 +12,7 @@ import Navbar from "../components/common/Navbar";
 const AccountAffiliate = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10 w-[100%] lg:w-[60%] ">
@@ -108,7 +108,7 @@ const AccountAffiliate = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

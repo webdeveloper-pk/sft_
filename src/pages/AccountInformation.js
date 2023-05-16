@@ -2,13 +2,13 @@ import React from "react";
 import { Tabs } from "antd";
 import Information from "../components/Information";
 import ChnagePassword from "../components/ChnagePassword";
-import Footer from "../components/common/Footer";
-import Navbar from "../components/common/Navbar";
+// import Footer from "../components/common/Footer";
+// import Navbar from "../components/common/Navbar";
 
 const AccountInformation = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10">
@@ -25,7 +25,7 @@ const AccountInformation = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

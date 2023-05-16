@@ -2,13 +2,13 @@ import React from "react";
 import LeadersStats from "../components/LeadersStats";
 import LeaderboardButton from "../components/common/LeaderboardButton";
 import LeaderboardTable from "../components/LeaderboardTable";
-import Footer from "../components/common/Footer";
-import Navbar from "../components/common/Navbar";
+// import Footer from "../components/common/Footer";
+// import Navbar from "../components/common/Navbar";
 
 const Leaderboard = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-y-4 pt-10">
@@ -68,7 +68,7 @@ const Leaderboard = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

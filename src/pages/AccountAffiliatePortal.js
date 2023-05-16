@@ -11,13 +11,13 @@ import copy from "../assets/images/affiliate-copy-icon.png";
 import share from "../assets/images/affiliate-share.png";
 import glow from "../assets/images/work-bg4.png";
 import AffiliatePortalTable from "../components/AffiliatePortalTable";
-import Footer from "../components/common/Footer";
-import Navbar from "../components/common/Navbar";
+// import Footer from "../components/common/Footer";
+// import Navbar from "../components/common/Navbar";
 
 const AccountAffiliatePortal = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="py-10">
@@ -149,7 +149,7 @@ const AccountAffiliatePortal = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

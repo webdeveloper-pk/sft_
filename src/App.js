@@ -24,6 +24,7 @@ import AccountAffiliate from "./pages/AccountAffiliate";
 import Leaderboard from "./pages/Leaderboard";
 import Simulator from "./pages/Simulator";
 import Dashboard from "./pages/Dashboard";
+import Layout from "./components/Layout";
 
 const App = () => {
   return (
@@ -36,19 +37,24 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/policy" element={<Policy />} />
-          <Route path="/accountmerge" element={<AccountMerge />} />
-          <Route path="/orders" element={<AccountOrders />} />
-          <Route path="/downloads" element={<AccountDownloads />} />
-          <Route path="/withdrawals" element={<AccountWithdrawals />} />
-          <Route path="/information" element={<AccountInformation />} />
-          <Route path="/certificates" element={<Certificates />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/affiliate" element={<AccountAffiliate />} />
-          <Route path="/simulator" element={<Simulator />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/affiliateportal" element={<AccountAffiliatePortal />} />
           <Route path="/404" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to="/404" />} />
+          <Route element={<Layout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/information" element={<AccountInformation />} />
+            <Route path="/accountmerge" element={<AccountMerge />} />
+            <Route path="/affiliate" element={<AccountAffiliate />} />
+            <Route path="/certificates" element={<Certificates />} />
+            <Route path="/withdrawals" element={<AccountWithdrawals />} />
+            <Route path="/simulator" element={<Simulator />} />
+            <Route
+              path="/affiliateportal"
+              element={<AccountAffiliatePortal />}
+            />
+            <Route path="/orders" element={<AccountOrders />} />
+            <Route path="/downloads" element={<AccountDownloads />} />
+          </Route>
         </Routes>
       </Router>
     </div>

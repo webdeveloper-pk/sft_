@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown } from "antd";
 import logo from "../../assets/images/navbar-black-logo.png";
@@ -33,9 +33,9 @@ const Navbar = () => {
         <div className="mx-auto lg:flex justify-between lg:items-center py-6 uppercase border-b border-dark-gray">
           <div>
             <div className="flex flex-row items-center w-full gap-x-3 md:gap-x-8">
-              <a href="/">
+              <div>
                 <img src={menu} alt="menu" width="30px" height="auto" />
-              </a>
+              </div>
               <a href="/" className="-mt-1">
                 <img src={logo} alt="logo" width="110px" height="auto" />
               </a>
@@ -85,14 +85,14 @@ const Navbar = () => {
             >
               <ul className="flex flex-col lg:flex-row items-center gap-x-6 gap-y-6 2xl:gap-12">
                 <li className="hover:cursor-pointer hover:text-white">
-                  <Link to="/login">
-                    <button
-                      onClick={() => setNavbar(!navbar)}
-                      className="text-sm text-white bg-light-green border border-light-green hover:bg-transparent hover:text-light-green py-1.5 px-6 rounded-full uppercase"
-                    >
-                      First free contest
-                    </button>
-                  </Link>
+                  {/* <Link to="/login"> */}
+                  <button
+                    onClick={() => setNavbar(!navbar)}
+                    className="text-sm text-white bg-light-green border border-light-green hover:bg-transparent hover:text-light-green py-1.5 px-6 rounded-full uppercase"
+                  >
+                    First free contest
+                  </button>
+                  {/* </Link> */}
                 </li>
                 <li className="hover:cursor-pointer hover:text-white">
                   {/* <a
