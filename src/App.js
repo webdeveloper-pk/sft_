@@ -39,22 +39,44 @@ const App = () => {
           <Route path="/policy" element={<Policy />} />
           <Route path="/404" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to="/404" />} />
-          <Route element={<Layout />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/information" element={<AccountInformation />} />
-            <Route path="/accountmerge" element={<AccountMerge />} />
-            <Route path="/affiliate" element={<AccountAffiliate />} />
-            <Route path="/certificates" element={<Certificates />} />
-            <Route path="/withdrawals" element={<AccountWithdrawals />} />
-            <Route path="/simulator" element={<Simulator />} />
-            <Route
-              path="/affiliateportal"
-              element={<AccountAffiliatePortal />}
-            />
-            <Route path="/orders" element={<AccountOrders />} />
-            <Route path="/downloads" element={<AccountDownloads />} />
-          </Route>
+          <Route
+            path="/layout/*"
+            element={
+              <Layout>
+                <Routes>
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/leaderboard" element={<Leaderboard />} />
+                  <Route path="/information" element={<AccountInformation />} />
+                  <Route path="/accountmerge" element={<AccountMerge />} />
+                  <Route path="/affiliate" element={<AccountAffiliate />} />
+                  <Route path="/certificates" element={<Certificates />} />
+                  <Route path="/withdrawals" element={<AccountWithdrawals />} />
+                  <Route path="/simulator" element={<Simulator />} />
+                  <Route
+                    path="/affiliateportal"
+                    element={<AccountAffiliatePortal />}
+                  />
+                  <Route path="/orders" element={<AccountOrders />} />
+                  <Route path="/downloads" element={<AccountDownloads />} />
+                </Routes>
+              </Layout>
+            }
+          />
+
+          {/* <Route path="/layout/dashboard" element={<Dashboard />} />
+          <Route path="/layout/leaderboard" element={<Leaderboard />} />
+          <Route path="/layout/information" element={<AccountInformation />} />
+          <Route path="/layout/accountmerge" element={<AccountMerge />} />
+          <Route path="/layout/affiliate" element={<AccountAffiliate />} />
+          <Route path="/layout/certificates" element={<Certificates />} />
+          <Route path="/layout/withdrawals" element={<AccountWithdrawals />} />
+          <Route path="/layout/simulator" element={<Simulator />} />
+          <Route
+            path="/layout/affiliateportal"
+            element={<AccountAffiliatePortal />}
+          />
+          <Route path="/layout/orders" element={<AccountOrders />} />
+          <Route path="/layout/downloads" element={<AccountDownloads />} /> */}
         </Routes>
       </Router>
     </div>

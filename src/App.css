@@ -1096,3 +1096,7 @@ p {
   background-color: #000000;
   color: white;
 }
+
+.ant-layout-sider-children {
+  background-color: #000000;
+}

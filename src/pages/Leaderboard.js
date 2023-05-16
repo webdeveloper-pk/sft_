@@ -9,7 +9,7 @@ const Leaderboard = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
+      <div className="bg-medium-gray px-6 md:px-8 lg:px-12 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-y-4 pt-10">
             <h1 className="text-light-green text-2xl lg:text-3xl font-bold uppercase mt-3">

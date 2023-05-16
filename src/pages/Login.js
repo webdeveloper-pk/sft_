@@ -64,7 +64,7 @@ const Login = () => {
                 />
               </div>
               <a
-                href="/dashboard"
+                href="/layout/dashboard"
                 className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-x-4"
               >
                 <ButtonFilled

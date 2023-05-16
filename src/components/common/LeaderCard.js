@@ -36,16 +36,16 @@ const LeaderCard = ({
       </div>
       <div className="flex flex-row justify-center my-6 gap-x-12 lg:gap-x-24 text-white uppercase font-semibold">
         <div>
-          <p className="text-sm md:text-base">profit</p>
-          <p className="text-lg md:text-xl">{profit}</p>
-          <p className="text-sm md:text-base mt-3">account size</p>
-          <p className="text-lg md:text-xl text-xl">{size}</p>
+          <p className="text-sm">profit</p>
+          <p className="text-lg md:text-base">{profit}</p>
+          <p className="text-sm mt-3">account size</p>
+          <p className="text-lg md:text-lg">{size}</p>
         </div>
         <div>
-          <p className="text-sm md:text-base">Equity</p>
-          <p className="text-lg md:text-xl">{equity}</p>
-          <p className="text-sm md:text-base mt-3">Gain</p>
-          <p className="text-lg md:text-xl">{gain}</p>
+          <p className="text-sm">Equity</p>
+          <p className="text-lg">{equity}</p>
+          <p className="text-sm mt-3">Gain</p>
+          <p className="text-lg">{gain}</p>
         </div>
       </div>
     </div>

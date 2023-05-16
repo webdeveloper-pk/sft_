@@ -12,6 +12,9 @@ import {
   AlignRightOutlined,
   DownloadOutlined,
   BookOutlined,
+  IdcardOutlined,
+  ProfileOutlined,
+  MoneyCollectOutlined,
 } from "@ant-design/icons";
 // import { usePathname } from "../customeHook/usePathName";
 import logo from "../assets/images/navbar-black-logo.png";
@@ -21,17 +24,17 @@ import Footer from "./common/Footer";
 
 const items = [
   {
-    label: <Link to="/information">Personal Information</Link>,
+    label: <Link to="/layout/information">Personal Information</Link>,
     key: "personalinformation",
     // icon: <img src={gbp} className="w-[16px]" alt="" />,
   },
   {
-    label: <Link to="/affiliateportal">Affiliate portal</Link>,
+    label: <Link to="/layout/affiliateportal">Affiliate portal</Link>,
     key: "affiliateportal",
     // icon: <img src={gbp} className="w-[16px]" alt="" />,
   },
   {
-    label: <Link to="/orders">Account orders</Link>,
+    label: <Link to="/layout/orders">Account orders</Link>,
     key: "orders",
     // icon: <img src={gbp} className="w-[16px]" alt="" />,
   },
@@ -74,7 +77,7 @@ const LayoutComponent = ({ children }) => {
                 </div>
               }
             >
-              <Link to="/dashboard">
+              <Link to="/layout/dashboard">
                 <div className="ml-1">Dashboard</div>
               </Link>
             </Menu.Item>
@@ -86,7 +89,7 @@ const LayoutComponent = ({ children }) => {
                 </div>
               }
             >
-              <Link to="/information">
+              <Link to="/layout/information">
                 <div className=" ml-1">Profile</div>
               </Link>
             </Menu.Item>
@@ -98,7 +101,7 @@ const LayoutComponent = ({ children }) => {
                 </div>
               }
             >
-              <Link to="/leaderboard">
+              <Link to="/layout/leaderboard">
                 <div className=" ml-1">Leaderboard</div>
               </Link>
             </Menu.Item>
@@ -111,7 +114,7 @@ const LayoutComponent = ({ children }) => {
                 </div>
               }
             >
-              <Link to="/accountmerge">
+              <Link to="/layout/accountmerge">
                 <div className=" ml-1">Account Merge</div>
               </Link>
             </Menu.Item>
@@ -123,7 +126,7 @@ const LayoutComponent = ({ children }) => {
                 </div>
               }
             >
-              <Link to="/affiliate">
+              <Link to="/layout/affiliate">
                 <div className=" ml-1">Account affiliate</div>
               </Link>
             </Menu.Item>
@@ -131,11 +134,11 @@ const LayoutComponent = ({ children }) => {
               key="6"
               icon={
                 <div className="mt-0">
-                  <DashboardOutlined />
+                  <ProfileOutlined />
                 </div>
               }
             >
-              <Link to="/certificates">
+              <Link to="/layout/certificates">
                 <div className=" ml-1">Certificates</div>
               </Link>
             </Menu.Item>
@@ -143,11 +146,11 @@ const LayoutComponent = ({ children }) => {
               key="7"
               icon={
                 <div className="mt-0">
-                  <DashboardOutlined />
+                  <MoneyCollectOutlined />
                 </div>
               }
             >
-              <Link to="/withdrawals">
+              <Link to="/layout/withdrawals">
                 <div className=" ml-1">Withdrawals</div>
               </Link>
             </Menu.Item>
@@ -159,7 +162,7 @@ const LayoutComponent = ({ children }) => {
                 </div>
               }
             >
-              <Link to="/simulator">
+              <Link to="/layout/simulator">
                 <div className=" ml-1">Simulator</div>
               </Link>
             </Menu.Item>
@@ -167,11 +170,11 @@ const LayoutComponent = ({ children }) => {
               key="9"
               icon={
                 <div className="mt-0">
-                  <DashboardOutlined />
+                  <IdcardOutlined />
                 </div>
               }
             >
-              <Link to="/affiliateportal">
+              <Link to="/layout/affiliateportal">
                 <div className=" ml-1">Affiliate Portal</div>
               </Link>
             </Menu.Item>
@@ -183,7 +186,7 @@ const LayoutComponent = ({ children }) => {
                 </div>
               }
             >
-              <Link to="/orders">
+              <Link to="/layout/orders">
                 <div className=" ml-1">Orders</div>
               </Link>
             </Menu.Item>
@@ -195,7 +198,7 @@ const LayoutComponent = ({ children }) => {
                 </div>
               }
             >
-              <Link to="/downloads">
+              <Link to="/layout/downloads">
                 <div className=" ml-1">Downloads</div>
               </Link>
             </Menu.Item>
@@ -216,11 +219,11 @@ const LayoutComponent = ({ children }) => {
               </Link>
             </div>
             <div className="flex flex-row items-center w-[100%] justify-end">
-              <ul className="flex items-center justify-center gap-x-6 mt-3">
+              <ul className="flex flex-col md:flex-row items-center justify-center gap-x-6 mt-3">
                 <li className="hover:cursor-pointer hover:text-white">
                   <button
                     onClick={() => setNavbar(!navbar)}
-                    className="text-sm text-white bg-light-green border border-light-green hover:bg-transparent hover:text-light-green py-1.5 px-6 rounded-full uppercase"
+                    className="text-xs md:text-sm text-white bg-light-green border border-light-green hover:bg-transparent hover:text-light-green py-1.5 px-6 rounded-full uppercase"
                   >
                     First free contest
                   </button>
