@@ -40,7 +40,7 @@ const App = () => {
           <Route path="/404" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to="/404" />} />
           <Route
-            path="/layout/*"
+            path="/home/*"
             element={
               <Layout>
                 <Routes>

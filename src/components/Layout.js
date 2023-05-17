@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Layout, Menu, Dropdown } from "antd";
 import {
@@ -6,15 +6,18 @@ import {
   DashboardOutlined,
   UserOutlined,
   TrophyOutlined,
-  HomeOutlined,
+  AppstoreOutlined,
   MergeCellsOutlined,
   AccountBookOutlined,
   AlignRightOutlined,
   DownloadOutlined,
-  BookOutlined,
+  DeleteOutlined,
   IdcardOutlined,
   ProfileOutlined,
   MoneyCollectOutlined,
+  PhoneOutlined,
+  ArrowLeftOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons";
 // import { usePathname } from "../customeHook/usePathName";
 import logo from "../assets/images/navbar-black-logo.png";
@@ -24,17 +27,17 @@ import Footer from "./common/Footer";
 
 const items = [
   {
-    label: <Link to="/layout/information">Personal Information</Link>,
+    label: <Link to="/home/information">Billing</Link>,
     key: "personalinformation",
     // icon: <img src={gbp} className="w-[16px]" alt="" />,
   },
   {
-    label: <Link to="/layout/affiliateportal">Affiliate portal</Link>,
+    label: <Link to="/home/information">Change password</Link>,
     key: "affiliateportal",
     // icon: <img src={gbp} className="w-[16px]" alt="" />,
   },
   {
-    label: <Link to="/layout/orders">Account orders</Link>,
+    label: <p>Sign out</p>,
     key: "orders",
     // icon: <img src={gbp} className="w-[16px]" alt="" />,
   },
@@ -47,6 +50,20 @@ const LayoutComponent = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   // const path = usePathname();
+
+  const handleWindowSizeChange = () => {
+    const isMobileSize = window.innerWidth <= 767; // Adjust the breakpoint as needed
+    setCollapsed(isMobileSize);
+  };
+
+  useEffect(() => {
+    handleWindowSizeChange(); // Set initial collapse state on component mount
+    window.addEventListener("resize", handleWindowSizeChange); // Update collapse state on window resize
+
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange); // Cleanup the event listener on component unmount
+    };
+  }, []);
 
   const toggle = () => {
     setCollapsed(!collapsed);
@@ -66,18 +83,18 @@ const LayoutComponent = ({ children }) => {
   return (
     <>
       <Layout className="layoutStyling">
-        <Sider trigger={null} collapsible collapsed={collapsed}>
+        <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
           <div className="logo bg-black"></div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item
               key="1"
               icon={
                 <div className="mt-0">
-                  <HomeOutlined />
+                  <AppstoreOutlined />
                 </div>
               }
             >
-              <Link to="/layout/dashboard">
+              <Link to="/home/dashboard">
                 <div className="ml-1">Dashboard</div>
               </Link>
             </Menu.Item>
@@ -85,27 +102,26 @@ const LayoutComponent = ({ children }) => {
               key="2"
               icon={
                 <div className="mt-0">
-                  <UserOutlined />
+                  <DeleteOutlined />
                 </div>
               }
             >
-              <Link to="/layout/information">
-                <div className=" ml-1">Profile</div>
+              <Link to="/home/orders">
+                <div className=" ml-1">My orders</div>
               </Link>
             </Menu.Item>
             <Menu.Item
               key="3"
               icon={
                 <div className="mt-0">
-                  <TrophyOutlined />
+                  <UserOutlined />
                 </div>
               }
             >
-              <Link to="/layout/leaderboard">
-                <div className=" ml-1">Leaderboard</div>
+              <Link to="/home/information">
+                <div className=" ml-1">Profile</div>
               </Link>
             </Menu.Item>
-
             <Menu.Item
               key="4"
               icon={
@@ -114,7 +130,7 @@ const LayoutComponent = ({ children }) => {
                 </div>
               }
             >
-              <Link to="/layout/accountmerge">
+              <Link to="/home/accountmerge">
                 <div className=" ml-1">Account Merge</div>
               </Link>
             </Menu.Item>
@@ -122,85 +138,122 @@ const LayoutComponent = ({ children }) => {
               key="5"
               icon={
                 <div className="mt-0">
-                  <AccountBookOutlined />
+                  <DownloadOutlined />
                 </div>
               }
             >
-              <Link to="/layout/affiliate">
-                <div className=" ml-1">Account affiliate</div>
+              <Link to="/home/downloads">
+                <div className=" ml-1">Downloads</div>
               </Link>
             </Menu.Item>
             <Menu.Item
               key="6"
               icon={
                 <div className="mt-0">
-                  <ProfileOutlined />
+                  <MoneyCollectOutlined />
                 </div>
               }
             >
-              <Link to="/layout/certificates">
-                <div className=" ml-1">Certificates</div>
+              <Link to="/home/withdrawals">
+                <div className=" ml-1">Payouts</div>
               </Link>
             </Menu.Item>
             <Menu.Item
               key="7"
               icon={
                 <div className="mt-0">
-                  <MoneyCollectOutlined />
+                  <ProfileOutlined />
                 </div>
               }
             >
-              <Link to="/layout/withdrawals">
-                <div className=" ml-1">Withdrawals</div>
+              <Link to="/home/certificates">
+                <div className=" ml-1">Certificates</div>
               </Link>
             </Menu.Item>
             <Menu.Item
               key="8"
               icon={
                 <div className="mt-0">
-                  <DashboardOutlined />
+                  <TrophyOutlined />
                 </div>
               }
             >
-              <Link to="/layout/simulator">
-                <div className=" ml-1">Simulator</div>
+              <Link to="/home/leaderboard">
+                <div className=" ml-1">Leaderboard</div>
               </Link>
             </Menu.Item>
             <Menu.Item
               key="9"
               icon={
                 <div className="mt-0">
-                  <IdcardOutlined />
+                  <AccountBookOutlined />
                 </div>
               }
             >
-              <Link to="/layout/affiliateportal">
-                <div className=" ml-1">Affiliate Portal</div>
+              <Link to="/home/affiliate">
+                <div className=" ml-1">Account affiliate</div>
               </Link>
             </Menu.Item>
             <Menu.Item
               key="10"
               icon={
                 <div className="mt-0">
-                  <BookOutlined />
+                  <IdcardOutlined />
                 </div>
               }
             >
-              <Link to="/layout/orders">
-                <div className=" ml-1">Orders</div>
+              <Link to="/home/affiliateportal">
+                <div className=" ml-1">Affiliate Portal</div>
               </Link>
             </Menu.Item>
             <Menu.Item
               key="11"
               icon={
                 <div className="mt-0">
-                  <DownloadOutlined />
+                  <DashboardOutlined />
                 </div>
               }
             >
-              <Link to="/layout/downloads">
-                <div className=" ml-1">Downloads</div>
+              <Link to="/home/simulator">
+                <div className=" ml-1">Simulator</div>
               </Link>
+            </Menu.Item>
+            <Menu.Item
+              key="12"
+              icon={
+                <div className="mt-0">
+                  <PhoneOutlined />
+                </div>
+              }
+            >
+              <Link to="/contact">
+                <div className=" ml-1">Contact us</div>
+              </Link>
+            </Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item
+              key="13"
+              icon={
+                <div className="mt-0 text-white">
+                  <ArrowLeftOutlined />
+                </div>
+              }
+            >
+              <Link to="/">
+                <div className=" ml-1 text-white">Back to Home</div>
+              </Link>
+            </Menu.Item>
+            <Menu.Item
+              key="14"
+              icon={
+                <div className="mt-0 text-white">
+                  <LogoutOutlined />
+                </div>
+              }
+            >
+              {/* <Link to="/"> */}
+              <div className=" ml-1 text-white">Sign out</div>
+              {/* </Link> */}
             </Menu.Item>
           </Menu>
         </Sider>
@@ -213,19 +266,25 @@ const LayoutComponent = ({ children }) => {
                 onClick: toggle,
               }
             )}
-            <div className="header-text">
+            <div className="header-text hidden md:block">
               <Link to="/">
                 <img src={logo} alt="logo" width="100px" height="auto" />
               </Link>
             </div>
             <div className="flex flex-row items-center w-[100%] justify-end">
-              <ul className="flex flex-col md:flex-row items-center justify-center gap-x-6 mt-3">
+              <ul className="flex flex-row items-center justify-center gap-x-2 md:gap-x-6 mt-3">
                 <li className="hover:cursor-pointer hover:text-white">
                   <button
                     onClick={() => setNavbar(!navbar)}
-                    className="text-xs md:text-sm text-white bg-light-green border border-light-green hover:bg-transparent hover:text-light-green py-1.5 px-6 rounded-full uppercase"
+                    className="hidden md:block text-xs md:text-sm text-white bg-light-green border border-light-green hover:bg-transparent hover:text-light-green py-1.5 px-6 rounded-full uppercase"
                   >
                     First free contest
+                  </button>
+                  <button
+                    onClick={() => setNavbar(!navbar)}
+                    className="hidden text-xs md:text-sm text-white bg-light-green border border-light-green hover:bg-transparent hover:text-light-green py-1.5 px-6 rounded-full uppercase"
+                  >
+                    contest
                   </button>
                 </li>
                 <li className="hover:cursor-pointer hover:text-white">
@@ -249,7 +308,7 @@ const LayoutComponent = ({ children }) => {
                   <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
                     <a
                       onClick={(e) => e.preventDefault()}
-                      className="text-black hover:text-black flex items-center pr-[20px]"
+                      className="text-black hover:text-black flex items-center pr-[6px] md:pr-[20px]"
                     >
                       <img
                         src={userIcon}
@@ -270,14 +329,7 @@ const LayoutComponent = ({ children }) => {
               </ul>
             </div>
           </Header>
-          <Content
-            className="site-layout-background"
-            style={{
-              margin: "24px 16px",
-              padding: 12,
-              minHeight: 280,
-            }}
-          >
+          <Content className="site-layout-background md:my-[24px] md:mx-[16px] md:min-h-[280px] md:p-[12px]">
             {children}
           </Content>
         </Layout>

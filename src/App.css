@@ -1024,10 +1024,6 @@ p {
   color: #ffffff;
 }
 
-.custom-dropdown {
-  background-color: red;
-}
-
 /* layout */
 
 #components-layout-demo-custom-trigger .trigger {
@@ -1099,4 +1095,21 @@ p {
 
 .ant-layout-sider-children {
   background-color: #000000;
+}
+
+.ant-layout-sider-trigger {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  height: 48px;
+  color: black;
+  text-align: center;
+  background: black;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ant-layout-sider-has-trigger {
+  padding-bottom: 48px;
+  background: black;
 }
