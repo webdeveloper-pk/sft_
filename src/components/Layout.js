@@ -69,17 +69,6 @@ const LayoutComponent = ({ children }) => {
     setCollapsed(!collapsed);
   };
 
-  // const onTitle = () => {
-  //   switch (path) {
-  //     case "/":
-  //       return "Global Statistics";
-  //     case "/countryData":
-  //       return "Countries Statistics ";
-  //     default:
-  //       return "Statistics";
-  //   }
-  // };
-
   return (
     <>
       <Layout className="layoutStyling">
@@ -308,7 +297,7 @@ const LayoutComponent = ({ children }) => {
                   <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
                     <a
                       onClick={(e) => e.preventDefault()}
-                      className="text-black hover:text-black flex items-center pr-[6px] md:pr-[20px]"
+                      className="text-black hover:text-black flex items-center mr-[-30px] md:mr-[-50px] md:pr-[20px]"
                     >
                       <img
                         src={userIcon}
