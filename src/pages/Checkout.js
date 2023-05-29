@@ -16,6 +16,7 @@ import discover from "../assets/images/Discover.png";
 import bitcoin from "../assets/images/bitcoin.png";
 import etherium from "../assets/images/ethereum.png";
 import tether from "../assets/images/tether.png";
+import chat from "../assets/images/chat.png";
 
 const Checkout = () => {
   const [platform, setPlatform] = useState("mt4");
@@ -48,6 +49,14 @@ const Checkout = () => {
 
   return (
     <div className="bg-medium-gray">
+      <div className="flex flex-row justify-end md:justify-center sticky-custom mr-6 cursor-pointer">
+        <img
+          src={chat}
+          alt="chat"
+          className="w-[50px] lg:w-[60px]"
+          height="auto"
+        />
+      </div>
       <ContactNavbar />
       <div className="pb-[100px]">
         <div className="mt-10 side-pages-container mx-auto px-6 md:px-6">
