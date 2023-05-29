@@ -329,9 +329,3 @@ const LayoutComponent = ({ children }) => {
 };
 
 export default LayoutComponent;
-
-{
-  /* <Navbar />
-<div className="bg-medium-gray px-6 md:px-8 lg:px-16">{children}</div>
-<Footer /> */
-}

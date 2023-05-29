@@ -25,6 +25,7 @@ import Leaderboard from "./pages/Leaderboard";
 import Simulator from "./pages/Simulator";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./components/Layout";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/policy" element={<Policy />} />
           <Route path="/404" element={<ErrorPage />} />

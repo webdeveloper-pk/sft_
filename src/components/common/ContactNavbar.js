@@ -1,7 +1,42 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { DownOutlined } from "@ant-design/icons";
+import { Dropdown } from "antd";
 import logo from "../../assets/images/sign-in-logo.png";
 import gbp from "../../assets/images/gbp.png";
+
+const items = [
+  {
+    label: <div>FR</div>,
+    key: "fr",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "ES",
+    key: "es",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "OF",
+    key: "of",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "IT",
+    key: "it",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "NV",
+    key: "nv",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+  {
+    label: "CZ",
+    key: "cz",
+    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+  },
+];
 
 const ContactNavbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -58,7 +93,7 @@ const ContactNavbar = () => {
                 navbar ? "block" : "hidden"
               }`}
             >
-              <ul className="flex flex-col lg:flex-row items-center gap-x-6 gap-y-6">
+              <ul className="flex flex-col lg:flex-row items-center gap-x-6 lg:gap-x-4 zl:gap-x-6 gap-y-6">
                 <li className="box-1" onClick={() => setNavbar(!navbar)}>
                   <div className="hover:text-light-green hover:cursor-pointer">
                     <a
@@ -100,7 +135,7 @@ const ContactNavbar = () => {
                   </div>
                 </li>
                 <li className="box-1" onClick={() => setNavbar(!navbar)}>
-                  <div className=" hover:text-light-green hover:cursor-pointer">
+                  <div className="hover:text-light-green hover:cursor-pointer">
                     <a
                       href="/contact"
                       className="text-black hover:text-light-green hover:cursor-pointer"
@@ -113,23 +148,35 @@ const ContactNavbar = () => {
                   <Link to="/login">
                     <button
                       onClick={() => setNavbar(!navbar)}
-                      className="text-white bg-light-green border border-light-green hover:bg-transparent hover:text-light-green py-1.5 2xl:py-3 px-8 rounded-full uppercase"
+                      className="text-light-green bg-transparent border border-light-green hover:bg-light-green hover:text-white py-1.5 2xl:py-3 px-8 rounded-full uppercase"
                     >
-                      <span className="log">Login</span>
+                      Login
                     </button>
                   </Link>
                 </li>
                 <li className="hover:cursor-pointer hover:text-white">
-                  <a
-                    href="/"
-                    onClick={() => setNavbar(!navbar)}
-                    className="flex flex-row gap-x-3 items-center"
-                  >
-                    <span style={{ color: "#000000" }}>Eng</span>
-                    <span>
-                      <img src={gbp} alt="eng" width={22} height={22} />
-                    </span>
-                  </a>
+                  <Link to="/signup">
+                    <button
+                      onClick={() => setNavbar(!navbar)}
+                      className="text-white bg-light-green border border-light-green hover:border-light-green hover:bg-transparent hover:text-light-green py-1.5 2xl:py-3 px-8 rounded-full uppercase"
+                    >
+                      Register
+                    </button>
+                  </Link>
+                </li>
+                <li className="hover:cursor-pointer hover:text-white">
+                  <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
+                    <button
+                      onClick={(e) => e.preventDefault()}
+                      className="text-light-white hover:text-light-white flex items-center pr-[20px]"
+                    >
+                      <img src={gbp} alt="gbp" className="w-[22px]" />
+                      <span className="pl-3 pr-4 text-black">ENG</span>
+                      <span className="mt-[1.5px] text-[12px]">
+                        <DownOutlined style={{ color: "black" }} />
+                      </span>
+                    </button>
+                  </Dropdown>
                 </li>
               </ul>
             </div>

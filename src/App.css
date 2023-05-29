@@ -1113,3 +1113,71 @@ p {
   padding-bottom: 48px;
   background: black;
 }
+
+/* checkout page  */
+
+.checkout-bg {
+  background-color: rgb(231, 229, 229);
+  border-radius: 50px;
+  padding: 40px 50px 40px 50px;
+}
+
+.checkout-payment-bg {
+  background-color: rgb(231, 229, 229);
+  border-radius: 50px 50px 0px 0px;
+  padding: 40px 50px 40px 50px;
+}
+
+.checkout-payment-bg2 {
+  background-color: rgb(231, 229, 229);
+  border-radius: 0px 0px 50px 50px;
+  padding: 40px 50px 40px 50px;
+}
+
+@media screen and (max-width: 767px) and (min-width: 0px) {
+  .checkout-bg {
+    padding: 30px 30px 30px 30px;
+  }
+
+  .checkout-payment-bg {
+    padding: 30px 30px 30px 30px;
+  }
+
+  .checkout-payment-bg2 {
+    padding: 30px 30px 30px 30px;
+  }
+}
+
+input[type="checkbox"] {
+  /* Hide the default checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Create a square checkbox */
+  width: 16px;
+  height: 16px;
+  border: 1px solid #232b2b;
+  background-color: transparent;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  /* Change the background color */
+  background-color: white;
+  border: 1px solid #232b2b;
+}
+
+/* Custom checkmark */
+input[type="checkbox"]:checked::before {
+  content: "\2713"; /* Unicode character for checkmark */
+  /* font-size: 12px; */
+  color: black; /* Color of the checkmark */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.total-button {
+  background-color: rgb(81, 81, 81);
+}

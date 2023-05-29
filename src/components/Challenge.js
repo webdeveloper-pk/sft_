@@ -8,6 +8,7 @@ import cad from "../assets/images/cad.png";
 import aud from "../assets/images/aud.png";
 import chf from "../assets/images/chf.png";
 import ChallengeTable from "./ChallengeTable";
+import { Link } from "react-router-dom";
 
 const Challenge = () => {
   const [currency, setCurrency] = useState("10k");
@@ -331,12 +332,13 @@ const Challenge = () => {
           <ChallengeTable currency={currency} mode={mode} country={country} />
         </div>
         <div className="mt-6 lg:mt-2 flex flex-row justify-center">
-          <button
+          <Link
             type="submit"
-            className="blink-me text-base text-light-white bg-light-green py-1.5 lg:py-2 2xl:py-3 px-8 rounded-full uppercase font-bold border border-light-green"
+            to="/checkout"
+            className="blink-me text-base text-light-white bg-light-green py-1.5 lg:py-2 2xl:py-3 px-8 rounded-full uppercase font-bold border border-light-green hover:text-white"
           >
             start challenge
-          </button>
+          </Link>
         </div>
       </div>
     </section>
