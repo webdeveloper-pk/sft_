@@ -294,10 +294,10 @@ const LayoutComponent = ({ children }) => {
                       />
                     </span>
                   </a> */}
-                  <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
-                    <a
+                  <Dropdown menu={{ items }} placement="bottomRight">
+                    <button
                       onClick={(e) => e.preventDefault()}
-                      className="text-black hover:text-black flex items-center mr-[-30px] md:mr-[-50px] md:pr-[20px]"
+                      className="text-black hover:text-black flex items-center mr-[-30px] md:mr-[-50px] lg:pr-[30px]"
                     >
                       <img
                         src={userIcon}
@@ -312,7 +312,7 @@ const LayoutComponent = ({ children }) => {
                           height={8}
                         />
                       </span>
-                    </a>
+                    </button>
                   </Dropdown>
                 </li>
               </ul>

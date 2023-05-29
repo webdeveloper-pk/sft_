@@ -1,5 +1,6 @@
 import React from "react";
 import chart from "../assets/images/features-chart.png";
+import mobileChart from "../assets/images/features-mobileChart.png";
 import featuresbg1 from "../assets/images/features-bg1.png";
 import featuresbg2 from "../assets/images/features-bg2.png";
 import featuresbg3 from "../assets/images/features-bg3.png";
@@ -70,16 +71,23 @@ const Features = () => {
       </div>
       <div>
         <div className="homepage-container mx-auto px-6 md:px-8 relative">
-          <div className="absolute mt-[10%] md:-mt-[5%] lg:-mt-[15%] xl:-mt-[20%] left-0 flex justify-center">
+          <div className="flex absolute mt-[10%] md:-mt-[5%] lg:-mt-[15%] xl:-mt-[20%] left-[30%] md:left-0 flex justify-center">
             <img
               src={chart}
               alt="chart"
-              className="w-[100%] lg:w-[90%] h-auto"
+              className="w-[100%] lg:w-[90%] h-auto hidden md:block"
             />
+            <div>
+              <img
+                src={mobileChart}
+                alt="mobile chart"
+                className="w-[130px] block md:hidden"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-between mt-[130px] md:mt-[200px] lg:mt-[150px] xl:mt-[70px] xl:ml-12">
+      <div className="w-full flex justify-between mt-[280px] md:mt-[200px] lg:mt-[150px] xl:mt-[70px] xl:ml-12">
         <div className="flex w-[0%] md:w-[50%]"></div>
         <div className="w-[100%] md:w-[40%] lg:w-[50%] pb-12 md:pb-36 xl:pb-44 mt-24 2xl:pb-56 2xl:mt-20 flex justify-center">
           {/* <p className="hidden xl:block text-transparent font-bold text-sm w-[100%] md:w-[90%] lg:w-[70%] xl:w-[50%] 2xl:w-[40%]"></p> */}
