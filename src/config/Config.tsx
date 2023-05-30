@@ -11,6 +11,7 @@ import PreLoader from "../components/preLoader/PreLoader";
 const Homepage = lazy(() => import("../pages/Homepage"));
 const Login = lazy(() => import("../pages/Login"));
 const SignUp = lazy(() => import("../pages/SignUp"));
+const Verification = lazy(() => import("../pages/Verification"));
 const AccountMerge = lazy(() => import("../pages/AccountMerge"));
 const ErrorPage = lazy(() => import("../pages/ErrorPage"));
 const AccountOrders = lazy(() => import("../pages/AccountOrders"));
@@ -30,6 +31,7 @@ const Simulator = lazy(() => import("../pages/Simulator"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Layout = lazy(() => import("../components/Layout"));
 const Checkout = lazy(() => import("../pages/Checkout"));
+
 const Config = () => {
   return (
     <Router>
@@ -38,6 +40,7 @@ const Config = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/Verify-code" element={<Verification />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/faq" element={<Faq />} />

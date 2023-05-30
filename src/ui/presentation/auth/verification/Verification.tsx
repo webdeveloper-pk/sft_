@@ -1,16 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Input, Tooltip } from "antd";
 import { LockOutlined } from "@ant-design/icons";
 import ButtonFilled from "../../../../components/common/ButtonFilled";
-import Button from "../../../../components/common/Button";
+// import Button from "../../../../components/common/Button";
 import logo from "../../../../assets/images/sign-in-logo.png";
-import { LoginProps } from "../../../../services/intefaces/auth";
+import { VerificationProps } from "../../../../services/intefaces/auth";
 import userIcon from "../../../../assets/images/user-icon.png";
 
-const Login: React.FC<LoginProps> = ({
+const Verification: React.FC<VerificationProps> = ({
   user,
-  loginReducer,
+  verificationReducer,
   handleChange,
   handleSubmit,
 }) => {
@@ -35,17 +35,17 @@ const Login: React.FC<LoginProps> = ({
               Success Fund trader
             </p>
             <p className="text-lighter-black2 text-xl md:text-2xl mt-8 lg:mt-12 font-bold">
-              Login
+              Verification Code
             </p>
             <form onSubmit={handleSubmit}>
               <div className="w-full mt-6 lg:mt-10 text-left font-semibold">
                 <div className="mb-4 lg:mb-6">
                   <Input
-                    placeholder="User Name"
+                    placeholder="Email"
                     bordered={false}
                     style={{ borderBottom: "1px solid #a8a8a8" }}
                     suffix={
-                      <Tooltip title="Username">
+                      <Tooltip title="Email">
                         <img
                           src={userIcon}
                           alt="arrow"
@@ -54,19 +54,19 @@ const Login: React.FC<LoginProps> = ({
                         />
                       </Tooltip>
                     }
-                    value={user.username}
+                    value={user.email}
                     type="text"
-                    name="username"
+                    name="email"
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <Input
-                  placeholder="Password"
+                  placeholder="Code"
                   bordered={false}
                   style={{ borderBottom: "1px solid #a8a8a8" }}
                   suffix={
-                    <Tooltip title="Password">
+                    <Tooltip title="Code">
                       <LockOutlined
                         style={{
                           color: "#01c887",
@@ -74,18 +74,18 @@ const Login: React.FC<LoginProps> = ({
                       />
                     </Tooltip>
                   }
-                  value={user.password}
-                  type="password"
-                  name="password"
+                  value={user.code}
+                  type="number"
+                  name="code"
                   onChange={handleChange}
                   required
                 />
               </div>
-              <div className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-x-4">
+              <div className="flex flex-row items-center justify-center mt-6 lg:mt-10 gap-x-4">
                 <ButtonFilled
                   textSize="text-xs lg:text-sm"
                   buttonText={
-                    loginReducer.status === "loading"
+                    verificationReducer?.status === "loading"
                       ? `Loading...`
                       : `get started`
                   }
@@ -94,20 +94,20 @@ const Login: React.FC<LoginProps> = ({
                   textColor=""
                   type="submit"
                 />
-                <Button
+                {/* <Button
                   textSize="text-xs md:text-sm"
                   buttonText="Forget Password?"
-                />
+                /> */}
               </div>
             </form>
-            <div className="flex flex-row item-center gap-x-2 justify-center lg:justify-start mt-6 lg:mt-10 font-semibold">
+            {/* <div className="flex flex-row item-center gap-x-2 justify-center lg:justify-start mt-6 lg:mt-10 font-semibold">
               <p className="text-lightest-black text-sm xl:text-base">
                 Still doesn't have an account?
               </p>
               <Link to="/signup">
                 <Button textSize="text-sm xl:text-base" buttonText="Sign up" />
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="w-full lg:w-[30%] xl:w-[25%] hidden lg:block"></div>
@@ -138,4 +138,4 @@ const Login: React.FC<LoginProps> = ({
   );
 };
 
-export default Login;
+export default Verification;
