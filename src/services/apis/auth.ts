@@ -1,6 +1,6 @@
 import axios from "axios";
 const api = axios.create({
-  baseURL: `${process.env.Base_URL}`,
+  baseURL: `${process.env.REACT_APP_Base_URL}`,
 });
 export const signup = (formData: any) =>
   api.post("/accounts/register/", formData);

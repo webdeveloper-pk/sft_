@@ -5,7 +5,16 @@ import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import ButtonFilled from "../../../../components/common/ButtonFilled";
 import Button from "../../../../components/common/Button";
 import logo from "../../../../assets/images/sign-in-logo.png";
-const Login = () => {
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
+import { LoginProps } from "../../../../services/intefaces/auth";
+
+const Login: React.FC<LoginProps> = ({
+  user,
+  loginReducer,
+  handleChange,
+  handleSubmit,
+}) => {
   return (
     <div className="px-6 md:px-8 lg:px-16 xl:px-24 pt-8 pb-4 lg:pt-12 flex flex-col justify-between min-h-screen gap-y-4 bg-signin">
       <div className="flex flex-col lg:flex-row items-center justify-between lg:min-h-[85vh] gap-y-6">
@@ -29,11 +38,7 @@ const Login = () => {
             <p className="text-lighter-black2 text-xl md:text-2xl mt-8 lg:mt-12 font-bold">
               Login
             </p>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-            >
+            <form onSubmit={handleSubmit}>
               <div className="w-full mt-6 lg:mt-10 text-left font-semibold">
                 <div className="mb-4 lg:mb-6">
                   <Input
@@ -49,6 +54,10 @@ const Login = () => {
                         />
                       </Tooltip>
                     }
+                    value={user.username}
+                    type="text"
+                    name="username"
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -65,13 +74,21 @@ const Login = () => {
                       />
                     </Tooltip>
                   }
+                  value={user.password}
+                  type="password"
+                  name="password"
+                  onChange={handleChange}
                   required
                 />
               </div>
               <div className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-x-4">
                 <ButtonFilled
                   textSize="text-xs lg:text-sm"
-                  buttonText="get started"
+                  buttonText={
+                    loginReducer.status === "loading"
+                      ? `Loading...`
+                      : `get started`
+                  }
                   paddingY="py-4"
                   paddingX="px-6 md:px-10 lg:px-12"
                   textColor=""
