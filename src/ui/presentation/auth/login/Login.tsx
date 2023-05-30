@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Input, Tooltip } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
-import ButtonFilled from "../components/common/ButtonFilled";
-import Button from "../components/common/Button";
-import logo from "../assets/images/sign-in-logo.png";
-
+import ButtonFilled from "../../../../components/common/ButtonFilled";
+import Button from "../../../../components/common/Button";
+import logo from "../../../../assets/images/sign-in-logo.png";
 const Login = () => {
   return (
     <div className="px-6 md:px-8 lg:px-16 xl:px-24 pt-8 pb-4 lg:pt-12 flex flex-col justify-between min-h-screen gap-y-4 bg-signin">
@@ -30,7 +29,11 @@ const Login = () => {
             <p className="text-lighter-black2 text-xl md:text-2xl mt-8 lg:mt-12 font-bold">
               Login
             </p>
-            <form>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+            >
               <div className="w-full mt-6 lg:mt-10 text-left font-semibold">
                 <div className="mb-4 lg:mb-6">
                   <Input
@@ -46,6 +49,7 @@ const Login = () => {
                         />
                       </Tooltip>
                     }
+                    required
                   />
                 </div>
                 <Input
@@ -61,23 +65,23 @@ const Login = () => {
                       />
                     </Tooltip>
                   }
+                  required
                 />
               </div>
-              <a
-                href="/home/dashboard"
-                className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-x-4"
-              >
+              <div className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-x-4">
                 <ButtonFilled
                   textSize="text-xs lg:text-sm"
                   buttonText="get started"
                   paddingY="py-4"
                   paddingX="px-6 md:px-10 lg:px-12"
+                  textColor=""
+                  type="submit"
                 />
                 <Button
                   textSize="text-xs md:text-sm"
                   buttonText="Forget Password?"
                 />
-              </a>
+              </div>
             </form>
             <div className="flex flex-row item-center gap-x-2 justify-center lg:justify-start mt-6 lg:mt-10 font-semibold">
               <p className="text-lightest-black text-sm xl:text-base">
