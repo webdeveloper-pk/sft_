@@ -30,7 +30,7 @@ export interface SignupProps {
 export interface VerificationProps {
   user: {
     email: string;
-    code: number;
+    code: string;
   };
   verificationReducer: {
     status: "idle" | "loading" | "succeeded" | "failed";

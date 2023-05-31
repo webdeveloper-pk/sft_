@@ -23,8 +23,17 @@ const VerificationContainer = () => {
     code: "",
     for_password: 0,
   });
+
+  console.log(user.code, typeof user.code);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    // setUser({ ...user, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    const newValue = name === "code" ? parseInt(value) : value;
+
+    setUser((prevState) => ({
+      ...prevState,
+      [name]: newValue,
+    }));
   };
   const handleVerificationUser = React.useCallback(() => {
     dispatch(verificationUser(user));
@@ -42,7 +51,7 @@ const VerificationContainer = () => {
   return (
     <Verification
       user={user}
-      loginReducer={verificationReducer}
+      verificationReducer={verificationReducer}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
     />
