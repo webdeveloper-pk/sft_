@@ -46,6 +46,7 @@ const SignupContainer = () => {
       navigate("/verify-code");
       dispatch(resetStatus());
     }
+    // eslint-disable-next-line
   }, [signupReducer?.status]);
   return (
     <Signup

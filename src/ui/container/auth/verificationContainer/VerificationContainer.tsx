@@ -24,7 +24,6 @@ const VerificationContainer = () => {
     // for_password: 0,
   });
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // setUser({ ...user, [e.target.name]: e.target.value });
     const { name, value } = e.target;
     const newValue = name === "code" ? parseInt(value) : value;
 

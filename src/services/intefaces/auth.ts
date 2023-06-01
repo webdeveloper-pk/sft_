@@ -44,3 +44,19 @@ export interface VerificationProps {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
+
+export interface ForgetPasswordProps {
+  user: {
+    email: string;
+    code: number;
+    password1: string;
+    password2: string;
+  };
+  // forgetPaswordReducer: {
+  //   status: "idle" | "loading" | "succeeded" | "failed";
+  //   user: any;
+  //   error: string | null;
+  // };
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+}

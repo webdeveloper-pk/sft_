@@ -12,6 +12,7 @@ const Homepage = lazy(() => import("../pages/Homepage"));
 const Login = lazy(() => import("../pages/Login"));
 const SignUp = lazy(() => import("../pages/SignUp"));
 const Verification = lazy(() => import("../pages/Verification"));
+const ForgetPassword = lazy(() => import("../pages/ForgetPassword"));
 const AccountMerge = lazy(() => import("../pages/AccountMerge"));
 const ErrorPage = lazy(() => import("../pages/ErrorPage"));
 const AccountOrders = lazy(() => import("../pages/AccountOrders"));
@@ -41,6 +42,7 @@ const Config = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/Verify-code" element={<Verification />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/faq" element={<Faq />} />
