@@ -47,6 +47,7 @@ const VerificationContainer = () => {
       navigate("/home/dashboard");
       dispatch(resetStatus());
     }
+    // eslint-disable-next-line
   }, [verificationReducer?.status]);
   return (
     <Verification
