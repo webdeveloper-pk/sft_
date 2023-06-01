@@ -1,5 +1,5 @@
 import React from "react";
-import Signup from "../../../presentation/auth/signup/Signup";
+import Signup from "../../../presentation/auth/signUp/Signup";
 import {
   useAppSelector,
   useAppDispatch,
@@ -27,7 +27,11 @@ const SignupContainer = () => {
     password: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   const handleSignupUser = React.useCallback(() => {

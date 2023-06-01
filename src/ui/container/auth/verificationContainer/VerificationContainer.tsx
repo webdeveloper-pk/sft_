@@ -21,10 +21,8 @@ const VerificationContainer = () => {
   const [user, setUser] = React.useState({
     email: "",
     code: "",
-    for_password: 0,
+    // for_password: 0,
   });
-
-  console.log(user.code, typeof user.code);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // setUser({ ...user, [e.target.name]: e.target.value });
     const { name, value } = e.target;

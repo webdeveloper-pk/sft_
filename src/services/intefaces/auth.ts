@@ -23,7 +23,11 @@ export interface SignupProps {
     user: any;
     error: string | null;
   };
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
