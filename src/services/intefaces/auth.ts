@@ -45,14 +45,26 @@ export interface VerificationProps {
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-export interface ForgetPasswordProps {
+export interface VerificationEmailProps {
   user: {
     email: string;
-    code: number;
+  };
+  // verificationEmailReducer: {
+  //   status: "idle" | "loading" | "succeeded" | "failed";
+  //   user: any;
+  //   error: string | null;
+  // };
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+}
+
+export interface ChangePasswordProps {
+  user: {
+    email: string;
     password1: string;
     password2: string;
   };
-  // forgetPaswordReducer: {
+  // changePasswordReducer: {
   //   status: "idle" | "loading" | "succeeded" | "failed";
   //   user: any;
   //   error: string | null;

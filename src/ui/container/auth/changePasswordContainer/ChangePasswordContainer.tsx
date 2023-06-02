@@ -1,13 +1,12 @@
 import React from "react";
-import ForgetPassword from "../../../presentation/auth/forgetPassword/ForgetPassword";
+import ChangePassword from "../../../presentation/auth/changePassword/ChangePassword";
 // import { useNavigate } from "react-router";
 
-const ForgetPasswordContainer = () => {
+const ChangePasswordContainer = () => {
   //   const navigate = useNavigate();
 
   const [user, setUser] = React.useState({
     email: "",
-    code: "",
     password1: "",
     password2: "",
   });
@@ -21,19 +20,20 @@ const ForgetPasswordContainer = () => {
   };
 
   //   React.useEffect(() => {
-  //     if (forgetPaswordReducer.status === "succeeded") {
-  //       navigate("/dashboard");
+  //     if (changePasswordReducer.status === "succeeded") {
+  //       navigate("/home/dashboard");
   //       dispatch(resetStatus());
   //     }
-  //   }, [forgetPaswordReducer?.status]);
+  //   }, [changePasswordReducer?.status]);
 
   return (
-    <ForgetPassword
+    <ChangePassword
       user={user}
+      //   changePasswordReducer={changePasswordReducer}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
     />
   );
 };
 
-export default ForgetPasswordContainer;
+export default ChangePasswordContainer;

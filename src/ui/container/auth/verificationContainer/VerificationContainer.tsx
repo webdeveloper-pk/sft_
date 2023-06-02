@@ -41,7 +41,9 @@ const VerificationContainer = () => {
   };
   React.useEffect(() => {
     if (verificationReducer?.status === "succeeded") {
+      // make a condition if this call from forget password then make it navigate to "/change-password" else "/home/dashboar"
       navigate("/home/dashboard");
+
       dispatch(resetStatus());
     }
     // eslint-disable-next-line

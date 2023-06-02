@@ -1,16 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Input, Tooltip } from "antd";
-import { LockOutlined } from "@ant-design/icons";
+import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import ButtonFilled from "../../../../components/common/ButtonFilled";
-import Button from "../../../../components/common/Button";
 import logo from "../../../../assets/images/sign-in-logo.png";
-import { LoginProps } from "../../../../services/intefaces/auth";
-import userIcon from "../../../../assets/images/user-icon.png";
+import { ChangePasswordProps } from "../../../../services/intefaces/auth";
 
-const Login: React.FC<LoginProps> = ({
+const ChangePassword: React.FC<ChangePasswordProps> = ({
   user,
-  loginReducer,
   handleChange,
   handleSubmit,
 }) => {
@@ -35,38 +31,59 @@ const Login: React.FC<LoginProps> = ({
               Success Fund trader
             </p>
             <p className="text-lighter-black2 text-xl md:text-2xl mt-8 lg:mt-12 font-bold">
-              Login
+              Forget Password
             </p>
             <form onSubmit={handleSubmit}>
               <div className="w-full mt-6 lg:mt-10 text-left font-semibold">
                 <div className="mb-4 lg:mb-6">
                   <Input
-                    placeholder="Username"
+                    placeholder="Enter email"
                     bordered={false}
                     style={{ borderBottom: "1px solid #a8a8a8" }}
                     suffix={
-                      <Tooltip title="Username">
-                        <img
-                          src={userIcon}
-                          alt="arrow"
-                          width="14px"
-                          height="14px"
+                      <Tooltip title="Email">
+                        <MailOutlined
+                          style={{
+                            color: "#01c887",
+                            marginTop: "10px",
+                          }}
                         />
                       </Tooltip>
                     }
-                    value={user.username}
-                    type="text"
-                    name="username"
+                    value={user.email}
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-4 lg:mb-6">
+                  <Input
+                    placeholder="New passowrd"
+                    bordered={false}
+                    style={{ borderBottom: "1px solid #a8a8a8" }}
+                    suffix={
+                      <Tooltip title="New passowrd">
+                        <LockOutlined
+                          style={{
+                            color: "#01c887",
+                          }}
+                        />
+                      </Tooltip>
+                    }
+                    value={user.password1}
+                    type="password"
+                    name="password1"
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <Input
-                  placeholder="Password"
+                  placeholder="Confirm passowrd"
                   bordered={false}
                   style={{ borderBottom: "1px solid #a8a8a8" }}
                   suffix={
-                    <Tooltip title="Password">
+                    <Tooltip title="Confirm passowrd">
                       <LockOutlined
                         style={{
                           color: "#01c887",
@@ -74,42 +91,29 @@ const Login: React.FC<LoginProps> = ({
                       />
                     </Tooltip>
                   }
-                  value={user.password}
+                  value={user.password2}
                   type="password"
-                  name="password"
+                  name="password2"
                   onChange={handleChange}
                   required
                 />
               </div>
-              <div className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-x-4">
+              <div className="flex flex-row items-center justify-center mt-6 lg:mt-10">
                 <ButtonFilled
                   textSize="text-xs lg:text-sm"
                   buttonText={
-                    loginReducer.status === "loading"
-                      ? `Loading...`
-                      : `get started`
+                    // changePaswordReducer.status === "loading"
+                    //   ? `Loading...`
+                    //   : `Get started`
+                    "Get started"
                   }
                   paddingY="py-4"
                   paddingX="px-6 md:px-10 lg:px-12"
                   textColor=""
                   type="submit"
                 />
-                <Link
-                  className="text-xs md:text-sm text-light-green font-semibold hover:font-bold hover:text-light-green"
-                  to="/forget-password"
-                >
-                  Forget Password?
-                </Link>
               </div>
             </form>
-            <div className="flex flex-row item-center gap-x-2 justify-center lg:justify-start mt-6 lg:mt-10 font-semibold">
-              <p className="text-lightest-black text-sm xl:text-base">
-                Still doesn't have an account?
-              </p>
-              <Link to="/signup">
-                <Button textSize="text-sm xl:text-base" buttonText="Sign up" />
-              </Link>
-            </div>
           </div>
         </div>
         <div className="w-full lg:w-[30%] xl:w-[25%] hidden lg:block"></div>
@@ -140,4 +144,4 @@ const Login: React.FC<LoginProps> = ({
   );
 };
 
-export default Login;
+export default ChangePassword;

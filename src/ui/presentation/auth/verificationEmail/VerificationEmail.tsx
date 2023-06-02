@@ -1,12 +1,11 @@
 import React from "react";
 import { Input, Tooltip } from "antd";
-import { LockOutlined } from "@ant-design/icons";
+import { MailOutlined } from "@ant-design/icons";
 import ButtonFilled from "../../../../components/common/ButtonFilled";
 import logo from "../../../../assets/images/sign-in-logo.png";
-import { ForgetPasswordProps } from "../../../../services/intefaces/auth";
-import userIcon from "../../../../assets/images/user-icon.png";
+import { VerificationEmailProps } from "../../../../services/intefaces/auth";
 
-const ForgetPassword: React.FC<ForgetPasswordProps> = ({
+const VerificationEmail: React.FC<VerificationEmailProps> = ({
   user,
   handleChange,
   handleSubmit,
@@ -38,88 +37,26 @@ const ForgetPassword: React.FC<ForgetPasswordProps> = ({
               <div className="w-full mt-6 lg:mt-10 text-left font-semibold">
                 <div className="mb-4 lg:mb-6">
                   <Input
-                    placeholder="Email"
+                    placeholder="Enter email"
                     bordered={false}
                     style={{ borderBottom: "1px solid #a8a8a8" }}
                     suffix={
                       <Tooltip title="Email">
-                        <img
-                          src={userIcon}
-                          alt="arrow"
-                          width="14px"
-                          height="14px"
+                        <MailOutlined
+                          style={{
+                            color: "#01c887",
+                            marginTop: "10px",
+                          }}
                         />
                       </Tooltip>
                     }
                     value={user.email}
-                    type="text"
-                    name="username"
+                    type="email"
+                    name="email"
                     onChange={handleChange}
                     required
                   />
                 </div>
-                <div className="mb-4 lg:mb-6">
-                  <Input
-                    placeholder="Code"
-                    bordered={false}
-                    style={{ borderBottom: "1px solid #a8a8a8" }}
-                    suffix={
-                      <Tooltip title="Code">
-                        <LockOutlined
-                          style={{
-                            color: "#01c887",
-                          }}
-                        />
-                      </Tooltip>
-                    }
-                    value={user.code}
-                    type="text"
-                    name="code"
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-4 lg:mb-6">
-                  <Input
-                    placeholder="Password"
-                    bordered={false}
-                    style={{ borderBottom: "1px solid #a8a8a8" }}
-                    suffix={
-                      <Tooltip title="Password">
-                        <LockOutlined
-                          style={{
-                            color: "#01c887",
-                          }}
-                        />
-                      </Tooltip>
-                    }
-                    value={user.password1}
-                    type="password"
-                    name="password2"
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-
-                <Input
-                  placeholder="Password"
-                  bordered={false}
-                  style={{ borderBottom: "1px solid #a8a8a8" }}
-                  suffix={
-                    <Tooltip title="Password">
-                      <LockOutlined
-                        style={{
-                          color: "#01c887",
-                        }}
-                      />
-                    </Tooltip>
-                  }
-                  value={user.password2}
-                  type="password"
-                  name="password2"
-                  onChange={handleChange}
-                  required
-                />
               </div>
               <div className="flex flex-row items-center justify-center mt-6 lg:mt-10">
                 <ButtonFilled
@@ -127,8 +64,8 @@ const ForgetPassword: React.FC<ForgetPasswordProps> = ({
                   buttonText={
                     // forgetPaswordReducer.status === "loading"
                     //   ? `Loading...`
-                    //   : `get started`
-                    "get started"
+                    //   : `Continue`
+                    "Continue"
                   }
                   paddingY="py-4"
                   paddingX="px-6 md:px-10 lg:px-12"
@@ -167,4 +104,4 @@ const ForgetPassword: React.FC<ForgetPasswordProps> = ({
   );
 };
 
-export default ForgetPassword;
+export default VerificationEmail;
