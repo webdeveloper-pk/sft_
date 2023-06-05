@@ -114,6 +114,7 @@ const Navbar = () => {
                   </a> */}
                   <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
                     <a
+                      href="#!"
                       onClick={(e) => e.preventDefault()}
                       className="text-black hover:text-black flex items-center pr-[20px]"
                     >

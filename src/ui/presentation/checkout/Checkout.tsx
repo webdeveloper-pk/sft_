@@ -1,52 +1,48 @@
-import React, { useState } from "react";
+import React from "react";
 import { Input, Select, Row, Col } from "antd";
 import { CaretDownFilled } from "@ant-design/icons";
-import ContactNavbar from "../components/common/ContactNavbar";
-import FooterHomepage from "../components/common/FooterHomepage";
-import usa from "../assets/images/usa.png";
-import eur from "../assets/images/eur.png";
-import gbp from "../assets/images/gbp.png";
-import cad from "../assets/images/cad.png";
-import aud from "../assets/images/aud.png";
-import chf from "../assets/images/chf.png";
-import visa from "../assets/images/visa.png";
-import master from "../assets/images/mastercard.png";
-import amex from "../assets/images/amex.png";
-import discover from "../assets/images/Discover.png";
-import bitcoin from "../assets/images/bitcoin.png";
-import etherium from "../assets/images/ethereum.png";
-import tether from "../assets/images/tether.png";
-import chat from "../assets/images/chat.png";
-
-const Checkout = () => {
-  const [platform, setPlatform] = useState("mt4");
-  const [mode, setMode] = useState("aggressive");
-  const [country, setCountry] = useState("usd");
-  const [checkboxValues, setCheckboxValues] = useState({
-    terms: false,
-    policy: false,
-  });
-
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    setCheckboxValues((prevState) => ({
-      ...prevState,
-      [name]: checked,
-    }));
-  };
-
-  const onPlatformHandler = (text) => {
-    setPlatform(text);
-  };
-
-  const onModeHandler = (text) => {
-    setMode(text);
-  };
-
-  const onCurrencyHandler = (text) => {
-    setCountry(text);
-  };
-
+import ContactNavbar from "../../../components/common/ContactNavbar";
+import FooterHomepage from "../../../components/common/FooterHomepage";
+import usa from "../../../assets/images/usa.png";
+import eur from "../../../assets/images/eur.png";
+import gbp from "../../../assets/images/gbp.png";
+import cad from "../../../assets/images/cad.png";
+import aud from "../../../assets/images/aud.png";
+import chf from "../../../assets/images/chf.png";
+import visa from "../../../assets/images/visa.png";
+import master from "../../../assets/images/mastercard.png";
+import amex from "../../../assets/images/amex.png";
+import discover from "../../../assets/images/Discover.png";
+import bitcoin from "../../../assets/images/bitcoin.png";
+import etherium from "../../../assets/images/ethereum.png";
+import tether from "../../../assets/images/tether.png";
+import chat from "../../../assets/images/chat.png";
+import countries from "../../../services/data/country.json";
+import Stripe from "./stripe/Stripe";
+const Checkout: React.FC<any> = ({
+  completeOrderObserver,
+  setCompleteOrderObserver,
+  stripePaymentLoader,
+  setStripePaymentLoader,
+  isLoadingStripeIntent,
+  setIsLoadingStripeIntent,
+  checkout,
+  setCheckout,
+  platform,
+  mode,
+  country,
+  checkboxValues,
+  handleChange,
+  handleCountryChange,
+  handleCheckboxChange,
+  onPlatformHandler,
+  onModeHandler,
+  onCurrencyHandler,
+  stripeIntentReducer,
+  placeChallengeReducer,
+  createPaymentIntent,
+}) => {
+  console.log("isLoadingStripeIntent::: ", isLoadingStripeIntent);
   return (
     <div className="bg-medium-gray">
       <div className="flex flex-row justify-end md:justify-center sticky-custom mr-6 cursor-pointer">
@@ -157,11 +153,11 @@ const Checkout = () => {
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm 
-                  ${
-                    mode === "aggressive"
-                      ? "bg-bg-green3 border-bg-green3"
-                      : "bg-lighter-gray border-lighter-gray"
-                  }`}
+              ${
+                mode === "aggressive"
+                  ? "bg-bg-green3 border-bg-green3"
+                  : "bg-lighter-gray border-lighter-gray"
+              }`}
                         onClick={() => onModeHandler("aggressive")}
                       >
                         <span>Aggressive</span>
@@ -170,11 +166,11 @@ const Checkout = () => {
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm 
-                   ${
-                     mode === "normal"
-                       ? "bg-bg-green3 border-bg-green3"
-                       : "bg-lighter-gray border-lighter-gray"
-                   }`}
+               ${
+                 mode === "normal"
+                   ? "bg-bg-green3 border-bg-green3"
+                   : "bg-lighter-gray border-lighter-gray"
+               }`}
                         onClick={() => onModeHandler("normal")}
                       >
                         <span>Normal</span>
@@ -188,11 +184,11 @@ const Checkout = () => {
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm 
-                  ${
-                    platform === "mt4"
-                      ? "bg-bg-green3 border-bg-green3"
-                      : "bg-lighter-gray border-lighter-gray"
-                  }`}
+              ${
+                platform === "mt4"
+                  ? "bg-bg-green3 border-bg-green3"
+                  : "bg-lighter-gray border-lighter-gray"
+              }`}
                         onClick={() => onPlatformHandler("mt4")}
                       >
                         <span>MT4</span>
@@ -201,11 +197,11 @@ const Checkout = () => {
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm 
-                   ${
-                     platform === "mt5"
-                       ? "bg-bg-green3 border-bg-green3"
-                       : "bg-lighter-gray border-lighter-gray"
-                   }`}
+               ${
+                 platform === "mt5"
+                   ? "bg-bg-green3 border-bg-green3"
+                   : "bg-lighter-gray border-lighter-gray"
+               }`}
                         onClick={() => onPlatformHandler("mt5")}
                       >
                         <span>MT5</span>
@@ -230,6 +226,9 @@ const Checkout = () => {
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          name="first_name"
+                          value={checkout.first_name}
+                          onChange={handleChange}
                         />
                       </Col>
                       <Col span={23} md={{ span: 11, offset: 2 }}>
@@ -241,6 +240,9 @@ const Checkout = () => {
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          name="last_name"
+                          value={checkout.last_name}
+                          onChange={handleChange}
                         />
                       </Col>
                     </Row>
@@ -254,6 +256,9 @@ const Checkout = () => {
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          name="email"
+                          value={checkout.email}
+                          onChange={handleChange}
                         />
                       </Col>
                       <Col span={23} md={{ span: 11, offset: 2 }}>
@@ -265,6 +270,9 @@ const Checkout = () => {
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          name="phone_no"
+                          value={checkout.phone_no}
+                          onChange={handleChange}
                         />
                       </Col>
                     </Row>
@@ -278,6 +286,9 @@ const Checkout = () => {
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          name="address_line_1"
+                          value={checkout.address_line_1}
+                          onChange={handleChange}
                         />
                       </Col>
                       <Col span={23} md={{ span: 11, offset: 2 }}>
@@ -289,6 +300,9 @@ const Checkout = () => {
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          name="town_city"
+                          value={checkout.town_city}
+                          onChange={handleChange}
                         />
                       </Col>
                     </Row>
@@ -302,6 +316,9 @@ const Checkout = () => {
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          name="postal_code"
+                          value={checkout.postal_code}
+                          onChange={handleChange}
                         />
                       </Col>
                       <Col
@@ -326,298 +343,9 @@ const Checkout = () => {
                               <CaretDownFilled />
                             </div>
                           }
-                          options={[
-                            { label: "Afghanistan", value: "AF" },
-                            { label: "Åland Islands", value: "AX" },
-                            { label: "Albania", value: "AL" },
-                            { label: "Algeria", value: "DZ" },
-                            { label: "American Samoa", value: "AS" },
-                            { label: "AndorrA", value: "AD" },
-                            { label: "Angola", value: "AO" },
-                            { label: "Anguilla", value: "AI" },
-                            { label: "Antarctica", value: "AQ" },
-                            { label: "Antigua and Barbuda", value: "AG" },
-                            { label: "Argentina", value: "AR" },
-                            { label: "Armenia", value: "AM" },
-                            { label: "Aruba", value: "AW" },
-                            { label: "Australia", value: "AU" },
-                            { label: "Austria", value: "AT" },
-                            { label: "Azerbaijan", value: "AZ" },
-                            { label: "Bahamas", value: "BS" },
-                            { label: "Bahrain", value: "BH" },
-                            { label: "Bangladesh", value: "BD" },
-                            { label: "Barbados", value: "BB" },
-                            { label: "Belarus", value: "BY" },
-                            { label: "Belgium", value: "BE" },
-                            { label: "Belize", value: "BZ" },
-                            { label: "Benin", value: "BJ" },
-                            { label: "Bermuda", value: "BM" },
-                            { label: "Bhutan", value: "BT" },
-                            { label: "Bolivia", value: "BO" },
-                            { label: "Bosnia and Herzegovina", value: "BA" },
-                            { label: "Botswana", value: "BW" },
-                            { label: "Bouvet Island", value: "BV" },
-                            { label: "Brazil", value: "BR" },
-                            {
-                              label: "British Indian Ocean Territory",
-                              value: "IO",
-                            },
-                            { label: "Brunei Darussalam", value: "BN" },
-                            { label: "Bulgaria", value: "BG" },
-                            { label: "Burkina Faso", value: "BF" },
-                            { label: "Burundi", value: "BI" },
-                            { label: "Cambodia", value: "KH" },
-                            { label: "Cameroon", value: "CM" },
-                            { label: "Canada", value: "CA" },
-                            { label: "Cape Verde", value: "CV" },
-                            { label: "Cayman Islands", value: "KY" },
-                            { label: "Central African Republic", value: "CF" },
-                            { label: "Chad", value: "TD" },
-                            { label: "Chile", value: "CL" },
-                            { label: "China", value: "CN" },
-                            { label: "Christmas Island", value: "CX" },
-                            { label: "Cocos (Keeling) Islands", value: "CC" },
-                            { label: "Colombia", value: "CO" },
-                            { label: "Comoros", value: "KM" },
-                            { label: "Congo", value: "CG" },
-                            {
-                              label: "Congo, The Democratic Republic of the",
-                              value: "CD",
-                            },
-                            { label: "Cook Islands", value: "CK" },
-                            { label: "Costa Rica", value: "CR" },
-                            { label: "Cote D'Ivoire", value: "CI" },
-                            { label: "Croatia", value: "HR" },
-                            { label: "Cuba", value: "CU" },
-                            { label: "Cyprus", value: "CY" },
-                            { label: "Czech Republic", value: "CZ" },
-                            { label: "Denmark", value: "DK" },
-                            { label: "Djibouti", value: "DJ" },
-                            { label: "Dominica", value: "DM" },
-                            { label: "Dominican Republic", value: "DO" },
-                            { label: "Ecuador", value: "EC" },
-                            { label: "Egypt", value: "EG" },
-                            { label: "El Salvador", value: "SV" },
-                            { label: "Equatorial Guinea", value: "GQ" },
-                            { label: "Eritrea", value: "ER" },
-                            { label: "Estonia", value: "EE" },
-                            { label: "Ethiopia", value: "ET" },
-                            {
-                              label: "Falkland Islands (Malvinas)",
-                              value: "FK",
-                            },
-                            { label: "Faroe Islands", value: "FO" },
-                            { label: "Fiji", value: "FJ" },
-                            { label: "Finland", value: "FI" },
-                            { label: "France", value: "FR" },
-                            { label: "French Guiana", value: "GF" },
-                            { label: "French Polynesia", value: "PF" },
-                            {
-                              label: "French Southern Territories",
-                              value: "TF",
-                            },
-                            { label: "Gabon", value: "GA" },
-                            { label: "Gambia", value: "GM" },
-                            { label: "Georgia", value: "GE" },
-                            { label: "Germany", value: "DE" },
-                            { label: "Ghana", value: "GH" },
-                            { label: "Gibraltar", value: "GI" },
-                            { label: "Greece", value: "GR" },
-                            { label: "Greenland", value: "GL" },
-                            { label: "Grenada", value: "GD" },
-                            { label: "Guadeloupe", value: "GP" },
-                            { label: "Guam", value: "GU" },
-                            { label: "Guatemala", value: "GT" },
-                            { label: "Guernsey", value: "GG" },
-                            { label: "Guinea", value: "GN" },
-                            { label: "Guinea-Bissau", value: "GW" },
-                            { label: "Guyana", value: "GY" },
-                            { label: "Haiti", value: "HT" },
-                            {
-                              label: "Heard Island and Mcdonald Islands",
-                              value: "HM",
-                            },
-                            {
-                              label: "Holy See (Vatican City State)",
-                              value: "VA",
-                            },
-                            { label: "Honduras", value: "HN" },
-                            { label: "Hong Kong", value: "HK" },
-                            { label: "Hungary", value: "HU" },
-                            { label: "Iceland", value: "IS" },
-                            { label: "India", value: "IN" },
-                            { label: "Indonesia", value: "ID" },
-                            { label: "Iran, Islamic Republic Of", value: "IR" },
-                            { label: "Iraq", value: "IQ" },
-                            { label: "Ireland", value: "IE" },
-                            { label: "Isle of Man", value: "IM" },
-                            { label: "Israel", value: "IL" },
-                            { label: "Italy", value: "IT" },
-                            { label: "Jamaica", value: "JM" },
-                            { label: "Japan", value: "JP" },
-                            { label: "Jersey", value: "JE" },
-                            { label: "Jordan", value: "JO" },
-                            { label: "Kazakhstan", value: "KZ" },
-                            { label: "Kenya", value: "KE" },
-                            { label: "Kiribati", value: "KI" },
-                            {
-                              label: "Korea, Democratic People'S Republic of",
-                              value: "KP",
-                            },
-                            { label: "Korea, Republic of", value: "KR" },
-                            { label: "Kuwait", value: "KW" },
-                            { label: "Kyrgyzstan", value: "KG" },
-                            {
-                              label: "Lao People'S Democratic Republic",
-                              value: "LA",
-                            },
-                            { label: "Latvia", value: "LV" },
-                            { label: "Lebanon", value: "LB" },
-                            { label: "Lesotho", value: "LS" },
-                            { label: "Liberia", value: "LR" },
-                            { label: "Libyan Arab Jamahiriya", value: "LY" },
-                            { label: "Liechtenstein", value: "LI" },
-                            { label: "Lithuania", value: "LT" },
-                            { label: "Luxembourg", value: "LU" },
-                            { label: "Macao", value: "MO" },
-                            {
-                              label:
-                                "Macedonia, The Former Yugoslav Republic of",
-                              value: "MK",
-                            },
-                            { label: "Madagascar", value: "MG" },
-                            { label: "Malawi", value: "MW" },
-                            { label: "Malaysia", value: "MY" },
-                            { label: "Maldives", value: "MV" },
-                            { label: "Mali", value: "ML" },
-                            { label: "Malta", value: "MT" },
-                            { label: "Marshall Islands", value: "MH" },
-                            { label: "Martinique", value: "MQ" },
-                            { label: "Mauritania", value: "MR" },
-                            { label: "Mauritius", value: "MU" },
-                            { label: "Mayotte", value: "YT" },
-                            { label: "Mexico", value: "MX" },
-                            {
-                              label: "Micronesia, Federated States of",
-                              value: "FM",
-                            },
-                            { label: "Moldova, Republic of", value: "MD" },
-                            { label: "Monaco", value: "MC" },
-                            { label: "Mongolia", value: "MN" },
-                            { label: "Montserrat", value: "MS" },
-                            { label: "Morocco", value: "MA" },
-                            { label: "Mozambique", value: "MZ" },
-                            { label: "Myanmar", value: "MM" },
-                            { label: "Namibia", value: "NA" },
-                            { label: "Nauru", value: "NR" },
-                            { label: "Nepal", value: "NP" },
-                            { label: "Netherlands", value: "NL" },
-                            { label: "Netherlands Antilles", value: "AN" },
-                            { label: "New Caledonia", value: "NC" },
-                            { label: "New Zealand", value: "NZ" },
-                            { label: "Nicaragua", value: "NI" },
-                            { label: "Niger", value: "NE" },
-                            { label: "Nigeria", value: "NG" },
-                            { label: "Niue", value: "NU" },
-                            { label: "Norfolk Island", value: "NF" },
-                            { label: "Northern Mariana Islands", value: "MP" },
-                            { label: "Norway", value: "NO" },
-                            { label: "Oman", value: "OM" },
-                            { label: "Pakistan", value: "PK" },
-                            { label: "Palau", value: "PW" },
-                            {
-                              label: "Palestinian Territory, Occupied",
-                              value: "PS",
-                            },
-                            { label: "Panama", value: "PA" },
-                            { label: "Papua New Guinea", value: "PG" },
-                            { label: "Paraguay", value: "PY" },
-                            { label: "Peru", value: "PE" },
-                            { label: "Philippines", value: "PH" },
-                            { label: "Pitcairn", value: "PN" },
-                            { label: "Poland", value: "PL" },
-                            { label: "Portugal", value: "PT" },
-                            { label: "Puerto Rico", value: "PR" },
-                            { label: "Qatar", value: "QA" },
-                            { label: "Reunion", value: "RE" },
-                            { label: "Romania", value: "RO" },
-                            { label: "Russian Federation", value: "RU" },
-                            { label: "RWANDA", value: "RW" },
-                            { label: "Saint Helena", value: "SH" },
-                            { label: "Saint Kitts and Nevis", value: "KN" },
-                            { label: "Saint Lucia", value: "LC" },
-                            { label: "Saint Pierre and Miquelon", value: "PM" },
-                            {
-                              label: "Saint Vincent and the Grenadines",
-                              value: "VC",
-                            },
-                            { label: "Samoa", value: "WS" },
-                            { label: "San Marino", value: "SM" },
-                            { label: "Sao Tome and Principe", value: "ST" },
-                            { label: "Saudi Arabia", value: "SA" },
-                            { label: "Senegal", value: "SN" },
-                            { label: "Serbia and Montenegro", value: "CS" },
-                            { label: "Seychelles", value: "SC" },
-                            { label: "Sierra Leone", value: "SL" },
-                            { label: "Singapore", value: "SG" },
-                            { label: "Slovakia", value: "SK" },
-                            { label: "Slovenia", value: "SI" },
-                            { label: "Solomon Islands", value: "SB" },
-                            { label: "Somalia", value: "SO" },
-                            { label: "South Africa", value: "ZA" },
-                            {
-                              label:
-                                "South Georgia and the South Sandwich Islands",
-                              value: "GS",
-                            },
-                            { label: "Spain", value: "ES" },
-                            { label: "Sri Lanka", value: "LK" },
-                            { label: "Sudan", value: "SD" },
-                            { label: "Surilabel", value: "SR" },
-                            { label: "Svalbard and Jan Mayen", value: "SJ" },
-                            { label: "Swaziland", value: "SZ" },
-                            { label: "Sweden", value: "SE" },
-                            { label: "Switzerland", value: "CH" },
-                            { label: "Syrian Arab Republic", value: "SY" },
-                            { label: "Taiwan, Province of China", value: "TW" },
-                            { label: "Tajikistan", value: "TJ" },
-                            {
-                              label: "Tanzania, United Republic of",
-                              value: "TZ",
-                            },
-                            { label: "Thailand", value: "TH" },
-                            { label: "Timor-Leste", value: "TL" },
-                            { label: "Togo", value: "TG" },
-                            { label: "Tokelau", value: "TK" },
-                            { label: "Tonga", value: "TO" },
-                            { label: "Trinidad and Tobago", value: "TT" },
-                            { label: "Tunisia", value: "TN" },
-                            { label: "Turkey", value: "TR" },
-                            { label: "Turkmenistan", value: "TM" },
-                            { label: "Turks and Caicos Islands", value: "TC" },
-                            { label: "Tuvalu", value: "TV" },
-                            { label: "Uganda", value: "UG" },
-                            { label: "Ukraine", value: "UA" },
-                            { label: "United Arab Emirates", value: "AE" },
-                            { label: "United Kingdom", value: "GB" },
-                            { label: "United States", value: "US" },
-                            {
-                              label: "United States Minor Outlying Islands",
-                              value: "UM",
-                            },
-                            { label: "Uruguay", value: "UY" },
-                            { label: "Uzbekistan", value: "UZ" },
-                            { label: "Vanuatu", value: "VU" },
-                            { label: "Venezuela", value: "VE" },
-                            { label: "Viet Nam", value: "VN" },
-                            { label: "Virgin Islands, British", value: "VG" },
-                            { label: "Virgin Islands, U.S.", value: "VI" },
-                            { label: "Wallis and Futuna", value: "WF" },
-                            { label: "Western Sahara", value: "EH" },
-                            { label: "Yemen", value: "YE" },
-                            { label: "Zambia", value: "ZM" },
-                            { label: "Zimbabwe", value: "ZW" },
-                          ]}
+                          options={countries}
+                          value={checkout.country}
+                          onChange={handleCountryChange}
                         />
                       </Col>
                     </Row>
@@ -631,6 +359,9 @@ const Checkout = () => {
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          name="state"
+                          value={checkout.state}
+                          onChange={handleChange}
                         />
                       </Col>
                       <Col span={23} md={{ span: 11, offset: 2 }}>
@@ -642,6 +373,9 @@ const Checkout = () => {
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          name="additional_notes"
+                          value={checkout.additional_notes}
+                          onChange={handleChange}
                         />
                       </Col>
                     </Row>
@@ -743,16 +477,28 @@ const Checkout = () => {
                     id="creditcard"
                     name="checkout"
                     value="creditcard"
+                    onClick={createPaymentIntent}
                   />
-                   {" "}
-                  <label for="creditcard" className="uppercase">
+                  <label htmlFor="creditcard" className="uppercase">
                     Credit Card
                   </label>
                   <p className="text-xs pl-5">
                     The charge will appear on your credit card statement as "The
                     Funded Trader".
                   </p>
-                  <div className="flex gap-x-4 pl-5 mt-4">
+                  {isLoadingStripeIntent ? "loading" : null}
+                  {stripeIntentReducer?.status === "succeeded" ? (
+                    <Stripe
+                      setIsLoadingStripeIntent={setIsLoadingStripeIntent}
+                      clientSecret={stripeIntentReducer?.payment?.client_secret}
+                      completeOrderObserver={completeOrderObserver}
+                      setCompleteOrderObserver={setCompleteOrderObserver}
+                      setCheckout={setCheckout}
+                      checkout={checkout}
+                      setStripePaymentLoader={setStripePaymentLoader}
+                    />
+                  ) : null}
+                  {/* <div className="flex gap-x-4 pl-5 mt-4">
                     <div>
                       <img
                         src={visa}
@@ -781,9 +527,9 @@ const Checkout = () => {
                         className="w-[50px] h-[35px]"
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <div className="mt-12">
-                    <Row>
+                    {/* <Row>
                       <Col span={23}>
                         <label className="uppercase font-light text-xs mb-0">
                           Card Number {"*"}
@@ -822,7 +568,7 @@ const Checkout = () => {
                           }}
                         />
                       </Col>
-                    </Row>
+                    </Row> */}
                     <div className="mt-8">
                       <input
                         type="radio"
@@ -830,8 +576,10 @@ const Checkout = () => {
                         name="checkout"
                         value="bitcoin"
                       />
-                       {" "}
-                      <label for="creditcard" className="uppercase text-[14px]">
+                      <label
+                        htmlFor="creditcard"
+                        className="uppercase text-[14px]"
+                      >
                         migpayments: BITCOIN AND OTHER CRYPTO CURREncies
                       </label>
                     </div>
@@ -885,8 +633,16 @@ const Checkout = () => {
                   </button>
                 </div>
                 <div className="md:mr-16 mt-3">
-                  <button className="bg-light-green rounded-full text-white font-bold text-lg py-3 text-black w-[100%] uppercase">
-                    Complete Order
+                  <button
+                    className="bg-light-green rounded-full text-white font-bold text-lg py-3 text-black w-[100%] uppercase"
+                    onClick={() => {
+                      setCompleteOrderObserver(true);
+                    }}
+                  >
+                    {stripePaymentLoader ||
+                    placeChallengeReducer.status === "loading"
+                      ? "Loading..."
+                      : "Complete Order"}
                   </button>
                 </div>
               </div>

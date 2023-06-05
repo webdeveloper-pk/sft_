@@ -31,7 +31,7 @@ const LoginContainer = () => {
   };
   React.useEffect(() => {
     if (loginReducer.status === "succeeded") {
-      // navigate("/dashboard");
+      navigate("/home/dashboard");
       dispatch(resetStatus());
     }
   }, [loginReducer?.status]);

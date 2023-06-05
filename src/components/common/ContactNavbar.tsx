@@ -4,6 +4,7 @@ import { DownOutlined } from "@ant-design/icons";
 import { Dropdown } from "antd";
 import logo from "../../assets/images/sign-in-logo.png";
 import gbp from "../../assets/images/gbp.png";
+import { useAppSelector } from "../../services/hooks/hooks";
 
 const items = [
   {
@@ -40,6 +41,9 @@ const items = [
 
 const ContactNavbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const loginReducer = useAppSelector((state) => ({
+    isLoggedIn: state.login.isLoggedIn,
+  }));
   return (
     <div>
       <nav className="text-black header">
@@ -144,26 +148,30 @@ const ContactNavbar = () => {
                     </a>
                   </div>
                 </li>
-                <li className="hover:cursor-pointer hover:text-white">
-                  <Link to="/login">
-                    <button
-                      onClick={() => setNavbar(!navbar)}
-                      className="text-light-green bg-transparent border border-light-green hover:bg-light-green hover:text-white py-1.5 2xl:py-3 px-8 rounded-full uppercase"
-                    >
-                      Login
-                    </button>
-                  </Link>
-                </li>
-                <li className="hover:cursor-pointer hover:text-white">
-                  <Link to="/signup">
-                    <button
-                      onClick={() => setNavbar(!navbar)}
-                      className="text-white bg-light-green border border-light-green hover:border-light-green hover:bg-transparent hover:text-light-green py-1.5 2xl:py-3 px-8 rounded-full uppercase"
-                    >
-                      Register
-                    </button>
-                  </Link>
-                </li>
+                {!loginReducer.isLoggedIn ? (
+                  <>
+                    <li className="hover:cursor-pointer hover:text-white">
+                      <Link to="/login">
+                        <button
+                          onClick={() => setNavbar(!navbar)}
+                          className="text-light-green bg-transparent border border-light-green hover:bg-light-green hover:text-white py-1.5 2xl:py-3 px-8 rounded-full uppercase"
+                        >
+                          Login
+                        </button>
+                      </Link>
+                    </li>
+                    <li className="hover:cursor-pointer hover:text-white">
+                      <Link to="/signup">
+                        <button
+                          onClick={() => setNavbar(!navbar)}
+                          className="text-white bg-light-green border border-light-green hover:border-light-green hover:bg-transparent hover:text-light-green py-1.5 2xl:py-3 px-8 rounded-full uppercase"
+                        >
+                          Register
+                        </button>
+                      </Link>
+                    </li>
+                  </>
+                ) : null}
                 <li className="hover:cursor-pointer hover:text-white">
                   <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
                     <button
