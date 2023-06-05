@@ -1,6 +1,6 @@
 import React from "react";
 
-const Table = ({ currency, mode, country }) => {
+const Table = ({ balance, mode, currency }) => {
   const arrData = [
     {
       aggressive: [
@@ -511,7 +511,7 @@ const Table = ({ currency, mode, country }) => {
                   >
                     Max. daily loss
                   </td>
-                  {arrData[0][mode][0].maxDailyLoss[currency][0][country].map(
+                  {arrData[0][mode][0].maxDailyLoss[balance][0][currency].map(
                     (value, index) => {
                       return (
                         <td
@@ -528,17 +528,17 @@ const Table = ({ currency, mode, country }) => {
                         >
                           <span>
                             {(() => {
-                              if (country === "usd") {
+                              if (currency === "usd") {
                                 return "$";
-                              } else if (country === "eur") {
+                              } else if (currency === "eur") {
                                 return "€";
-                              } else if (country === "gbp") {
+                              } else if (currency === "gbp") {
                                 return "£";
-                              } else if (country === "cad") {
+                              } else if (currency === "cad") {
                                 return "CA$";
-                              } else if (country === "aud") {
+                              } else if (currency === "aud") {
                                 return "A$";
-                              } else if (country === "chf") {
+                              } else if (currency === "chf") {
                                 return "₣";
                               } else {
                                 return "$";
@@ -560,7 +560,7 @@ const Table = ({ currency, mode, country }) => {
                   >
                     Max. loss
                   </td>
-                  {arrData[0][mode][0].maxLoss[currency][0][country].map(
+                  {arrData[0][mode][0].maxLoss[balance][0][currency].map(
                     (value, index) => {
                       return (
                         <td
@@ -577,17 +577,17 @@ const Table = ({ currency, mode, country }) => {
                         >
                           <span>
                             {(() => {
-                              if (country === "usd") {
+                              if (currency === "usd") {
                                 return "$";
-                              } else if (country === "eur") {
+                              } else if (currency === "eur") {
                                 return "€";
-                              } else if (country === "gbp") {
+                              } else if (currency === "gbp") {
                                 return "£";
-                              } else if (country === "cad") {
+                              } else if (currency === "cad") {
                                 return "CA$";
-                              } else if (country === "aud") {
+                              } else if (currency === "aud") {
                                 return "A$";
-                              } else if (country === "chf") {
+                              } else if (currency === "chf") {
                                 return "₣";
                               } else {
                                 return "$";
@@ -609,7 +609,7 @@ const Table = ({ currency, mode, country }) => {
                   >
                     profit target
                   </td>
-                  {arrData[0][mode][0].profitTarget[currency][0][country].map(
+                  {arrData[0][mode][0].profitTarget[balance][0][currency].map(
                     (value, index) => {
                       return (
                         <td
@@ -619,17 +619,17 @@ const Table = ({ currency, mode, country }) => {
                         >
                           <span>
                             {(() => {
-                              if (country === "usd") {
+                              if (currency === "usd") {
                                 return "$";
-                              } else if (country === "eur") {
+                              } else if (currency === "eur") {
                                 return "€";
-                              } else if (country === "gbp") {
+                              } else if (currency === "gbp") {
                                 return "£";
-                              } else if (country === "cad") {
+                              } else if (currency === "cad") {
                                 return "CA$";
-                              } else if (country === "aud") {
+                              } else if (currency === "aud") {
                                 return "A$";
-                              } else if (country === "chf") {
+                              } else if (currency === "chf") {
                                 return "₣";
                               } else {
                                 return "$";
@@ -681,17 +681,17 @@ const Table = ({ currency, mode, country }) => {
                     className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center"
                   >
                     {(() => {
-                      if (currency === "10k") {
+                      if (balance === "10k") {
                         return "X$";
-                      } else if (currency === "25k") {
+                      } else if (balance === "25k") {
                         return "X$ ($)";
-                      } else if (currency === "50k") {
+                      } else if (balance === "50k") {
                         return "X$";
-                      } else if (currency === "100k") {
+                      } else if (balance === "100k") {
                         return "X$";
-                      } else if (currency === "200k") {
+                      } else if (balance === "200k") {
                         return "$X";
-                      } else if (currency === "500k") {
+                      } else if (balance === "500k") {
                         return "X$";
                       } else {
                         return "X$";

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import Challenge from "../components/Challenge";
+import ChallengeContainer from "../ui/container/challenge/ChallengeContainer";
 import DiscoverSFT from "../components/DiscoverSFT";
 import Featured from "../components/Featured";
 import Features from "../components/Features";
@@ -42,7 +42,7 @@ const Homepage = () => {
       </div>
       <Stats />
       <Featured />
-      <Challenge />
+      <ChallengeContainer />
       <DiscoverSFT />
       <Working />
       <TextWithImage1 />
