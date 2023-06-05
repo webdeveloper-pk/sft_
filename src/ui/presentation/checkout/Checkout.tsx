@@ -1,6 +1,6 @@
 import React from "react";
 import { Input, Select, Row, Col } from "antd";
-import { CaretDownFilled } from "@ant-design/icons";
+import { CaretDownFilled, LoadingOutlined } from "@ant-design/icons";
 import ContactNavbar from "../../../components/common/ContactNavbar";
 import FooterHomepage from "../../../components/common/FooterHomepage";
 import usa from "../../../assets/images/usa.png";
@@ -9,16 +9,17 @@ import gbp from "../../../assets/images/gbp.png";
 import cad from "../../../assets/images/cad.png";
 import aud from "../../../assets/images/aud.png";
 import chf from "../../../assets/images/chf.png";
-import visa from "../../../assets/images/visa.png";
-import master from "../../../assets/images/mastercard.png";
-import amex from "../../../assets/images/amex.png";
-import discover from "../../../assets/images/Discover.png";
+// import visa from "../../../assets/images/visa.png";
+// import master from "../../../assets/images/mastercard.png";
+// import amex from "../../../assets/images/amex.png";
+// import discover from "../../../assets/images/Discover.png";
 import bitcoin from "../../../assets/images/bitcoin.png";
 import etherium from "../../../assets/images/ethereum.png";
 import tether from "../../../assets/images/tether.png";
 import chat from "../../../assets/images/chat.png";
 import countries from "../../../services/data/country.json";
 import Stripe from "./stripe/Stripe";
+
 const Checkout: React.FC<any> = ({
   completeOrderObserver,
   setCompleteOrderObserver,
@@ -30,7 +31,8 @@ const Checkout: React.FC<any> = ({
   setCheckout,
   platform,
   mode,
-  country,
+  balance,
+  currency,
   checkboxValues,
   handleChange,
   handleCountryChange,
@@ -38,11 +40,14 @@ const Checkout: React.FC<any> = ({
   onPlatformHandler,
   onModeHandler,
   onCurrencyHandler,
+  onBalanceHandler,
+  challnegeReducer1,
+  challnegeReducer2,
+  challnegeReducer3,
   stripeIntentReducer,
   placeChallengeReducer,
   createPaymentIntent,
 }) => {
-  console.log("isLoadingStripeIntent::: ", isLoadingStripeIntent);
   return (
     <div className="bg-medium-gray">
       <div className="flex flex-row justify-end md:justify-center sticky-custom mr-6 cursor-pointer">
@@ -59,7 +64,7 @@ const Checkout: React.FC<any> = ({
           <h1 className="text-light-green text-[26px] md:text-[30px] lg:text-[56px] font-bold">
             PURCHASE
             <br />
-            <div className="-mt-[10px] lg:-mt-[30px]">CHALLENGE</div>
+            <div className="-mt-[10px] lg:-mt-[30px] uppercase">CHALLENGE</div>
           </h1>
           <div className="flex flex-col lg:flex-row justify-center gap-x-12 gap-y-12">
             <div className="w-full flex flex-col gap-y-12 lg:w-[60%] xl:w-[60%]">
@@ -70,7 +75,7 @@ const Checkout: React.FC<any> = ({
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
-                          country === "usd"
+                          currency === "usd"
                             ? "bg-bg-green3 border-bg-green3"
                             : "bg-lighter-gray border-lighter-gray"
                         }`}
@@ -83,7 +88,7 @@ const Checkout: React.FC<any> = ({
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
-                          country === "eur"
+                          currency === "eur"
                             ? "bg-bg-green3 border-bg-green3"
                             : "bg-lighter-gray border-lighter-gray"
                         }`}
@@ -96,7 +101,7 @@ const Checkout: React.FC<any> = ({
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
-                          country === "gbp"
+                          currency === "gbp"
                             ? "bg-bg-green3 border-bg-green3"
                             : "bg-lighter-gray border-lighter-gray"
                         }`}
@@ -109,7 +114,7 @@ const Checkout: React.FC<any> = ({
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
-                          country === "cad"
+                          currency === "cad"
                             ? "bg-bg-green3 border-bg-green3"
                             : "bg-lighter-gray border-lighter-gray"
                         }`}
@@ -122,7 +127,7 @@ const Checkout: React.FC<any> = ({
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
-                          country === "aud"
+                          currency === "aud"
                             ? "bg-bg-green3 border-bg-green3"
                             : "bg-lighter-gray border-lighter-gray"
                         }`}
@@ -135,7 +140,7 @@ const Checkout: React.FC<any> = ({
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
-                          country === "chf"
+                          currency === "chf"
                             ? "bg-bg-green3 border-bg-green3"
                             : "bg-lighter-gray border-lighter-gray"
                         }`}
@@ -179,9 +184,98 @@ const Checkout: React.FC<any> = ({
                   </div>
                 </div>
                 <div className="mt-8">
+                  <p className="font-bold">BALANCE:</p>
+                  <div className="flex flex-row flex-wrap md:flex-nowrap gap-x-2 gap-y-2 mt-1">
+                    <div>
+                      <div className="challenge-tooltip">
+                        <button
+                          className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
+                            balance === "10k"
+                              ? "bg-bg-green3 border-bg-green3"
+                              : "bg-lighter-gray border-lighter-gray"
+                          }`}
+                          onClick={() => onBalanceHandler("10k")}
+                        >
+                          <span>$10k</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="challenge-tooltip">
+                        <button
+                          className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
+                            balance === "25k"
+                              ? "bg-bg-green3 border-bg-green3"
+                              : "bg-lighter-gray border-lighter-gray"
+                          }`}
+                          onClick={() => onBalanceHandler("25k")}
+                        >
+                          <span>$25k</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="challenge-tooltip">
+                        <button
+                          className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
+                            balance === "50k"
+                              ? "bg-bg-green3 border-bg-green3"
+                              : "bg-lighter-gray border-lighter-gray"
+                          }`}
+                          onClick={() => onBalanceHandler("50k")}
+                        >
+                          <span>$50k</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="challenge-tooltip">
+                        <button
+                          className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
+                            balance === "100k"
+                              ? "bg-bg-green3 border-bg-green3"
+                              : "bg-lighter-gray border-lighter-gray"
+                          }`}
+                          onClick={() => onBalanceHandler("100k")}
+                        >
+                          <span>$100k</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="challenge-tooltip">
+                        <button
+                          className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
+                            balance === "200k"
+                              ? "bg-bg-green3 border-bg-green3"
+                              : "bg-lighter-gray border-lighter-gray"
+                          }`}
+                          onClick={() => onBalanceHandler("200k")}
+                        >
+                          <span>$200k</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="challenge-tooltip">
+                        <button
+                          className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm ${
+                            balance === "500k"
+                              ? "bg-bg-green3 border-bg-green3"
+                              : "bg-lighter-gray border-lighter-gray"
+                          }`}
+                          onClick={() => onBalanceHandler("500k")}
+                        >
+                          <span>$500k</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-8">
                   <p className="font-bold">PLATFORM:</p>
                   <div className="flex flex-row flex-wrap gap-x-2 gap-y-3 mt-1">
-                    <div>
+                    {/* <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm 
               ${
@@ -193,7 +287,7 @@ const Checkout: React.FC<any> = ({
                       >
                         <span>MT4</span>
                       </button>
-                    </div>
+                    </div> */}
                     <div>
                       <button
                         className={`flex justify-center items-center gap-x-1.5 text-white border border-bg-green1 hover:bg-light-green hover:border-light-green py-3 px-3 rounded-full text-sm 
@@ -436,13 +530,19 @@ const Checkout: React.FC<any> = ({
                     <p className="text-lighter-black mb-1">platform </p>
                   </div>
                   <div>
-                    <p className="font-semibold mb-1">USD</p>
+                    <p className="font-semibold mb-1">
+                      {challnegeReducer1?.challenge1}
+                    </p>
 
-                    <p className="font-semibold mb-1">Normal</p>
+                    <p className="font-semibold mb-1">
+                      {challnegeReducer2?.challenge2}
+                    </p>
 
-                    <p className="font-semibold mb-1">$ 100,000</p>
+                    <p className="font-semibold mb-1">
+                      ${challnegeReducer3?.challenge3}
+                    </p>
 
-                    <p className="font-semibold mb-1">MTS</p>
+                    <p className="font-semibold mb-1">MT5</p>
                   </div>
                 </div>
                 <div className="border-b border-light-gray mt-4 lg:mr-6"></div>
@@ -479,14 +579,18 @@ const Checkout: React.FC<any> = ({
                     value="creditcard"
                     onClick={createPaymentIntent}
                   />
-                  <label htmlFor="creditcard" className="uppercase">
+                  <label htmlFor="creditcard" className="uppercase ml-3">
                     Credit Card
                   </label>
-                  <p className="text-xs pl-5">
+                  <p className="text-xs pl-5 mt-2 ml-1 mb-6">
                     The charge will appear on your credit card statement as "The
                     Funded Trader".
                   </p>
-                  {isLoadingStripeIntent ? "loading" : null}
+                  {isLoadingStripeIntent ? (
+                    <div className="flex justify-center text-light-green font-bold">
+                      <LoadingOutlined style={{ width: "30px" }} />
+                    </div>
+                  ) : null}
                   {stripeIntentReducer?.status === "succeeded" ? (
                     <Stripe
                       setIsLoadingStripeIntent={setIsLoadingStripeIntent}
@@ -569,7 +673,7 @@ const Checkout: React.FC<any> = ({
                         />
                       </Col>
                     </Row> */}
-                    <div className="mt-8">
+                    <div className="mt-6">
                       <input
                         type="radio"
                         id="bitcoin"
@@ -578,7 +682,7 @@ const Checkout: React.FC<any> = ({
                       />
                       <label
                         htmlFor="creditcard"
-                        className="uppercase text-[14px]"
+                        className="uppercase text-[14px] ml-3"
                       >
                         migpayments: BITCOIN AND OTHER CRYPTO CURREncies
                       </label>
