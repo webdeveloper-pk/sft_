@@ -5,6 +5,7 @@ const Phase = ({ value, phase, title, description }) => {
   const ref = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
+  // eslint-disable-next-line
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   useEffect(() => {
@@ -19,10 +20,13 @@ const Phase = ({ value, phase, title, description }) => {
       observer.observe(ref.current);
     }
     return () => {
+      // eslint-disable-next-line
       if (ref.current) {
+        // eslint-disable-next-line
         observer.unobserve(ref.current);
       }
     };
+    // eslint-disable-next-line
   }, [ref, delay]);
 
   return (

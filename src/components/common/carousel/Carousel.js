@@ -59,7 +59,7 @@ const SimpleSlider = () => {
             message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut consectetur dolor, et suscipit elit. Maecenas feugiat facilisis libero, quis semper urna "
           />
         </div>
-        <div className="px-4 mt-12">
+        <div className="px-4">
           <Card
             src={avatar2}
             name="john snow"

@@ -9,7 +9,7 @@ import featuresbg4 from "../assets/images/features-bg4.png";
 const Features = () => {
   return (
     <section
-      class="px-6 md:px-8 pb-8 xl:-mt-[40px] text-light-black features-bg relative"
+      className="px-6 md:px-8 pb-8 xl:-mt-[40px] text-light-black features-bg relative"
       id="scaling"
     >
       <div className="absolute left-0 bottom-0">
@@ -77,19 +77,19 @@ const Features = () => {
               alt="chart"
               className="w-[100%] lg:w-[90%] h-auto hidden md:block"
             />
-            <div>
+            <div className="flex justify-center mx-auto -ml-10">
               <img
                 src={mobileChart}
                 alt="mobile chart"
-                className="w-[130px] block md:hidden"
+                className="w-[220px] block md:hidden"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-between mt-[280px] md:mt-[200px] lg:mt-[150px] xl:mt-[70px] xl:ml-12">
+      <div className="w-full flex justify-between mt-[320px] md:mt-[200px] lg:mt-[150px] xl:mt-[70px] xl:ml-12">
         <div className="flex w-[0%] md:w-[50%]"></div>
-        <div className="w-[100%] md:w-[40%] lg:w-[50%] pb-12 md:pb-36 xl:pb-44 mt-24 2xl:pb-56 2xl:mt-20 flex justify-center">
+        <div className="w-[100%] md:w-[40%] lg:w-[50%] pb-12 md:pb-36 xl:pb-44 mt-64 md:mt-24 2xl:pb-56 2xl:mt-20 flex justify-center">
           {/* <p className="hidden xl:block text-transparent font-bold text-sm w-[100%] md:w-[90%] lg:w-[70%] xl:w-[50%] 2xl:w-[40%]"></p> */}
           <p className="text-light-green font-bold text-xs md:text-sm w-[100%] md:w-[90%] lg:w-[70%] xl:w-[50%] 2xl:w-[40%]">
             It is important that the trader's account balance is greater than

@@ -28,7 +28,7 @@
 //   };
 
 //   return (
-//     <section class="px-6 md:px-8 py-12 bg-lightest-white-bg text-lighter-black homepage-container mx-auto">
+//     <section className="px-6 md:px-8 py-12 bg-lightest-white-bg text-lighter-black homepage-container mx-auto">
 //       <div className="flex flex-col gap-y-2" id="challenge">
 //         <div
 //           className="uppercase font-bold text-2xl md:text-[26px]"
@@ -155,7 +155,7 @@
 //           </div>
 //         </div>
 //         <div className="flex flex-col md:flex-row gap-16 mt-2">
-//           <div class="">
+//           <div className="">
 //             <p
 //               className="font-bold"
 //               data-aos="zoom-in-right"
@@ -193,7 +193,7 @@
 //               </div>
 //             </div>
 //           </div>
-//           <div class="">
+//           <div className="">
 //             <p
 //               className="font-bold"
 //               data-aos="zoom-in-left"

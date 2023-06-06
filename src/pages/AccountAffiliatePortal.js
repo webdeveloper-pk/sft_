@@ -54,7 +54,7 @@ const AccountAffiliatePortal = () => {
               </div>
             </div>
           </div>
-          <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-8 pt-8 pb-12">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-8 pt-8 pb-12">
             <div>
               <AffiliatePortalCard
                 bgColor="bg-referral-green1"

@@ -3,7 +3,7 @@ import chat from "../assets/images/chat.png";
 
 const SubHero = () => {
   return (
-    <section class="body-font py-12 lg:py-16 md:mt-52">
+    <section className="body-font py-12 lg:py-16 md:mt-52">
       <div className="-mt-4 md:mt-0 w-full md:w-auto relative">
         <div className="flex flex-row justify-end md:justify-center sticky-custom mr-6 cursor-pointer">
           <img
@@ -15,9 +15,9 @@ const SubHero = () => {
         </div>
       </div>
       <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-y-8 homepage-container mx-auto px-6 md:px-8">
-        <div class="flex flex-col items-center md:items-start text-center md:text-left w-full">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left w-full">
           <h1
-            class="hidden md:block text-5xl lg:text-6xl xl:text-7xl mb-4 font-medium text-light-black uppercase"
+            className="hidden md:block text-5xl lg:text-6xl xl:text-7xl mb-4 font-medium text-light-black uppercase"
             data-aos="zoom-in-down"
             data-aos-once="true"
           >
@@ -34,7 +34,7 @@ const SubHero = () => {
           >
             <div className="mt-[500px] md:mt-[0px] relative">
               <h1
-                class="block md:hidden text-4xl lg:text-6xl xl:text-7xl mb-4 font-medium text-light-black uppercase"
+                className="block md:hidden text-4xl lg:text-6xl xl:text-7xl mb-4 font-medium text-light-black uppercase"
                 data-aos="zoom-in-down"
                 data-aos-once="true"
               >

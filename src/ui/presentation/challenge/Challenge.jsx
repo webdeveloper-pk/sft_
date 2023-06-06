@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Tooltip } from "antd";
 import usa from "../../../assets/images/usa.png";
 import eur from "../../../assets/images/eur.png";
@@ -145,7 +145,7 @@ const Challenge = ({
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-16 mt-2">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-16  mt-2">
           <div>
             <p
               className="font-bold"
@@ -184,7 +184,7 @@ const Challenge = ({
               </div>
             </div>
           </div>
-          <div className="">
+          <div>
             <p
               className="font-bold"
               data-aos="zoom-in-left"

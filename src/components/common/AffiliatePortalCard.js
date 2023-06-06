@@ -6,7 +6,7 @@ const AffiliatePortalCard = ({ bgColor, src, title, total }) => {
       className={`${bgColor} rounded-md px-6 md:px-10 py-8 flex flex-row justify-start items-center gap-x-6`}
     >
       <div>
-        <img src={src} alt="card-image" />
+        <img src={src} alt="portal-card" />
       </div>
       <div>
         <h1 className="text-black font-medium text-lg md:text-2xl">{title}</h1>

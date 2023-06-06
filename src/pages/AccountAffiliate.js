@@ -6,8 +6,8 @@ import silver from "../assets/images/affiliate-silver.png";
 import gold from "../assets/images/affiliate-gold.png";
 import gorilla from "../assets/images/affiliate-account-gorilla.png";
 import AffiliateRegistrationForm from "../components/AffiliateRegistrationForm";
-import Footer from "../components/common/Footer";
-import Navbar from "../components/common/Navbar";
+// import Footer from "../components/common/Footer";
+// import Navbar from "../components/common/Navbar";
 
 const AccountAffiliate = () => {
   return (

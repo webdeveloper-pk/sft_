@@ -36,8 +36,8 @@ const TextWithImage4 = () => {
   const linkName = readMore ? "Read Less << " : "Read More >> ";
 
   return (
-    <section class="px-6 md:px-8 bg-lightest-white-bg homepage-container mx-auto">
-      <div class="pt-12 pb-12 mx-auto flex flex-col-reverse lg:flex-row items-center gap-y-8 gap-x-6">
+    <section className="px-6 md:px-8 bg-lightest-white-bg homepage-container mx-auto">
+      <div className="pt-12 pb-12 mx-auto flex flex-col-reverse lg:flex-row items-center gap-y-8 gap-x-6">
         <div className="block md:hidden w-full lg:w-1/2 flex flex-col text-left mt-4 lg:mt-0">
           <h1 className="text-2xl md:text-[28px] mb-4 font-bold uppercase">
             EARLY ACCESS TO SFT ACADEMY
@@ -56,7 +56,7 @@ const TextWithImage4 = () => {
                 </span>
               </p>
               {readMore && extraContent}
-              <a
+              <p
                 className="read-more-link"
                 onClick={() => {
                   setReadMore(!readMore);
@@ -65,7 +65,7 @@ const TextWithImage4 = () => {
                 <button className="mt-3 text-xs md:text-base text-light-white bg-light-green py-1.5 px-5 rounded-sm font-bold border border-light-green">
                   {linkName}
                 </button>
-              </a>
+              </p>
             </div>
           </div>
         </div>

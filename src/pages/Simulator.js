@@ -5,8 +5,8 @@ import SimulatorResult from "../components/common/SimulatorResult";
 import ButtonFilled from "../components/common/ButtonFilled";
 import SimulatorCounter from "../components/common/SimulatorCounter";
 import SimulatorChart from "../components/SimulatorChart";
-import Footer from "../components/common/Footer";
-import Navbar from "../components/common/Navbar";
+// import Footer from "../components/common/Footer";
+// import Navbar from "../components/common/Navbar";
 
 const Simulator = () => {
   const [probability, setProbablity] = useState(50);
