@@ -22,10 +22,10 @@ const Faq = () => {
                 Advice and answers from the Funded Trader{" "}
                 <span className="text-light-green">Support Team</span>
               </h1>
-              <div class="w-[100%] md:w-[70%] mt-8 md:mt-4">
+              <div className="w-[100%] md:w-[70%] mt-8 md:mt-4">
                 <form>
-                  <div class="relative flex items-center">
-                    <span class="absolute left-0 flex items-center pl-2">
+                  <div className="relative flex items-center">
+                    <span className="absolute left-0 flex items-center pl-2">
                       <button type="submit" className="text-white ml-2">
                         <svg
                           fill="none"
@@ -34,7 +34,7 @@ const Faq = () => {
                           stroke-linejoin="round"
                           stroke-width="2"
                           viewBox="0 0 24 24"
-                          class="w-4 h-4"
+                          className="w-4 h-4"
                         >
                           <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
@@ -43,7 +43,7 @@ const Faq = () => {
                     <input
                       type="search"
                       name="faq"
-                      class="w-[100%] py-3 text-[10px] text-white bg-transparent rounded-md pl-10 border border-white focus:outline-none focus:bg-transparent focus:text-white uppercase faq-input"
+                      className="w-[100%] py-3 text-[10px] text-white bg-transparent rounded-md pl-10 border border-white focus:outline-none focus:bg-transparent focus:text-white uppercase faq-input"
                       placeholder="Search for articles"
                       autocomplete="off"
                     />

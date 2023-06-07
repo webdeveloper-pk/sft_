@@ -19,8 +19,8 @@ const TextWithImage1 = () => {
   const linkName = readMore ? "Read Less << " : "Read More >> ";
 
   return (
-    <section class="px-6 md:px-8 bg-lightest-white-bg homepage-container mx-auto">
-      <div class="mx-auto flex flex-col-reverse lg:flex-row items-center gap-y-12 gap-x-8">
+    <section className="px-6 md:px-8 bg-lightest-white-bg homepage-container mx-auto">
+      <div className="mx-auto flex flex-col-reverse lg:flex-row items-center gap-y-12 gap-x-8">
         <div className="w-full lg:w-1/2 z-50  -mt-[50px] md:-mt-[80px] flex justify-center">
           <img
             className="object-cover object-center rounded w-full md:w-[70%] lg:w-full"
@@ -55,7 +55,7 @@ const TextWithImage1 = () => {
                 during the 4-month period.
               </p>
               {readMore && extraContent}
-              <a
+              <p
                 className="read-more-link"
                 onClick={() => {
                   setReadMore(!readMore);
@@ -64,7 +64,7 @@ const TextWithImage1 = () => {
                 <button className="mt-3 text-xs md:text-base text-light-white bg-light-green py-1.5 px-5 rounded-sm font-bold border border-light-green">
                   {linkName}
                 </button>
-              </a>
+              </p>
             </div>
           </div>
         </div>

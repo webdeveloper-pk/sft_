@@ -19,8 +19,8 @@ const TextWithImage2 = () => {
   const linkName = readMore ? "Read Less << " : "Read More >> ";
 
   return (
-    <section class="px-6 md:px-8 bg-lightest-white-bg lg:-mt-12 homepage-container mx-auto">
-      <div class="mx-auto flex flex-col lg:flex-row items-center gap-y-8 gap-x-6 pt-12 lg:pt-0 ">
+    <section className="px-6 md:px-8 bg-lightest-white-bg lg:-mt-12 homepage-container mx-auto">
+      <div className="mx-auto flex flex-col lg:flex-row items-center gap-y-8 gap-x-6 pt-12 lg:pt-0 ">
         <div className="block md:hidden w-full lg:w-1/2 flex flex-col text-left xl:mt-[100px]">
           <h1 className="text-2xl md:text-[28px] mb-4 font-bold uppercase">
             EARN UP TO <span className="text-light-green px-2">90%</span>OF THE
@@ -41,7 +41,7 @@ const TextWithImage2 = () => {
                 create at the beginning.
               </p>
               {readMore && extraContent}
-              <a
+              <p
                 className="read-more-link"
                 onClick={() => {
                   setReadMore(!readMore);
@@ -50,7 +50,7 @@ const TextWithImage2 = () => {
                 <button className="mt-3 text-xs md:text-base text-light-white bg-light-green py-1.5 px-5 rounded-sm font-bold border border-light-green">
                   {linkName}
                 </button>
-              </a>
+              </p>
             </div>
           </div>
         </div>

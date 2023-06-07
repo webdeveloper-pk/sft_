@@ -25,8 +25,8 @@ const TextWithImage3 = () => {
   const linkName = readMore ? "Read Less << " : "Read More >> ";
 
   return (
-    <section class="pr-6 md:pr-8 -mt-[50px] md:-mt-[200px] lg:-mt-[100px] xl:-mt-[180px]">
-      <div class="mx-auto flex flex-col pt-12 pb-8 lg:flex-row items-center gap-y-8 gap-x-8">
+    <section className="pr-6 md:pr-8 -mt-[50px] md:-mt-[200px] lg:-mt-[100px] xl:-mt-[180px]">
+      <div className="mx-auto flex flex-col pt-12 pb-8 lg:flex-row items-center gap-y-8 gap-x-8">
         <div className="w-full lg:w-[50%] z-50">
           <img
             alt="gorilla"
@@ -58,7 +58,7 @@ const TextWithImage3 = () => {
                 </span>
               </p>
               {readMore && extraContent}
-              <a
+              <p
                 className="read-more-link"
                 onClick={() => {
                   setReadMore(!readMore);
@@ -67,7 +67,7 @@ const TextWithImage3 = () => {
                 <button className="mt-3 text-xs md:text-base text-light-white bg-light-green py-1.5 px-5 rounded-sm font-bold border border-light-green">
                   {linkName}
                 </button>
-              </a>
+              </p>
             </div>
             <div className="ml-4 text-lighter-black hidden 2xl:block">
               <p className="mt-1 font-semibold">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Challenge from "../../../ui/presentation/challenge/Challenge";
-import { useAppSelector, useAppDispatch } from "../../../services/hooks/hooks";
+import { useAppDispatch } from "../../../services/hooks/hooks";
 import { setChallenge1 } from "../../../store/slices/challenge/challengeSlice";
 import { setChallenge2 } from "../../../store/slices/challenge/challengeSlice";
 import { setChallenge3 } from "../../../store/slices/challenge/challengeSlice";

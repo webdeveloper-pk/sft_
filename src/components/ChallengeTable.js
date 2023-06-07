@@ -677,7 +677,7 @@ const Table = ({ balance, mode, currency }) => {
                     price
                   </td>
                   <td
-                    colspan="3"
+                    colSpan="3"
                     className="text-[13px]  font-light px-16 lg:px-0 py-3 whitespace-nowrap bg-bg-green1 text-center"
                   >
                     {(() => {

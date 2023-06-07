@@ -25,6 +25,7 @@ const StripeCheckoutForm = ({
   const stripe = useStripe();
   const elements = useElements();
   const paymentElementRef = React.useRef<any>(null);
+  // eslint-disable-next-line
   const [message, setMessage] = React.useState<any>();
   const loginReducer = useAppSelector((state) => ({
     user: state.login.user,
@@ -58,6 +59,7 @@ const StripeCheckoutForm = ({
           break;
       }
     });
+    // eslint-disable-next-line
   }, [stripe]);
 
   const handleSubmit = async () => {
@@ -90,6 +92,7 @@ const StripeCheckoutForm = ({
     if (completeOrderObserver) {
       handleSubmit();
     }
+    // eslint-disable-next-line
   }, [completeOrderObserver]);
   const placeChallengeReducer = useAppSelector((state) => ({
     status: state.placeChallenge.status,

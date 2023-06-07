@@ -1,41 +1,71 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../services/hooks/hooks";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown } from "antd";
 import logo from "../../assets/images/logo.png";
 import gbp from "../../assets/images/gbp.png";
-import { useAppSelector } from "../../services/hooks/hooks";
+import france from "../../assets/images/france-flag.jpeg";
+import es from "../../assets/images/espain-flag.jpeg";
+import italy from "../../assets/images/italy-flag.jpg";
+import czech from "../../assets/images/czech-flag.jpg";
+import denmark from "../../assets/images/denmark-flag.jpg";
+import vitenam from "../../assets/images/vitenam-flag.jpg";
 
 const items = [
   {
     label: <div>FR</div>,
     key: "fr",
-    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+    icon: (
+      <img
+        src={france}
+        className="w-[16px] h-[16px] rounded-full"
+        alt="france"
+      />
+    ),
   },
   {
     label: "ES",
     key: "es",
-    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+    icon: (
+      <img src={es} className="w-[16px] h-[16px] rounded-full" alt="espain" />
+    ),
   },
   {
-    label: "OF",
-    key: "of",
-    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+    label: "DE",
+    key: "de",
+    icon: (
+      <img
+        src={denmark}
+        className="w-[16px] h-[16px] rounded-full"
+        alt="denmark"
+      />
+    ),
   },
   {
     label: "IT",
     key: "it",
-    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+    icon: (
+      <img src={italy} className="w-[16px] h-[16px] rounded-full" alt="italy" />
+    ),
   },
   {
-    label: "NV",
-    key: "nv",
-    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+    label: "VN",
+    key: "vn",
+    icon: (
+      <img
+        src={vitenam}
+        className="w-[16px] h-[16px] rounded-full"
+        alt="vitenam"
+      />
+    ),
   },
   {
     label: "CZ",
     key: "cz",
-    // icon: <img src={gbp} className="w-[16px]" alt="" />,
+    icon: (
+      <img src={czech} className="w-[16px] h-[16px] rounded-full" alt="czech" />
+    ),
   },
 ];
 

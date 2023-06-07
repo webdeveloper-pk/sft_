@@ -6,7 +6,7 @@ import tradingview from "../assets/images/tradingview.png";
 
 const Featured = () => {
   return (
-    <section class="px-6 md:px-8 py-4 lg:py-6 bg-lightest-white-bg text-light-black homepage-container mx-auto">
+    <section className="px-6 md:px-8 py-4 lg:py-6 bg-lightest-white-bg text-light-black homepage-container mx-auto">
       <div
         className="uppercase text-center mb-6"
         data-aos="zoom-in-left"
@@ -15,7 +15,7 @@ const Featured = () => {
       >
         as featured on
       </div>
-      <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-12">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-12">
         <div className="border-l-4 md:border-l-0 border-r-4 border-light-green flex items-center justify-center py-4">
           <span>
             <img

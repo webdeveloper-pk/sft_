@@ -8,7 +8,7 @@ import testimonialbg from "../assets/images/testimonialbg.png";
 const Testimonial = () => {
   return (
     <section
-      class="px-6 md:px-8 py-12 bg-lightest-white-bg text-light-black relative homepage-container mx-auto"
+      className="px-6 md:px-8 py-12 bg-lightest-white-bg text-light-black relative homepage-container mx-auto"
       id="testimonial"
     >
       <div className="absolute left-[15%] xl:left-[22%] 2xl:w-[50%] top-[30%] md:top-[5%]">

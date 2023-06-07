@@ -34,6 +34,7 @@ const LoginContainer = () => {
       navigate("/home/dashboard");
       dispatch(resetStatus());
     }
+    // eslint-disable-next-line
   }, [loginReducer?.status]);
   return (
     <Login
