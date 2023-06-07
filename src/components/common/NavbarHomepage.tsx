@@ -77,8 +77,8 @@ const NavbarHomepage = () => {
 
   return (
     <div>
-      <nav className="text-light-white px-2 md:px-8 header homepage-container mx-auto">
-        <div className="mx-auto lg:flex justify-between lg:items-center py-6 uppercase">
+      <nav className="text-light-white px-2 md:px-8 header homepage-container mx-auto bg-mobile-navbar md:bg-transparent">
+        <div className="mx-auto lg:flex justify-between lg:items-center pt-6 pb-0 md:pt-6 md:pb-6 uppercase">
           <div>
             <div className="flex-row flex justify-between items-center w-full -mt-3 ml-2 md:ml-0">
               <a href="/">

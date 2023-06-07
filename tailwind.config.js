@@ -41,6 +41,7 @@ module.exports = {
         "leaderboard-table-bg4": "#6cdab6",
         "leaderboard-table-bg5": "#01c887",
         "simulator-counter": "#7fe3c3",
+        "mobile-navbar": "#1A1A1A",
       },
       fontSize: {
         "text-custom-size": "12px",

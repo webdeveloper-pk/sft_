@@ -35,11 +35,21 @@ const Homepage = () => {
           </div>
         </div>
       </div> */}
-      <div className="hero-bg">
+      <div className="block md:hidden">
         <NavbarHomepage />
-        <Hero />
-        <SubHero />
+        <div className="hero-bg">
+          <Hero />
+          <SubHero />
+        </div>
       </div>
+      <div className="hidden md:block">
+        <div className="hero-bg">
+          <NavbarHomepage />
+          <Hero />
+          <SubHero />
+        </div>
+      </div>
+
       <Stats />
       <Featured />
       <ChallengeContainer />

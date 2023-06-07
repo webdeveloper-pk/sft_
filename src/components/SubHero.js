@@ -3,8 +3,8 @@ import chat from "../assets/images/chat.png";
 
 const SubHero = () => {
   return (
-    <section className="body-font py-12 lg:py-16 md:mt-52">
-      <div className="-mt-4 md:mt-0 w-full md:w-auto relative">
+    <section className="body-font lg:py-16 md:mt-64 xl:mt-60">
+      <div className="mt-20 md:mt-0 w-full md:w-auto relative">
         <div className="flex flex-row justify-end md:justify-center sticky-custom mr-6 cursor-pointer">
           <img
             src={chat}
@@ -32,7 +32,7 @@ const SubHero = () => {
             data-aos-once="true"
             data-aos-duration="3000"
           >
-            <div className="mt-[500px] md:mt-[0px] relative">
+            <div className="mt-[0px] md:mt-[0px] relative">
               <h1
                 className="block md:hidden text-4xl lg:text-6xl xl:text-7xl mb-4 font-medium text-light-black uppercase"
                 data-aos="zoom-in-down"

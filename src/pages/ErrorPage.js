@@ -18,7 +18,12 @@ const ErrorPage = () => {
           </p>
           <div className="w-[230px] mx-auto">
             <Link to="/">
-              <ButtonFilled buttonText="Back to homepage" textSize="text-sm" />
+              <ButtonFilled
+                buttonText="Back to homepage"
+                textSize="text-sm"
+                paddingY="py-2.5"
+                paddingX="px-6 md:px-6"
+              />
             </Link>
           </div>
         </div>
