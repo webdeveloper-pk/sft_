@@ -47,7 +47,26 @@ const Checkout: React.FC<any> = ({
   stripeIntentReducer,
   placeChallengeReducer,
   createPaymentIntent,
+  openNotification,
 }) => {
+  const onSubmitCheck = (flag: any) => {
+    if (
+      checkout?.first_name !== "" &&
+      checkout?.last_name !== "" &&
+      checkout?.email !== "" &&
+      checkout?.phone_no !== "" &&
+      checkout?.address_line_1 !== "" &&
+      checkout?.town_city !== "" &&
+      checkout?.postal_code !== "" &&
+      checkout?.country !== "" &&
+      checkout?.state !== "" &&
+      checkout?.additional_notes !== ""
+    ) {
+      setCompleteOrderObserver(flag);
+      openNotification();
+    }
+  };
+
   return (
     <div className="bg-medium-gray">
       <div className="flex flex-row justify-end md:justify-center sticky-custom mr-6 cursor-pointer">
@@ -66,6 +85,7 @@ const Checkout: React.FC<any> = ({
             <br />
             <div className="-mt-[10px] lg:-mt-[30px] uppercase">CHALLENGE</div>
           </h1>
+
           <div className="flex flex-col lg:flex-row justify-center gap-x-12 gap-y-12">
             <div className="w-full flex flex-col gap-y-12 lg:w-[60%] xl:w-[60%]">
               <div className="checkout-bg">
@@ -312,7 +332,13 @@ const Checkout: React.FC<any> = ({
                   <div className="w-full mt-6 lg:mt-10 text-left font-semibold">
                     <Row className="mb-4" gutter={[0, 16]}>
                       <Col span={23} md={{ span: 11 }}>
-                        <label className="uppercase font-light text-xs">
+                        <label
+                          className={`${
+                            checkout.first_name === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs `}
+                        >
                           First Name {"*"}
                         </label>
                         <Input
@@ -327,7 +353,13 @@ const Checkout: React.FC<any> = ({
                         />
                       </Col>
                       <Col span={23} md={{ span: 11, offset: 2 }}>
-                        <label className="uppercase font-light text-xs">
+                        <label
+                          className={`${
+                            checkout.last_name === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs `}
+                        >
                           Last Name {"*"}
                         </label>
                         <Input
@@ -344,7 +376,13 @@ const Checkout: React.FC<any> = ({
                     </Row>
                     <Row className="mb-4" gutter={[0, 16]}>
                       <Col span={23} md={{ span: 11 }}>
-                        <label className="uppercase font-light text-xs">
+                        <label
+                          className={`${
+                            checkout.email === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs `}
+                        >
                           email address {"*"}
                         </label>
                         <Input
@@ -359,7 +397,13 @@ const Checkout: React.FC<any> = ({
                         />
                       </Col>
                       <Col span={23} md={{ span: 11, offset: 2 }}>
-                        <label className="uppercase font-light text-xs">
+                        <label
+                          className={`${
+                            checkout.phone_no === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs `}
+                        >
                           phone number {"*"}
                         </label>
                         <Input
@@ -376,7 +420,13 @@ const Checkout: React.FC<any> = ({
                     </Row>
                     <Row className="mb-4" gutter={[0, 16]}>
                       <Col span={23} md={{ span: 11 }}>
-                        <label className="uppercase font-light text-xs">
+                        <label
+                          className={`${
+                            checkout.address_line_1 === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs `}
+                        >
                           address line 1 {"*"}
                         </label>
                         <Input
@@ -391,7 +441,13 @@ const Checkout: React.FC<any> = ({
                         />
                       </Col>
                       <Col span={23} md={{ span: 11, offset: 2 }}>
-                        <label className="uppercase font-light text-xs">
+                        <label
+                          className={`${
+                            checkout.town_city === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs `}
+                        >
                           town city {"*"}
                         </label>
                         <Input
@@ -408,7 +464,13 @@ const Checkout: React.FC<any> = ({
                     </Row>
                     <Row className="mb-4" gutter={[0, 16]}>
                       <Col span={23} md={{ span: 11 }}>
-                        <label className="uppercase font-light text-xs">
+                        <label
+                          className={`${
+                            checkout.postal_code === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs `}
+                        >
                           Postal Code {"*"}
                         </label>
                         <Input
@@ -426,7 +488,13 @@ const Checkout: React.FC<any> = ({
                         md={{ span: 11, offset: 2 }}
                         className="flex flex-col mt-0.5"
                       >
-                        <div className="uppercase font-light text-xs mb-[2px]">
+                        <div
+                          className={`${
+                            checkout.country === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs mb-[2px] `}
+                        >
                           Country {"*"}
                         </div>
                         <Select
@@ -451,7 +519,13 @@ const Checkout: React.FC<any> = ({
                     </Row>
                     <Row className="mb-4" gutter={[0, 16]}>
                       <Col span={23} md={{ span: 11 }}>
-                        <label className="uppercase font-light text-xs">
+                        <label
+                          className={`${
+                            checkout.state === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs mb-[2px] `}
+                        >
                           State {"*"}
                         </label>
                         <Input
@@ -466,7 +540,13 @@ const Checkout: React.FC<any> = ({
                         />
                       </Col>
                       <Col span={23} md={{ span: 11, offset: 2 }}>
-                        <label className="uppercase font-light text-xs">
+                        <label
+                          className={`${
+                            checkout.additional_notes === ""
+                              ? "text-red-500"
+                              : "text-black"
+                          } uppercase font-light text-xs mb-[2px] `}
+                        >
                           Additional Notes
                         </label>
                         <Input
@@ -748,7 +828,7 @@ const Checkout: React.FC<any> = ({
                   <button
                     className="bg-light-green rounded-full text-white font-bold text-lg py-3 text-black w-[100%] uppercase"
                     onClick={() => {
-                      setCompleteOrderObserver(true);
+                      onSubmitCheck(true);
                     }}
                   >
                     {stripePaymentLoader ||
