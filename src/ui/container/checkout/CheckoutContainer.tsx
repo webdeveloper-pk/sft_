@@ -61,9 +61,9 @@ const CheckoutContainer = () => {
   const [isLoadingStripeIntent, setIsLoadingStripeIntent] =
     React.useState(false);
   const [checkout, setCheckout] = React.useState({
-    currency: currency,
-    mode: mode,
-    balance: balance,
+    currency: currency || "usd",
+    mode: mode || "normal",
+    balance: balance || "10k",
     platform: "mt5",
     first_name: "",
     last_name: "",

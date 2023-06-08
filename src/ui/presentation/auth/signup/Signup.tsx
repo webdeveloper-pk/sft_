@@ -126,11 +126,16 @@ const Signup: React.FC<SignupProps> = ({
                         </Tooltip>
                       }
                       value={user.email}
-                      type="text"
+                      type="email"
                       name="email"
                       onChange={handleChange}
                       required
                     />
+                    <span className="text-red-500 text-[13px]">
+                      {signupReducer.status === "failed"
+                        ? "Email already exists"
+                        : ""}
+                    </span>
                   </Col>
                 </Row>
                 <Row className="mb-4 lg:mb-6" gutter={[0, 16]}>
@@ -160,7 +165,6 @@ const Signup: React.FC<SignupProps> = ({
                   <Col span={23} md={{ span: 11, offset: 2 }}>
                     <Input
                       placeholder="Password"
-                      type="password"
                       bordered={false}
                       className="text-light-gray"
                       style={{ borderBottom: "1px solid #a8a8a8" }}
@@ -174,6 +178,7 @@ const Signup: React.FC<SignupProps> = ({
                         </Tooltip>
                       }
                       value={user.password}
+                      type="password"
                       name="password"
                       onChange={handleChange}
                       required

@@ -33,7 +33,7 @@ export interface SignupProps {
 
 export interface VerificationProps {
   user: {
-    email: string;
+    email: any;
     code: string;
   };
   verificationReducer: {

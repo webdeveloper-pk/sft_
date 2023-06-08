@@ -18,8 +18,11 @@ const VerificationContainer = () => {
     user: state.verification.user,
     error: state.verification.error,
   }));
+
+  const storedEmail = localStorage?.getItem("email");
+
   const [user, setUser] = React.useState({
-    email: "",
+    email: storedEmail ? storedEmail : "",
     code: "",
     // for_password: 0,
   });

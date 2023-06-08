@@ -320,6 +320,7 @@ const Checkout: React.FC<any> = ({
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          type="text"
                           name="first_name"
                           value={checkout.first_name}
                           onChange={handleChange}
@@ -334,6 +335,7 @@ const Checkout: React.FC<any> = ({
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          type="text"
                           name="last_name"
                           value={checkout.last_name}
                           onChange={handleChange}
@@ -350,6 +352,7 @@ const Checkout: React.FC<any> = ({
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          type="email"
                           name="email"
                           value={checkout.email}
                           onChange={handleChange}
@@ -364,6 +367,7 @@ const Checkout: React.FC<any> = ({
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          type="number"
                           name="phone_no"
                           value={checkout.phone_no}
                           onChange={handleChange}
@@ -380,6 +384,7 @@ const Checkout: React.FC<any> = ({
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          type="text"
                           name="address_line_1"
                           value={checkout.address_line_1}
                           onChange={handleChange}
@@ -394,6 +399,7 @@ const Checkout: React.FC<any> = ({
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          type="text"
                           name="town_city"
                           value={checkout.town_city}
                           onChange={handleChange}
@@ -453,6 +459,7 @@ const Checkout: React.FC<any> = ({
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          type="text"
                           name="state"
                           value={checkout.state}
                           onChange={handleChange}
@@ -467,6 +474,7 @@ const Checkout: React.FC<any> = ({
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
+                          type="text"
                           name="additional_notes"
                           value={checkout.additional_notes}
                           onChange={handleChange}

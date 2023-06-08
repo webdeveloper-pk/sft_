@@ -6,7 +6,7 @@ import ButtonFilled from "../../../../components/common/ButtonFilled";
 // import Button from "../../../../components/common/Button";
 import logo from "../../../../assets/images/sign-in-logo.png";
 import { VerificationProps } from "../../../../services/intefaces/auth";
-import userIcon from "../../../../assets/images/user-icon.png";
+// import userIcon from "../../../../assets/images/user-icon.png";
 
 const Verification: React.FC<VerificationProps> = ({
   user,
@@ -39,7 +39,7 @@ const Verification: React.FC<VerificationProps> = ({
             </p>
             <form onSubmit={handleSubmit}>
               <div className="w-full mt-6 lg:mt-10 text-left font-semibold">
-                <div className="mb-4 lg:mb-6">
+                {/* <div className="mb-4 lg:mb-6">
                   <Input
                     placeholder="Email"
                     bordered={false}
@@ -60,7 +60,7 @@ const Verification: React.FC<VerificationProps> = ({
                     onChange={handleChange}
                     required
                   />
-                </div>
+                </div> */}
                 <Input
                   placeholder="Code"
                   bordered={false}
@@ -81,6 +81,17 @@ const Verification: React.FC<VerificationProps> = ({
                   required
                 />
               </div>
+
+              <div
+                className={`${
+                  verificationReducer.status === "failed" ? "mt-6" : "mt-0"
+                } font-bold text-red-500`}
+              >
+                {verificationReducer.status === "failed"
+                  ? "Verification failed, Code is not correct"
+                  : ""}
+              </div>
+
               <div className="flex flex-row items-center justify-center mt-6 lg:mt-10 gap-x-4">
                 <ButtonFilled
                   textSize="text-xs lg:text-sm"

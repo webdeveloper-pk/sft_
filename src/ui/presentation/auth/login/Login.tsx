@@ -81,6 +81,15 @@ const Login: React.FC<LoginProps> = ({
                   required
                 />
               </div>
+              <div
+                className={`${
+                  loginReducer.status === "failed" ? "mt-6" : "mt-0"
+                } text-red-500 font-semibold text-[14px]`}
+              >
+                {loginReducer.status === "failed"
+                  ? "No active account found with the given credentials"
+                  : ""}
+              </div>
               <div className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-x-4">
                 <ButtonFilled
                   textSize="text-xs lg:text-sm"

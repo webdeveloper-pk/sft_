@@ -41,10 +41,16 @@ const SignupContainer = () => {
     e.preventDefault();
     handleSignupUser();
   };
+
+  const setEmailInLocalStorage = () => {
+    localStorage.setItem("email", user.email);
+  };
+
   React.useEffect(() => {
     if (signupReducer.status === "succeeded") {
       navigate("/verify-code");
       dispatch(resetStatus());
+      setEmailInLocalStorage();
     }
     // eslint-disable-next-line
   }, [signupReducer?.status]);
