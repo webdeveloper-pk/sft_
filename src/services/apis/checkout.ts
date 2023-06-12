@@ -10,6 +10,8 @@ const config = (token: any) => {
   };
 };
 export const createIntent = (formData: any, token: any) =>
-  api.post("/challenge/purchase/", formData, config(token));
+  api.post("/challenge/purchase/", formData);
 export const placeChallenge = (formData: any, token: any) =>
-  api.post("/challenge/checkout/", formData, config(token));
+  api.post("/challenge/checkout/", formData);
+
+// api.post("/challenge/checkout/", formData, config(token));

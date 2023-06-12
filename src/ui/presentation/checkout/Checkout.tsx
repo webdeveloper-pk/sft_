@@ -411,7 +411,7 @@ const Checkout: React.FC<any> = ({
                             backgroundColor: "white",
                             borderRadius: "20px",
                           }}
-                          type="number"
+                          type="text"
                           name="phone_no"
                           value={checkout.phone_no}
                           onChange={handleChange}

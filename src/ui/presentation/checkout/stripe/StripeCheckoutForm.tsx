@@ -83,14 +83,16 @@ const StripeCheckoutForm = ({
     } else {
       setMessage(`Payment Succeeded: ${response.paymentIntent.id}`);
       //   makePayment();
-
-      handlePlaceChallenge();
+      // ** scenario changed
+      // handlePlaceChallenge();
     }
     setCompleteOrderObserver(false);
   };
   React.useEffect(() => {
     if (completeOrderObserver) {
-      handleSubmit();
+      // ** scenario changed
+      handlePlaceChallenge();
+      // handleSubmit();
     }
     // eslint-disable-next-line
   }, [completeOrderObserver]);
@@ -109,6 +111,7 @@ const StripeCheckoutForm = ({
   }, [checkout, dispatch, loginReducer]);
   React.useEffect(() => {
     if (placeChallengeReducer.status === "succeeded") {
+      setCompleteOrderObserver(false);
       setCheckout({
         currency: "usd",
         risk: "aggressive",
@@ -124,6 +127,7 @@ const StripeCheckoutForm = ({
         state: "",
         additional_notes: "",
         amount: 450,
+        is_new_user: true,
       });
       if (paymentElementRef.current) {
         paymentElementRef.current.clear();

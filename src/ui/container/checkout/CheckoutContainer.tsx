@@ -63,7 +63,7 @@ const CheckoutContainer = () => {
     React.useState(false);
   const [checkout, setCheckout] = React.useState({
     currency: currency || "usd",
-    mode: mode || "normal",
+    risk: mode || "normal",
     balance: balance || "10k",
     platform: "mt5",
     first_name: "",
@@ -77,7 +77,9 @@ const CheckoutContainer = () => {
     state: "",
     additional_notes: "",
     amount: 450,
+    is_new_user: true,
   });
+  console.log("checkout::: ", checkout);
 
   const [checkboxValues, setCheckboxValues] = React.useState({
     terms: false,
@@ -85,9 +87,17 @@ const CheckoutContainer = () => {
   });
 
   const loginReducer = useAppSelector((state) => ({
+    isLoggedIn: state.login.isLoggedIn,
     user: state.login.user,
   }));
-
+  React.useEffect(() => {
+    if (loginReducer.isLoggedIn) {
+      setCheckout((prevCheckout) => ({ ...prevCheckout, is_new_user: false }));
+    }
+    //  else {
+    //   setCheckout((prevCheckout) => ({ ...prevCheckout, is_new_user: false }));
+    // }
+  }, [loginReducer.isLoggedIn]);
   const stripeIntentReducer = useAppSelector((state) => ({
     status: state.createStripeIntent.status,
     payment: state.createStripeIntent.payment,
