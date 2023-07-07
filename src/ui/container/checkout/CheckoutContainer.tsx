@@ -1,5 +1,4 @@
 import React from "react";
-import { notification } from "antd";
 import Checkout from "../../presentation/checkout/Checkout";
 import {
   createStripeIntent,
@@ -136,16 +135,6 @@ const CheckoutContainer = () => {
     );
   }, [dispatch, loginReducer]);
 
-  const openNotification = () => {
-    notification.open({
-      message: "Order Completed Successfully",
-    });
-    notification.config({
-      placement: "topRight",
-      duration: 3,
-    });
-  };
-
   return (
     <Checkout
       completeOrderObserver={completeOrderObserver}
@@ -174,7 +163,6 @@ const CheckoutContainer = () => {
       stripeIntentReducer={stripeIntentReducer}
       placeChallengeReducer={placeChallengeReducer}
       createPaymentIntent={createPaymentIntent}
-      openNotification={openNotification}
     />
   );
 };

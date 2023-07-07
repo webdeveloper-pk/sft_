@@ -57,19 +57,19 @@ const Config = () => {
               <Layout>
                 <Routes>
                   <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/leaderboard" element={<Leaderboard />} />
+                  <Route path="/orders" element={<AccountOrders />} />
                   <Route path="/information" element={<AccountInformation />} />
                   <Route path="/accountmerge" element={<AccountMerge />} />
-                  <Route path="/affiliate" element={<AccountAffiliate />} />
-                  <Route path="/certificates" element={<Certificates />} />
+                  <Route path="/downloads" element={<AccountDownloads />} />
                   <Route path="/withdrawals" element={<AccountWithdrawals />} />
-                  <Route path="/simulator" element={<Simulator />} />
+                  <Route path="/certificates" element={<Certificates />} />
+                  <Route path="/leaderboard" element={<Leaderboard />} />
+                  <Route path="/affiliate" element={<AccountAffiliate />} />
                   <Route
                     path="/affiliateportal"
                     element={<AccountAffiliatePortal />}
                   />
-                  <Route path="/orders" element={<AccountOrders />} />
-                  <Route path="/downloads" element={<AccountDownloads />} />
+                  <Route path="/simulator" element={<Simulator />} />
                 </Routes>
               </Layout>
             }

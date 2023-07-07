@@ -105,7 +105,11 @@ const Signup: React.FC<SignupProps> = ({
                       }}
                     >
                       {countries?.map((country, index) => (
-                        <option key={index} value={country.value}>
+                        <option
+                          key={index}
+                          value={country.value}
+                          style={{ background: "red" }}
+                        >
                           {country.label}
                         </option>
                       ))}

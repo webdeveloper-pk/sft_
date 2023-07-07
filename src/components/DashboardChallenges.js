@@ -9,18 +9,18 @@ const DashboardChallenges = () => {
     <>
       <Tabs
         tabBarExtraContent={
-          <div className="flex flex-row gap-x-2 md:gap-x-3 items-center">
+          <div className="flex flex-row gap-x-2 lg:gap-x-3 items-center pl-1 md:pl-2 lg:pl-0">
             <ButtonFilled
-              textSize="text-xs lg:text-sm"
+              textSize="text-[10px] lg:text-sm"
               buttonText="Visible"
-              paddingY="py-2 md:py-3"
-              paddingX="px-4 md:px-8 lg:px-12"
+              paddingY="py-2 md:py-2 lg:py-3"
+              paddingX="px-3 md:px-6 lg:px-12"
             />
             <ButtonOutlined
               buttonText="hidden"
-              textSize="text-xs lg:text-sm"
-              paddingY="py-2 md:py-3"
-              paddingX="px-4 md:px-8 lg:px-12"
+              textSize="text-[10px] lg:text-sm"
+              paddingY="py-2 md:py-2 lg:py-3"
+              paddingX="px-3 md:px-6 lg:px-12"
             />
           </div>
         }

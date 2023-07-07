@@ -63,7 +63,6 @@ const Checkout: React.FC<any> = ({
       checkout?.additional_notes !== ""
     ) {
       setCompleteOrderObserver(flag);
-      openNotification();
     }
   };
 
@@ -688,6 +687,7 @@ const Checkout: React.FC<any> = ({
                       setCheckout={setCheckout}
                       checkout={checkout}
                       setStripePaymentLoader={setStripePaymentLoader}
+                      // openNotification={openNotification}
                     />
                   ) : null}
                   {/* <div className="flex gap-x-4 pl-5 mt-4">

@@ -11,7 +11,7 @@ const Orders = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
+      <div className="bg-medium-gray px-3.5 md:px-8 lg:px-16 layout-bg">
         <div className="min-h-screen">
           <div className="flex flex-col md:flex-row justify-between items-center gap-y-4 pt-10">
             <h1 className="text-black text-2xl lg:text-3xl font-bold">

@@ -1188,3 +1188,53 @@ input[type="checkbox"]:checked::before {
 .total-button {
   background-color: rgb(81, 81, 81);
 }
+
+@media screen and (max-width: 767px) and (min-width: 0px) {
+  .collapse-style {
+    flex: 0 0 0px !important;
+    max-width: 0px !important;
+    min-width: 0px !important;
+    width: 0px !important;
+  }
+
+  .uncollapse-style {
+    flex: 0 0 50px !important;
+    max-width: 50px !important;
+    min-width: 50px !important;
+    width: 50px !important;
+    /* position: fixed; */
+  }
+
+  .ant-layout-sider-trigger {
+    flex: 0 0 0px !important;
+    max-width: 50px !important;
+    min-width: 0px !important;
+    width: 0px !important;
+    color: transparent;
+  }
+
+  .ant-menu-dark.ant-menu-inline .ant-menu-item {
+    padding-left: 19px !important;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .collapse-style {
+    flex: 0 0 60px !important;
+    max-width: 60px !important;
+    min-width: 0px !important;
+    width: 60px !important;
+  }
+
+  .uncollapse-style {
+    flex: 0 0 170px !important;
+    max-width: 170px !important;
+    min-width: 60px !important;
+    width: 170px !important;
+    /* position: fixed; */
+  }
+
+  .ant-layout-sider-trigger {
+    display: none;
+  }
+}

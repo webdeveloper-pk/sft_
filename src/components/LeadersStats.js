@@ -9,7 +9,7 @@ import trophy3 from "../assets/images/affiliate-trophy3.png";
 
 const LeadersStats = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-24">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 lg:gap-x-8 gap-y-24">
       <div>
         <LeaderCard
           trophy={trophy1}

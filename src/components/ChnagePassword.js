@@ -5,7 +5,7 @@ import gorilla from "../assets/images/information-gorilla.png";
 
 const ChnagePassword = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-y-4 md:justify-between w-full bg-white rounded-xl px-8 pt-8 pb-6 mt-2">
+    <div className="flex flex-col md:flex-row gap-y-4 md:justify-between w-full bg-white rounded-xl px-5 pt-8 pb-6 mt-2">
       <div className="w-full md:w-[35%] lg:w-[30%] xl:w-[30%]">
         <Form
           name="form"

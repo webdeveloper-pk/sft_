@@ -23,37 +23,37 @@ const Simulator = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
+      <div className="bg-medium-gray px-3.5 md:px-4 lg:px-8 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10">
             <h1 className="text-black text-2xl lg:text-3xl font-bold">
               Equity Curve <span className="text-light-green">Simulator</span>
             </h1>
             <div className="flex flex-row justify-end mt-8 mb-3">
-              <div className="w-[100%] lg:w-[35%] xl:w-[40%] flex justify-between items-center md:px-3">
+              <div className="w-[100%] lg:w-[35%] xl:w-[40%] flex justify-between items-center md:px-6">
                 <p className="font-bold text-xl">Results</p>
                 <div>
                   <img src={download} alt="download" width={24} height="auto" />
                 </div>
               </div>
             </div>
-            <div className="w-full flex flex-col lg:flex-row gap-8">
-              <div className="w-[100%] lg:w-[65%] xl:w-[60%] min-h-[600px] flex flex-col gap-y-8 justify-between">
-                <div className="w-[100%] md:min-h-[350px] lg:min-h-[400px]  bg-white rounded-md px-8 py-6">
+            <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-4 xl:gap-6">
+              <div className="w-[100%] lg:w-[65%] xl:w-[60%] min-h-[600px] flex flex-col gap-y-8 lg:gap-y-4 xl:gap-y-6 justify-between">
+                <div className="w-[100%] md:min-h-[350px] lg:min-h-[400px]  bg-white rounded-md md:px-4 xl:px-8 py-6">
                   <SimulatorChart />
                 </div>
-                <div className="min-h-[200px] bg-white rounded-md px-10 py-6">
+                <div className="min-h-[200px] bg-white rounded-md px-4 md:px-10 lg:px-6 xl:px-6 py-6">
                   <div className="flex flex-col md:flex-row flex-wrap justify-between mb-5 gap-y-4">
-                    <div className="w-[100%] md:w-[45%] xl:w-[20%]">
+                    <div className="w-[100%] md:w-[45%] xl:w-[22%]">
                       <SimulatorCounter title="Starting equity, $" />
                     </div>
-                    <div className="w-[100%] md:w-[45%] xl:w-[20%]">
+                    <div className="w-[100%] md:w-[45%] xl:w-[22%]">
                       <SimulatorCounter title="Risk per trade, %" />
                     </div>
-                    <div className="w-[100%] md:w-[45%] xl:w-[20%]">
+                    <div className="w-[100%] md:w-[45%] xl:w-[22%]">
                       <SimulatorCounter title="WinL Loss ratio, : 1" />
                     </div>
-                    <div className="w-[100%] md:w-[45%] xl:w-[20%]">
+                    <div className="w-[100%] md:w-[45%] xl:w-[22%]">
                       <SimulatorCounter title="Scenarios (lines)" />
                     </div>
                   </div>
@@ -109,15 +109,15 @@ const Simulator = () => {
                         <ButtonFilled
                           textSize="text-xs lg:text-sm"
                           buttonText="RUN SIMULATION"
-                          paddingY="py-4"
-                          paddingX="px-6 md:px-10 lg:px-10"
+                          paddingY="py-3 xl:py-4"
+                          paddingX="px-6 md:px-10 lg:px-8 xl:px-10"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="w-[100%] lg:w-[35%] xl:w-[40%] min-h-[400px] bg-white rounded-md p-6 flex flex-col justify-center gap-y-6 md:gap-y-12 lg:gap-y-10 xl:gap-y-6">
+              <div className="w-[100%] lg:w-[35%] xl:w-[40%] min-h-[400px] bg-white rounded-md px-4 md:px-6 lg:px-4 xl:px-6 py-4 md:py-6 flex flex-col justify-center gap-y-6 md:gap-y-12 lg:gap-y-10 xl:gap-y-6">
                 <div>
                   <SimulatorResult text="Avg. Performance" result="67.48%" />
                 </div>

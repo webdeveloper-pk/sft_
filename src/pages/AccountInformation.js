@@ -9,7 +9,7 @@ const AccountInformation = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
+      <div className="bg-medium-gray px-3.5 md:px-4 lg:px-8 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10">
             <div>

@@ -9,13 +9,13 @@ const Leaderboard = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="bg-medium-gray px-6 md:px-8 lg:px-12 layout-bg">
+      <div className="bg-medium-gray px-3.5 md:px-4 lg:px-8 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-y-4 pt-10">
             <h1 className="text-light-green text-2xl lg:text-3xl font-bold uppercase mt-3">
               LEADERBOARD
             </h1>
-            <div className="flex flex-wrap gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 lg:pl-12 xl:pl-0">
               <div>
                 <LeaderboardButton
                   text="All"
@@ -63,7 +63,7 @@ const Leaderboard = () => {
           <div className="mt-28 mb-6">
             <LeadersStats />
           </div>
-          <div className="mt-16">
+          <div className="mt-8 xl:mt-12">
             <LeaderboardTable />
           </div>
         </div>

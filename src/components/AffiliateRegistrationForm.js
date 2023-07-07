@@ -1,14 +1,15 @@
 import React from "react";
-import { Form, Input, Row, Col, DatePicker } from "antd";
+import { Form, Input, Row, Col, DatePicker, Select } from "antd";
 import ButtonFilled from "../components/common/ButtonFilled";
 import user from "../assets/images/affiliate-user.png";
 import company from "../assets/images/affiliate-company.png";
 import location from "../assets/images/affiliate-maps.png";
-import nationality from "../assets/images/affiliate-uk.png";
 import date from "../assets/images/affiliate-calendar.png";
 import website from "../assets/images/affiliate-website.png";
 import email from "../assets/images/affiliate-mail.png";
 import number from "../assets/images/affiliate-phone-call.png";
+import dropdown from "../assets/images/order-dropdown-icon.png";
+import countries from "../services/data/country.json";
 
 const AffiliateRegistrationForm = () => {
   return (
@@ -34,6 +35,7 @@ const AffiliateRegistrationForm = () => {
                 suffix={
                   <img src={user} alt="arrow" width="14px" height="14px" />
                 }
+                style={{ fontWeight: "400" }}
               />
             </Form.Item>
           </Col>
@@ -51,6 +53,7 @@ const AffiliateRegistrationForm = () => {
                 suffix={
                   <img src={company} alt="arrow" width="14px" height="14px" />
                 }
+                style={{ fontWeight: "400" }}
               />
             </Form.Item>
           </Col>
@@ -70,6 +73,7 @@ const AffiliateRegistrationForm = () => {
                 suffix={
                   <img src={location} alt="arrow" width="14px" height="14px" />
                 }
+                style={{ fontWeight: "400" }}
               />
             </Form.Item>
           </Col>
@@ -79,19 +83,21 @@ const AffiliateRegistrationForm = () => {
               name="nationality"
               className="font-bold text-black"
             >
-              <Input
+              <Select
                 className="affiliate-registration"
                 size="large"
-                placeholder="USA"
+                // className="info-input"
                 bordered={false}
-                suffix={
-                  <img
-                    src={nationality}
-                    alt="arrow"
-                    width="14px"
-                    height="14px"
-                  />
+                style={{
+                  fontSize: "14px",
+                  color: "#757575",
+                }}
+                suffixIcon={
+                  <img src={dropdown} alt="arrow" width="10px" height="8px" />
                 }
+                placeholder={<span className="font-semibold">USA</span>}
+                defaultValue="USA"
+                options={countries}
               />
             </Form.Item>
           </Col>
@@ -104,8 +110,12 @@ const AffiliateRegistrationForm = () => {
               className="font-bold text-black"
             >
               <DatePicker
-                placeholder=""
-                style={{ backgroundColor: "transparent", width: "100%" }}
+                placeholder="2000-01-01"
+                style={{
+                  backgroundColor: "transparent",
+                  width: "100%",
+                  fontWeight: "400",
+                }}
                 className="affiliate-registration"
                 suffixIcon={
                   <img src={date} alt="arrow" width="14px" height="14px" />
@@ -128,6 +138,7 @@ const AffiliateRegistrationForm = () => {
                 suffix={
                   <img src={website} alt="arrow" width="14px" height="14px" />
                 }
+                style={{ fontWeight: "400" }}
               />
             </Form.Item>
           </Col>
@@ -142,11 +153,12 @@ const AffiliateRegistrationForm = () => {
               <Input
                 className="affiliate-registration"
                 size="large"
-                placeholder=""
+                placeholder="Email"
                 bordered={false}
                 suffix={
                   <img src={email} alt="arrow" width="14px" height="14px" />
                 }
+                style={{ fontWeight: "400" }}
               />
             </Form.Item>
           </Col>
@@ -159,11 +171,12 @@ const AffiliateRegistrationForm = () => {
               <Input
                 className="affiliate-registration"
                 size="large"
-                placeholder=""
+                placeholder="Phone Number"
                 bordered={false}
                 suffix={
                   <img src={number} alt="arrow" width="14px" height="14px" />
                 }
+                style={{ fontWeight: "400" }}
               />
             </Form.Item>
           </Col>

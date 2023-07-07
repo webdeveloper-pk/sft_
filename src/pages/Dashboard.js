@@ -13,7 +13,7 @@ const Dashboard = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
+      <div className="bg-medium-gray px-3.5 md:px-4 lg:px-8 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10">
             <h1 className="text-black text-2xl lg:text-3xl font-bold">
@@ -95,7 +95,7 @@ const Dashboard = () => {
               <h1 className="text-center  md:text-start text-black text-xl font-bold px-6 mb-0">
                 Trade History
               </h1>
-              <div className="flex flex-col md:flex-row justify-between items-center px-6 mt-4 mb-8 gap-y-6">
+              <div className="flex flex-col lg:flex-row justify-between items-center px-6 mt-4 mb-8 gap-y-6">
                 <div className="font-semibold text-lighter-gray2">
                   <Button.Group>
                     <button className="bg-light-green text-white text-xs border border-light-green hover:bg-light-green hover:text-white w-[80px] py-2 rounded-l-md">
@@ -109,7 +109,7 @@ const Dashboard = () => {
                     </button>
                   </Button.Group>
                 </div>
-                <div className="flex flex-col gap-y-4 md:flex-row justify-center items-center gap-x-2 w-[100%] md:w-[55%] lg:w-[45%] xl:w-[35%]">
+                <div className="flex flex-col gap-y-4 md:flex-row justify-center items-center gap-x-2 w-[100%] lg:w-[45%] xl:w-[35%]">
                   <div className="w-[100%] md:w-[85%]">
                     <Row>
                       <Col span={24} md={{ span: 22 }}>
@@ -133,7 +133,7 @@ const Dashboard = () => {
                         <img
                           src={sort}
                           alt="filter"
-                          className="w-[15px] md:w-[50px] lg:w-[45px] xl:w-[35px]"
+                          className="w-[15px] md:w-[25px] lg:w-[45px] xl:w-[35px]"
                         />
                       </div>
                       <div className="text-lighter-gray2 font-semibold">

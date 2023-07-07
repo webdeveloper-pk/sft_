@@ -187,7 +187,7 @@ const DashboardTable = () => {
   };
 
   return (
-    <div className="w-full overflow-auto px-6 dashboard-table">
+    <div className="w-full overflow-auto px-2 dashboard-table">
       <Table
         columns={columns}
         dataSource={data}

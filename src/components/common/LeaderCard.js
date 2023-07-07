@@ -27,25 +27,27 @@ const LeaderCard = ({
         <div className="-mt-20 flex flex-col items-center">
           <img src={src} alt="avatar" />
           <div className="text-center mt-2">
-            <h1 className="text-white uppercase font-bold text-2xl">{name}</h1>
-            <p className="text-white font-semibold text-base -mt-2">
+            <h1 className="text-white uppercase font-bold text-lg md:text-xl lg:text-2xl">
+              {name}
+            </h1>
+            <p className="text-white font-semibold text-sm md:text-base -mt-2">
               {country}
             </p>
           </div>
         </div>
       </div>
-      <div className="flex flex-row justify-center my-6 gap-x-12 lg:gap-x-24 text-white uppercase font-semibold">
+      <div className="flex flex-row justify-center my-6 gap-x-12 md:gap-x-8 lg:gap-x-24 text-white uppercase font-semibold">
         <div>
-          <p className="text-sm">profit</p>
-          <p className="text-lg md:text-base">{profit}</p>
-          <p className="text-sm mt-3">account size</p>
-          <p className="text-lg md:text-lg">{size}</p>
+          <p className="text-xs md:text-sm">profit</p>
+          <p className="text-sm md:text-base">{profit}</p>
+          <p className="text-xs md:text-sm mt-3">account size</p>
+          <p className="text-sm md:text-lg">{size}</p>
         </div>
         <div>
-          <p className="text-sm">Equity</p>
-          <p className="text-lg">{equity}</p>
-          <p className="text-sm mt-3">Gain</p>
-          <p className="text-lg">{gain}</p>
+          <p className="text-xs md:text-sm">Equity</p>
+          <p className="text-sm md:text-lg">{equity}</p>
+          <p className="text-xs md:text-sm mt-3">Gain</p>
+          <p className="text-sm md:text-lg">{gain}</p>
         </div>
       </div>
     </div>

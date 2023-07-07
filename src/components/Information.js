@@ -5,7 +5,7 @@ import CopmanyInformation from "./CompanyInformation";
 
 const Information = () => {
   return (
-    <div className="flex flex-col gap-y-4 w-full bg-white rounded-xl px-8 pt-3 pb-6 mt-2">
+    <div className="flex flex-col gap-y-4 w-full bg-white rounded-xl px-5 md:px-6 lg:px-8 pt-3 pb-6 mt-2">
       <div>
         <Tabs defaultActiveKey="1" className="inner-tabs-info">
           <Tabs.TabPane tab="Person" key="1">

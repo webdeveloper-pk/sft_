@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout, Menu, Dropdown } from "antd";
 import {
@@ -24,6 +24,7 @@ import logo from "../assets/images/navbar-black-logo.png";
 import userIcon from "../assets/images/navbar-user-icon.png";
 import dropdownIcon from "../assets/images/navbar-dropdown-icon.png";
 import Footer from "./common/Footer";
+import "../style.scss";
 
 const items = [
   {
@@ -47,23 +48,23 @@ const { Header, Sider, Content } = Layout;
 
 const LayoutComponent = ({ children }) => {
   const [navbar, setNavbar] = useState(false);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   // const path = usePathname();
 
-  const handleWindowSizeChange = () => {
-    const isMobileSize = window.innerWidth <= 767; // Adjust the breakpoint as needed
-    setCollapsed(isMobileSize);
-  };
+  // const handleWindowSizeChange = () => {
+  //   const isMobileSize = window.innerWidth <= 767; // Adjust the breakpoint as needed
+  //   setCollapsed(isMobileSize);
+  // };
 
-  useEffect(() => {
-    handleWindowSizeChange(); // Set initial collapse state on component mount
-    window.addEventListener("resize", handleWindowSizeChange); // Update collapse state on window resize
+  // useEffect(() => {
+  //   handleWindowSizeChange(); // Set initial collapse state on component mount
+  //   window.addEventListener("resize", handleWindowSizeChange); // Update collapse state on window resize
 
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange); // Cleanup the event listener on component unmount
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleWindowSizeChange); // Cleanup the event listener on component unmount
+  //   };
+  // }, []);
 
   const toggle = () => {
     setCollapsed(!collapsed);
@@ -72,7 +73,12 @@ const LayoutComponent = ({ children }) => {
   return (
     <>
       <Layout className="layoutStyling">
-        <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
+        <Sider
+          collapsible
+          collapsed={collapsed}
+          onCollapse={setCollapsed}
+          className={collapsed ? "collapse-style" : "uncollapse-style"}
+        >
           <div className="logo bg-black"></div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item
@@ -251,7 +257,7 @@ const LayoutComponent = ({ children }) => {
             {React.createElement(
               collapsed ? MenuUnfoldOutlined : AlignRightOutlined,
               {
-                className: "trigger mt-2",
+                className: collapsed ? "trigger mt-2" : "trigger mt-2",
                 onClick: toggle,
               }
             )}
@@ -294,31 +300,33 @@ const LayoutComponent = ({ children }) => {
                       />
                     </span>
                   </a> */}
-                  <Dropdown menu={{ items }} placement="bottomRight">
-                    <button
-                      onClick={(e) => e.preventDefault()}
-                      className="text-black hover:text-black flex items-center mr-[-30px] md:mr-[-50px] lg:pr-[30px]"
-                    >
-                      <img
-                        src={userIcon}
-                        alt="gbp"
-                        className="w-[30px] h-[32px]"
-                      />
-                      <span className="mt-[1.5px] text-[12px] pl-[10px]">
+                  <div className="my-dropdown-container">
+                    <Dropdown menu={{ items }} placement="bottomRight">
+                      <button
+                        onClick={(e) => e.preventDefault()}
+                        className="text-black hover:text-black flex items-center mr-[-30px] md:mr-[-30px] lg:pr-[30px]"
+                      >
                         <img
-                          src={dropdownIcon}
-                          alt="dropdown"
-                          width={8}
-                          height={8}
+                          src={userIcon}
+                          alt="gbp"
+                          className="w-[30px] h-[32px]"
                         />
-                      </span>
-                    </button>
-                  </Dropdown>
+                        <span className="mt-[1.5px] text-[12px] pl-[10px]">
+                          <img
+                            src={dropdownIcon}
+                            alt="dropdown"
+                            width={8}
+                            height={8}
+                          />
+                        </span>
+                      </button>
+                    </Dropdown>
+                  </div>
                 </li>
               </ul>
             </div>
           </Header>
-          <Content className="site-layout-background md:my-[24px] md:mx-[16px] md:min-h-[280px] md:p-[12px]">
+          <Content className="site-layout-background md:min-h-[280px] md:p-[6px]">
             {children}
           </Content>
         </Layout>

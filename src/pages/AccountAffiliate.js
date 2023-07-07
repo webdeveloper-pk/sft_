@@ -13,10 +13,10 @@ const AccountAffiliate = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
+      <div className="bg-medium-gray px-3.5 md:px-4 lg:px-8 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10 w-[100%] lg:w-[60%] ">
-            <h1 className="text-black text-2xl lg:text-4xl font-bold uppercase">
+            <h1 className="text-black text-2xl lg:text-3xl font-bold uppercase">
               Looking to promote <br /> unique and exciting trading <br />{" "}
               <span className="text-light-green">challenges?</span>
             </h1>
@@ -88,13 +88,13 @@ const AccountAffiliate = () => {
             descriptions. We'll also manage the payments and commissions for
             you, so you can focus on promoting our challenges.
           </p>
-          <div className="my-12 bg-black rounded-md flex flex-col md:flex-row justify-between gap-y-12">
-            <div className="w-[100%] md:w-[60%] pl-2 pr-2 md:pr-0 md:pl-8 xl:pl-12 flex flex-col justify-center">
+          <div className="my-12 bg-black rounded-md flex flex-col lg:flex-row items-center lg:items-start justify-between gap-y-12 pt-6 lg:pt-6 xl:pt-12">
+            <div className="w-[100%] lg:w-[60%] pl-2 pr-2 md:pr-0 md:pl-8 xl:pl-12 flex flex-col justify-center">
               <h1 className="text-light-green text-2xl xl:text-4xl font-semibold text-center md:text-start mt-8 md:mt-2 lg:mt-0">
                 Join our affiliate program <br />
                 <span className="font-bold px-1">now</span>
               </h1>
-              <p className="text-white text-lg xl:text-xl font-semibold w-[100%] md:w-[90%] lg:w-[80%] xl:w-[60%] text-center md:text-start mb-0 md:mb-2 lg:mb-0">
+              <p className="text-white text-lg xl:text-xl font-semibold w-[100%] lg:w-[90%] lg:w-[80%] xl:w-[60%] text-center md:text-start mb-0 md:mb-2 lg:mb-0">
                 Start earning money by helping traders reach their financial
                 goals !
               </p>

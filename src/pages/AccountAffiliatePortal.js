@@ -18,7 +18,7 @@ const AccountAffiliatePortal = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="bg-medium-gray px-6 md:px-8 lg:px-16 layout-bg">
+      <div className="bg-medium-gray px-3.5 md:px-4 lg:px-8 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="py-10">
             <h1 className="text-black text-2xl lg:text-3xl font-bold">
@@ -32,7 +32,7 @@ const AccountAffiliatePortal = () => {
             <div className="flex flex-row justify-start mt-5">
               <ButtonFilled
                 buttonText="request payout"
-                textSize="text-base"
+                textSize="text-sm lg:text-base"
                 paddingY="py-2"
                 paddingX="px-6 md:px-10"
               />
@@ -48,13 +48,12 @@ const AccountAffiliatePortal = () => {
                 <img
                   src={filterIcon}
                   alt="filter-icon"
-                  width="28px"
-                  height="28px"
+                  className="w-[20px] h-[20px] md:w-[24px] md:h-[24px]"
                 />
               </div>
             </div>
           </div>
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-8 pt-8 pb-12">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 lg:gap-x-8 gap-y-4 md:gap-y-6 lg:gap-y-8 pt-8 pb-12">
             <div>
               <AffiliatePortalCard
                 bgColor="bg-referral-green1"
@@ -101,11 +100,11 @@ const AccountAffiliatePortal = () => {
               <div className="absolute left-[30%] -top-[40%] ">
                 <img src={glow} alt="glow" width="500px" height="400px" />
               </div>
-              <div className="w-full lg:w-[90%] xl:w-[65%] 2xl:w-[50%] py-12 lg:py-8 xl:py-12">
-                <h1 className="text-2xl md:text-3xl text-light-green font-bold">
+              <div className="w-full lg:w-[90%] lg:w-[50%] xl:w-[65%] 2xl:w-[50%] py-12 lg:py-8 xl:py-12">
+                <h1 className="text-xl md:text-2xl lg:text-3xl text-light-green font-bold">
                   Referral URL
                 </h1>
-                <p className="text-lg md:text-xl text-white font-medium -mt-2">
+                <p className="text-base md:text-lg lg:text-xl text-white font-medium -mt-2">
                   Share your referral URL with your audience to earn commission.
                 </p>
                 <div className="w-[100%] mt-8 flex flex-col md:flex-row gap-y-6 gap-x-8 items-center">
@@ -136,7 +135,7 @@ const AccountAffiliatePortal = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[60%] md:w-[30%] xl:w-[21%] 2xl:w-[15%] mx-auto xl:mx-0 bg-yellow-100">
+              <div className="w-[60%] md:w-[30%] lg:w-[35%] xl:w-[21%] 2xl:w-[15%] mx-auto xl:mx-0 bg-black lg:mt-10">
                 <img src={gorilla} alt="gorila" />
               </div>
             </div>

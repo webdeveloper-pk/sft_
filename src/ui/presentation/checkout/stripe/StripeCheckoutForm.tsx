@@ -4,6 +4,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+// import { notification } from "antd";
 import {
   placeChallengeAction,
   resetStatus,
@@ -62,6 +63,7 @@ const StripeCheckoutForm = ({
     // eslint-disable-next-line
   }, [stripe]);
 
+  // eslint-disable-next-line
   const handleSubmit = async () => {
     // e.preventDefault();
 
@@ -109,6 +111,17 @@ const StripeCheckoutForm = ({
       })
     );
   }, [checkout, dispatch, loginReducer]);
+
+  // const openNotification = () => {
+  //   notification.open({
+  //     message: "Order Completed Successfully",
+  //   });
+  //   notification.config({
+  //     placement: "topRight",
+  //     duration: 3,
+  //   });
+  // };
+
   React.useEffect(() => {
     if (placeChallengeReducer.status === "succeeded") {
       setCompleteOrderObserver(false);
@@ -133,7 +146,9 @@ const StripeCheckoutForm = ({
         paymentElementRef.current.clear();
       }
       setStripePaymentLoader(false);
+      // openNotification();
       dispatch(resetStatus());
+      console.log("testing2");
     }
     // eslint-disable-next-line
   }, [placeChallengeReducer?.status]);
