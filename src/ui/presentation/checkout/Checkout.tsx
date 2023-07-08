@@ -62,12 +62,13 @@ const Checkout: React.FC<any> = ({
       checkout?.postal_code !== "" &&
       checkout?.country !== "" &&
       checkout?.state !== "" &&
-      checkout?.additional_notes !== ""
+      checkout?.additional_notes !== "" &&
+      checkboxValues.terms &&
+      checkboxValues.policy
     ) {
       setCompleteOrderObserver(true);
     }
   };
-
   return (
     <div className="bg-medium-gray">
       <div className="flex flex-row justify-end md:justify-center sticky-custom mr-6 cursor-pointer">
@@ -578,7 +579,13 @@ const Checkout: React.FC<any> = ({
                       onChange={handleCheckboxChange}
                       id="terms"
                     />
-                    <div className="pl-3 text-black text-[12px]">
+                    <div
+                      className={`pl-3 text-black text-[12px] ${
+                        onSubmitCheck && !checkboxValues.terms
+                          ? "text-red-500"
+                          : "text-black"
+                      }`}
+                    >
                       I have <span className="underline font-bold">read</span>{" "}
                       the terms and conditions and agree to the processing of my
                       personal data.
@@ -595,7 +602,13 @@ const Checkout: React.FC<any> = ({
                       onChange={handleCheckboxChange}
                       id="policy"
                     />
-                    <div className="pl-3 text-black text-[12px]">
+                    <div
+                      className={`pl-3 text-black text-[12px] ${
+                        onSubmitCheck && !checkboxValues.policy
+                          ? "text-red-500"
+                          : "text-black"
+                      }`}
+                    >
                       I have <span className="underline font-bold">read</span>{" "}
                       the cancellation and refund policy and agree to the terms.
                     </div>
