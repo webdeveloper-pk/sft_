@@ -47,9 +47,11 @@ const Checkout: React.FC<any> = ({
   stripeIntentReducer,
   placeChallengeReducer,
   createPaymentIntent,
-  openNotification,
+  onSubmitCheck,
+  setOnSubmitCheck,
 }) => {
-  const onSubmitCheck = (flag: any) => {
+  const onSubmitHandlerCheck = () => {
+    setOnSubmitCheck(true);
     if (
       checkout?.first_name !== "" &&
       checkout?.last_name !== "" &&
@@ -62,7 +64,7 @@ const Checkout: React.FC<any> = ({
       checkout?.state !== "" &&
       checkout?.additional_notes !== ""
     ) {
-      setCompleteOrderObserver(flag);
+      setCompleteOrderObserver(true);
     }
   };
 
@@ -333,7 +335,7 @@ const Checkout: React.FC<any> = ({
                       <Col span={23} md={{ span: 11 }}>
                         <label
                           className={`${
-                            checkout.first_name === ""
+                            onSubmitCheck && checkout.first_name === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs `}
@@ -354,7 +356,7 @@ const Checkout: React.FC<any> = ({
                       <Col span={23} md={{ span: 11, offset: 2 }}>
                         <label
                           className={`${
-                            checkout.last_name === ""
+                            onSubmitCheck && checkout.last_name === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs `}
@@ -377,7 +379,7 @@ const Checkout: React.FC<any> = ({
                       <Col span={23} md={{ span: 11 }}>
                         <label
                           className={`${
-                            checkout.email === ""
+                            onSubmitCheck && checkout.email === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs `}
@@ -398,7 +400,7 @@ const Checkout: React.FC<any> = ({
                       <Col span={23} md={{ span: 11, offset: 2 }}>
                         <label
                           className={`${
-                            checkout.phone_no === ""
+                            onSubmitCheck && checkout.phone_no === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs `}
@@ -421,7 +423,7 @@ const Checkout: React.FC<any> = ({
                       <Col span={23} md={{ span: 11 }}>
                         <label
                           className={`${
-                            checkout.address_line_1 === ""
+                            onSubmitCheck && checkout.address_line_1 === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs `}
@@ -442,7 +444,7 @@ const Checkout: React.FC<any> = ({
                       <Col span={23} md={{ span: 11, offset: 2 }}>
                         <label
                           className={`${
-                            checkout.town_city === ""
+                            onSubmitCheck && checkout.town_city === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs `}
@@ -465,7 +467,7 @@ const Checkout: React.FC<any> = ({
                       <Col span={23} md={{ span: 11 }}>
                         <label
                           className={`${
-                            checkout.postal_code === ""
+                            onSubmitCheck && checkout.postal_code === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs `}
@@ -489,7 +491,7 @@ const Checkout: React.FC<any> = ({
                       >
                         <div
                           className={`${
-                            checkout.country === ""
+                            onSubmitCheck && checkout.country === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs mb-[2px] `}
@@ -520,7 +522,7 @@ const Checkout: React.FC<any> = ({
                       <Col span={23} md={{ span: 11 }}>
                         <label
                           className={`${
-                            checkout.state === ""
+                            onSubmitCheck && checkout.state === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs mb-[2px] `}
@@ -541,7 +543,7 @@ const Checkout: React.FC<any> = ({
                       <Col span={23} md={{ span: 11, offset: 2 }}>
                         <label
                           className={`${
-                            checkout.additional_notes === ""
+                            onSubmitCheck && checkout.additional_notes === ""
                               ? "text-red-500"
                               : "text-black"
                           } uppercase font-light text-xs mb-[2px] `}
@@ -687,7 +689,6 @@ const Checkout: React.FC<any> = ({
                       setCheckout={setCheckout}
                       checkout={checkout}
                       setStripePaymentLoader={setStripePaymentLoader}
-                      // openNotification={openNotification}
                     />
                   ) : null}
                   {/* <div className="flex gap-x-4 pl-5 mt-4">
@@ -828,7 +829,7 @@ const Checkout: React.FC<any> = ({
                   <button
                     className="bg-light-green rounded-full text-white font-bold text-lg py-3 text-black w-[100%] uppercase"
                     onClick={() => {
-                      onSubmitCheck(true);
+                      onSubmitHandlerCheck();
                     }}
                   >
                     {stripePaymentLoader ||

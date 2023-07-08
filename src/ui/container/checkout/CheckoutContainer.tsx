@@ -35,6 +35,7 @@ const CheckoutContainer = () => {
   const [mode, setMode] = React.useState(challnegeReducer2?.challenge2);
   const [balance, setBalance] = React.useState(challnegeReducer3?.challenge3);
   const [platform, setPlatform] = React.useState<any>("mt5");
+  const [onSubmitCheck, setOnSubmitCheck] = React.useState(false);
 
   const onCurrencyHandler = (text: any) => {
     setCurrency(text);
@@ -163,6 +164,8 @@ const CheckoutContainer = () => {
       stripeIntentReducer={stripeIntentReducer}
       placeChallengeReducer={placeChallengeReducer}
       createPaymentIntent={createPaymentIntent}
+      onSubmitCheck={onSubmitCheck}
+      setOnSubmitCheck={setOnSubmitCheck}
     />
   );
 };
