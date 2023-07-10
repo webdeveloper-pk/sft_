@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Input, Tooltip } from "antd";
-import { LockOutlined } from "@ant-design/icons";
+import { LockOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 import ButtonFilled from "../../../../components/common/ButtonFilled";
 import Button from "../../../../components/common/Button";
 import logo from "../../../../assets/images/sign-in-logo.png";
@@ -86,9 +86,14 @@ const Login: React.FC<LoginProps> = ({
                   loginReducer.status === "failed" ? "mt-6" : "mt-0"
                 } text-red-500 font-semibold text-[14px]`}
               >
-                {loginReducer.status === "failed"
-                  ? "No active account found with the given credentials"
-                  : ""}
+                {loginReducer.status === "failed" ? (
+                  <span>
+                    <ExclamationCircleOutlined className="mr-1" /> No active
+                    account found with the given credentials
+                  </span>
+                ) : (
+                  ""
+                )}
               </div>
               <div className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-x-4">
                 <ButtonFilled

@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import { Input, Tooltip } from "antd";
-import { LockOutlined } from "@ant-design/icons";
+import { LockOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 import ButtonFilled from "../../../../components/common/ButtonFilled";
 // import Button from "../../../../components/common/Button";
 import logo from "../../../../assets/images/sign-in-logo.png";
@@ -87,9 +87,14 @@ const Verification: React.FC<VerificationProps> = ({
                   verificationReducer.status === "failed" ? "mt-6" : "mt-0"
                 } font-bold text-red-500`}
               >
-                {verificationReducer.status === "failed"
-                  ? "Verification failed, Code is not correct"
-                  : ""}
+                {verificationReducer.status === "failed" ? (
+                  <span>
+                    <ExclamationCircleOutlined className="mr-1" /> Verification
+                    failed, Code is not correct
+                  </span>
+                ) : (
+                  ""
+                )}
               </div>
 
               <div className="flex flex-row items-center justify-center mt-6 lg:mt-10 gap-x-4">
