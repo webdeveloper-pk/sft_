@@ -1,18 +1,15 @@
 import React from "react";
 import { Row, Col, Input, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import DashboardCircularSlider from "../components/common/DashboardCircularSlider";
-import DashboardTable from "../components/DashboardTable";
-import sort from "../assets/images/order-sort-icon.png";
-import DashboardChallenges from "../components/DashboardChallenges";
-import DashboardChart from "../components/DashboardChart";
-// import Footer from "../components/common/Footer";
-// import Navbar from "../components/common/Navbar";
+import DashboardCircularSlider from "../../../components/common/DashboardCircularSlider";
+import DashboardTable from "../../../components/DashboardTable";
+import sort from "../../../assets/images/order-sort-icon.png";
+import DashboardChallenges from "../../../components/DashboardChallenges";
+import DashboardChart from "../../../components/DashboardChart";
 
 const Dashboard = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <div className="bg-medium-gray px-3.5 md:px-4 lg:px-8 layout-bg">
         <div className="h-full pb-[200px] lg:pb-[300px] xl:pb-[360px]">
           <div className="pt-10">
@@ -153,7 +150,6 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </>
   );
 };
