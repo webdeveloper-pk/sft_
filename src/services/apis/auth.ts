@@ -16,3 +16,7 @@ export const resendCodeForEmailVerification = (formData: any) =>
 
 export const resendCodeForForgetPassword = (formData: any) =>
   api.post("/accounts/send-verification-email-password/", formData);
+
+// export const getAdminCtx = () => api.get("/mt5/admin-login");
+
+// export const mt5UserRegistration = (formData: any) => api.post("/mt5/register", formData)

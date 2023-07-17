@@ -1,5 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { signup } from "../../../services/apis/auth";
+import {
+  signup,
+  //  getAdminCtx ,
+  // mt5UserRegistration,
+} from "../../../services/apis/auth";
 
 export const signupUser = createAsyncThunk(
   "auth/signup",
@@ -16,6 +20,32 @@ export const signupUser = createAsyncThunk(
     }
   }
 );
+
+// export const getCtx = createAsyncThunk("mt5/admin-login", async () => {
+//   try {
+//     const ctx = getAdminCtx();
+//     return ctx;
+//   } catch {
+//     return "Something went wrong";
+//   }
+// });
+
+// export const userRegister = createAsyncThunk(
+//   "mt5/register",
+//   async (userRegisterData: any, thunkAPI) => {
+//     try {
+//       const formData = new FormData();
+//       for (const key in userRegisterData) {
+//         formData.append(key, userRegisterData[key]);
+//       }
+//       const { data } = await signup(formData);
+//       return data;
+//     } catch (error: any) {
+//       return thunkAPI.rejectWithValue(error.response.data);
+//     }
+//   }
+// );
+
 interface signupState {
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null;
