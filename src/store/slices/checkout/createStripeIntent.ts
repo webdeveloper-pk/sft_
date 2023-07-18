@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { createIntent } from "../../../services/apis/checkout";
+
 export const createStripeIntent = createAsyncThunk(
   "createStripeIntent",
   async (stripeIntentData: any, thunkAPI) => {

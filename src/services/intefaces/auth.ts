@@ -23,6 +23,11 @@ export interface SignupProps {
     user: any;
     error: string | null;
   };
+  mt5UserReducer: {
+    status: "idle" | "loading" | "succeeded" | "failed";
+    mt5user: any;
+    error: string | null;
+  };
   handleChange: (
     e:
       | React.ChangeEvent<HTMLInputElement>

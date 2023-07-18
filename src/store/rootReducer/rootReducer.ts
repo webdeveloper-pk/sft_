@@ -5,11 +5,12 @@ import verificationSlice from "../slices/auth/verificationSlice";
 import createStripeIntentSlice from "../slices/checkout/createStripeIntent";
 import placeChallengeSlice from "../slices/checkout/placeChallenge";
 import challengeSlice from "../slices/challenge/challengeSlice";
-import loginManagerSlice from "../slices/mt5/manager/loginManagerSlice";
-import userAddSlice from "../slices/mt5/manager/userAddSlice";
 import getInfoSlice from "../slices/mt5/user/getInfoSlice";
 import getAccountInfoSlice from "../slices/mt5/user/getAccountInfoSlice";
 import dealsSlice from "../slices/mt5/user/dealsSlice";
+import ctxSlice from "../slices/mt5/ctxSlice";
+import mt5UserSlice from "../slices/mt5/mt5UserRegisterSlice";
+import balanceHistorySlice from "../slices/mt5/balanceHistorySlice";
 
 const rootReducer = combineReducers({
   // Accounts
@@ -21,8 +22,9 @@ const rootReducer = combineReducers({
   placeChallenge: placeChallengeSlice,
   challenge: challengeSlice,
   // dashboard
-  loginManager: loginManagerSlice,
-  userAdd: userAddSlice,
+  ctxSlice: ctxSlice,
+  mt5User: mt5UserSlice,
+  balanceHistorySlice: balanceHistorySlice,
   getInfo: getInfoSlice,
   getAccountInfo: getAccountInfoSlice,
   deals: dealsSlice,

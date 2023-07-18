@@ -20,11 +20,12 @@ const devTools =
 
 const loginFilter = createFilter("login", ["isLoggedIn", "user"]);
 const signupFilter = createFilter("signup", ["user"]);
+const ctxFilter = createFilter("ctx", ["ctx"]);
 const persistConfig = {
   key: "sftAuth",
   storage,
-  whitelist: ["login", "signup"],
-  transforms: [loginFilter, signupFilter],
+  whitelist: ["login", "signup", "ctx"],
+  transforms: [loginFilter, signupFilter, ctxFilter],
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

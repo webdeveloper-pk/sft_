@@ -8,6 +8,10 @@ import {
   loginUser,
   resetStatus,
 } from "../../../../store/slices/auth/loginSlice";
+import {
+  ctxUser,
+  resetStatus as ctxResetStatus,
+} from "../../../../store/slices/mt5/ctxSlice";
 import { useNavigate } from "react-router";
 
 const LoginContainer = () => {
@@ -24,6 +28,7 @@ const LoginContainer = () => {
   };
   const handleLoginUser = React.useCallback(() => {
     dispatch(loginUser(user));
+    dispatch(ctxUser());
   }, [dispatch, user]);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,6 +38,7 @@ const LoginContainer = () => {
     if (loginReducer.status === "succeeded") {
       navigate("/home/dashboard");
       dispatch(resetStatus());
+      dispatch(ctxResetStatus());
     }
     // eslint-disable-next-line
   }, [loginReducer?.status]);

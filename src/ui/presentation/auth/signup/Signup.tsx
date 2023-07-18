@@ -12,6 +12,7 @@ import countries from "../../../../services/data/country.json";
 const Signup: React.FC<SignupProps> = ({
   user,
   signupReducer,
+  mt5UserReducer,
   handleChange,
   handleSubmit,
 }) => {
@@ -193,7 +194,8 @@ const Signup: React.FC<SignupProps> = ({
                   <ButtonFilled
                     textSize="text-xs lg:text-sm"
                     buttonText={
-                      signupReducer.status === "loading"
+                      signupReducer.status === "loading" &&
+                      mt5UserReducer.status === "loading"
                         ? `Loading...`
                         : `Sign Up`
                     }

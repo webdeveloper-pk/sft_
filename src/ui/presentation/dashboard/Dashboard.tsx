@@ -6,8 +6,9 @@ import DashboardTable from "../../../components/DashboardTable";
 import sort from "../../../assets/images/order-sort-icon.png";
 import DashboardChallenges from "../../../components/DashboardChallenges";
 import DashboardChart from "../../../components/DashboardChart";
+import { dashboardProps } from "../../../services/intefaces/dashbaord";
 
-const Dashboard = () => {
+const Dashboard: React.FC<dashboardProps> = ({ dates, balances }) => {
   return (
     <>
       <div className="bg-medium-gray px-3.5 md:px-4 lg:px-8 layout-bg">
@@ -20,7 +21,7 @@ const Dashboard = () => {
               <div className="w-[100%]  lg:w-[65%] xl:w-[60%] ">
                 <p className="mb-3 font-bold text-xl">Common balance chart</p>
                 <div className="lg:min-h-[500px] bg-white rounded-md px-6 pt-6 pb-0">
-                  <DashboardChart />
+                  <DashboardChart dates={dates} balances={balances} />
                 </div>
               </div>
               <div className="w-[100%] lg:w-[35%] xl:w-[40%]">
