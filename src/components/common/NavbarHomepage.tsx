@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../services/hooks/hooks";
 import { DownOutlined } from "@ant-design/icons";
@@ -71,14 +71,38 @@ const items = [
 
 const NavbarHomepage = () => {
   const [navbar, setNavbar] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
   const loginReducer = useAppSelector((state) => ({
     isLoggedIn: state.login.isLoggedIn,
   }));
 
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div>
-      <nav className="text-light-white px-2 md:px-8 header homepage-container mx-auto bg-mobile-navbar md:bg-transparent">
-        <div className="mx-auto lg:flex justify-between lg:items-center pt-6 pb-0 md:pt-6 md:pb-6 uppercase">
+    <div
+      className={`${
+        scrolling ? "scrolling" : ""
+      } navbar-container header-width-class`}
+    >
+      <nav
+        className={
+          "text-light-white px-2 md:px-8 header homepage-container mx-auto bg-mobile-navbar lg:bg-transparent"
+        }
+      >
+        <div className="mx-auto lg:flex justify-between lg:items-center pt-8 pb-0 lg:pt-0 lg:pb-0 uppercase">
           <div>
             <div className="flex-row flex justify-between items-center w-full -mt-3 ml-2 md:ml-0">
               <a href="/">
@@ -124,11 +148,11 @@ const NavbarHomepage = () => {
           </div>
           <div>
             <div
-              className={`flex-1 justify-self-center py-16 lg:py-0 lg:block mt-3 font-light text-lg lg:text-sm xl:text-sm  ${
+              className={`flex-1 justify-self-center py-16 lg:py-0 lg:block mt-3 font-light text-lg lg:text-xs xl:text-sm  ${
                 navbar ? "block" : "hidden"
               }`}
             >
-              <ul className="flex flex-col lg:flex-row items-center gap-x-8 gap-y-3 2xl:gap-12">
+              <ul className="flex flex-col lg:flex-row items-center gap-x-8 lg:gap-x-4 xl:gap-x-8 gap-y-3 2xl:gap-12">
                 <li className="box-1" onClick={() => setNavbar(!navbar)}>
                   <a href="#working">
                     <div className="btn btn-one hover:text-light-green">
@@ -188,12 +212,12 @@ const NavbarHomepage = () => {
                     </li>
                   </>
                 ) : null}
-                <li className="hover:cursor-pointer hover:text-white">
+                <li className="hover:cursor-pointer hover:text-white mt-2 lg:mt-0">
                   <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
                     <a
                       href="#!"
                       onClick={(e) => e.preventDefault()}
-                      className="text-light-white hover:text-light-white flex items-center pr-[20px]"
+                      className="text-light-white hover:text-light-white flex items-center lg:pr-[20px]"
                     >
                       <img src={gbp} alt="gbp" className="w-[16px]" />
                       <span className="pl-3 pr-4">ENG</span>
