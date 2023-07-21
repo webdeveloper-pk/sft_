@@ -7,7 +7,7 @@ const Policy = () => {
   return (
     <div className="bg-medium-gray">
       <ContactNavbar />
-      <div className="policy-bg px-6 md:px-8 lg:px-16 pb-[200px] lg:pb-[300px] xl:pb-[360px]">
+      <div className="policy-bg px-6 md:px-8 lg:px-16 pb-[200px] lg:pb-[300px] xl:pb-[360px] pt-8 lg:pt-32 xl:pt-36">
         <div className="side-pages-container mx-auto px-6 md:px-6">
           <h1 className="text-black text-2xl lg:text-3xl font-bold uppercase pb-2 border-b border-lighter-gray">
             PRIVACY <span className="text-light-green">policy</span>

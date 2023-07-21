@@ -80,7 +80,7 @@ const Checkout: React.FC<any> = ({
         />
       </div>
       <ContactNavbar />
-      <div className="pb-[100px]">
+      <div className="pb-[100px] pt-0 md:pt-4 lg:pt-20 xl:pt-24">
         <div className="mt-10 side-pages-container mx-auto px-6 md:px-6">
           <h1 className="text-light-green text-[26px] md:text-[30px] lg:text-[56px] font-bold">
             PURCHASE

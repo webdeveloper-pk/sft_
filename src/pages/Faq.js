@@ -14,7 +14,7 @@ const Faq = () => {
   return (
     <div className="bg-medium-gray">
       <ContactNavbar />
-      <div className="layout-bg pb-[200px] lg:pb-[300px] xl:pb-[360px] side-pages-container mx-auto px-6 md:px-6">
+      <div className="layout-bg pb-[200px] lg:pb-[300px] xl:pb-[360px] side-pages-container mx-auto px-6 md:px-6 pt-6 lg:pt-20 xl:pt-28">
         <div className="bg-black ">
           <div className="bg-black flex flex-col md:flex-row justify-between gap-y-4 px-6 md:px-8 lg:px-16">
             <div className="w-full md:w-[70%] xl:w-[55%] py-12 pl-0 md:pl-12 xl:pl-28">
@@ -51,7 +51,7 @@ const Faq = () => {
                 </form>
               </div>
             </div>
-            <div className="w-[60%] md:w-[40%] lg:w-[25%] xl:w-[17%] 2xl:w-[15%] mx-auto xl:mx-0 xl:mr-28">
+            <div className="w-[60%] md:w-[40%] lg:w-[25%] xl:w-[21%] 2xl:w-[21%] mx-auto xl:mx-0 xl:mr-28">
               <img src={gorilla} alt="gorila" />
             </div>
           </div>

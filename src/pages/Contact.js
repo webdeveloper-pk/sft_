@@ -11,7 +11,7 @@ const Contact = () => {
   return (
     <div className="bg-medium-gray">
       <ContactNavbar />
-      <div className="layout-bg pb-[200px] lg:pb-[300px] xl:pb-[360px]">
+      <div className="layout-bg pb-[200px] lg:pb-[300px] xl:pb-[360px] lg:pt-28 xl:pt-32">
         <div className="flex flex-col lg:flex-row justify-between gap-y-12 mt-10 side-pages-container mx-auto px-6 md:px-6">
           <div className="w-full lg:w-[45%] xl:w-[45%]">
             <h1 className="text-light-green text-2xl font-bold uppercase">

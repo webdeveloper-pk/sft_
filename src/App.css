@@ -65,6 +65,43 @@ p {
   animation-delay: 1.6s;
 }
 
+.contact-header-width-class {
+  max-width: 100vw;
+  width: 100%;
+  background-color: #efefef;
+}
+
+.contact-navbar-container {
+  position: relative;
+  width: 100%;
+  background-color: #efefef;
+  transition-duration: 0.7s;
+  -webkit-transition-duration: 0.7s;
+  -moz-transition-duration: 0.7s;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 769px) {
+  .contact-navbar-container {
+    position: fixed;
+    top: 0;
+    background-color: #efefef;
+    width: 100%;
+    z-index: 999;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  /* Background color when scrolling */
+  .contact-navbar-container.contact-scrolling {
+    background-color: #efefef;
+    width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
+
 /* hrero section */
 
 .hero-bg {
