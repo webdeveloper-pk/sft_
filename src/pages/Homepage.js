@@ -26,23 +26,14 @@ const Homepage = () => {
 
   return (
     <div className="bg-lightest-white-bg overflow-body">
-      {/* <div className="hero-bg-test">
-        <div className="homepage-container mx-auto bg-red-100">
-          <div className="hero-bg">
-            <NavbarHomepage />
-            <Hero />
-            <SubHero />
-          </div>
-        </div>
-      </div> */}
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         <NavbarHomepage />
         <div className="hero-bg">
           <Hero />
           <SubHero />
         </div>
       </div>
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div className="hero-bg">
           <NavbarHomepage />
           <Hero />

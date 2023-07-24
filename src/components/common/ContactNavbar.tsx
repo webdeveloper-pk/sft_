@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DownOutlined } from "@ant-design/icons";
 import { Dropdown } from "antd";
@@ -71,13 +71,33 @@ const items = [
 
 const ContactNavbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
   const loginReducer = useAppSelector((state) => ({
     isLoggedIn: state.login.isLoggedIn,
   }));
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <div>
+    <div
+      className={`${
+        scrolling ? "contact-scrolling" : ""
+      } contact-navbar-container contact-header-width-class`}
+    >
       <nav className="text-black header">
-        <div className="mx-auto lg:flex justify-between lg:items-center py-6 uppercase side-pages-container px-6 md:px-6">
+        <div className="mx-auto lg:flex justify-between lg:items-center uppercase side-pages-container px-6 md:px-6">
           <div>
             <div className="flex-row flex justify-between items-center w-full">
               <a href="/">
@@ -123,11 +143,11 @@ const ContactNavbar = () => {
           </div>
           <div>
             <div
-              className={`flex-1 justify-self-center py-16 lg:py-0 lg:block mt-3 font-light text-lg lg:text-sm xl:text-base  ${
+              className={`flex-1 justify-self-center py-16 lg:py-0 lg:block mt-3 font-light text-lg lg:text-xs xl:text-base  ${
                 navbar ? "block" : "hidden"
               }`}
             >
-              <ul className="flex flex-col lg:flex-row items-center gap-x-6 lg:gap-x-4 zl:gap-x-6 gap-y-6">
+              <ul className="flex flex-col lg:flex-row items-center gap-x-6 lg:gap-x-4 xl:gap-x-6 gap-y-6">
                 <li className="box-1" onClick={() => setNavbar(!navbar)}>
                   <div className="hover:text-light-green hover:cursor-pointer">
                     <a
@@ -202,11 +222,11 @@ const ContactNavbar = () => {
                     </li>
                   </>
                 ) : null}
-                <li className="hover:cursor-pointer hover:text-white">
+                <li className="hover:cursor-pointer hover:text-white mt-2 lg:mt-0">
                   <Dropdown menu={{ items }} overlayClassName="custom-dropdown">
                     <button
                       onClick={(e) => e.preventDefault()}
-                      className="text-light-white hover:text-light-white flex items-center pr-[20px]"
+                      className="text-light-white hover:text-light-white flex items-center lg:pr-[20px]"
                     >
                       <img src={gbp} alt="gbp" className="w-[22px]" />
                       <span className="pl-3 pr-4 text-black">ENG</span>
