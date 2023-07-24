@@ -19,7 +19,7 @@ export const signupUser = createAsyncThunk(
 
 interface signupState {
   status: "idle" | "loading" | "succeeded" | "failed";
-  error: string | null;
+  error: any;
   user: any;
 }
 
@@ -34,6 +34,7 @@ const signupSlice = createSlice({
   reducers: {
     resetStatus: (state) => {
       state.status = "idle";
+      state.user = null;
       state.error = null;
     },
     logout: (state) => {

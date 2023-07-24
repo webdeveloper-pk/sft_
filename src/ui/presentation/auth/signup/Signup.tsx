@@ -8,11 +8,10 @@ import Button from "../../../../components/common/Button";
 import ButtonFilled from "../../../../components/common/ButtonFilled";
 import { SignupProps } from "../../../../services/intefaces/auth";
 import countries from "../../../../services/data/country.json";
-
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 const Signup: React.FC<SignupProps> = ({
   user,
   signupReducer,
-  mt5UserReducer,
   handleChange,
   handleSubmit,
 }) => {
@@ -104,13 +103,14 @@ const Signup: React.FC<SignupProps> = ({
                         width: "100%",
                         marginTop: "4px",
                       }}
+                      placeholder="Select A Country"
+                      className="focus:outline-none"
                     >
+                      <option value="" disabled>
+                        Select a Country
+                      </option>
                       {countries?.map((country, index) => (
-                        <option
-                          key={index}
-                          value={country.value}
-                          style={{ background: "red" }}
-                        >
+                        <option key={index} value={country.value}>
                           {country.label}
                         </option>
                       ))}
@@ -136,11 +136,6 @@ const Signup: React.FC<SignupProps> = ({
                       onChange={handleChange}
                       required
                     />
-                    <span className="text-red-500 text-[13px]">
-                      {signupReducer.status === "failed"
-                        ? "Email already exists"
-                        : ""}
-                    </span>
                   </Col>
                 </Row>
                 <Row className="mb-4 lg:mb-6" gutter={[0, 16]}>
@@ -190,12 +185,18 @@ const Signup: React.FC<SignupProps> = ({
                     />
                   </Col>
                 </Row>
+                {signupReducer?.error ? (
+                  <div className="flex justify-start items-center gap-1 text-red-600 capitalize">
+                    <ExclamationCircleOutlined className="mt-2" />
+                    <p>{signupReducer?.error?.detail}</p>
+                  </div>
+                ) : null}
+
                 <div className="flex flex-row items-center justify-center mt-6 lg:mt-8 gap-x-4">
                   <ButtonFilled
                     textSize="text-xs lg:text-sm"
                     buttonText={
-                      signupReducer.status === "loading" &&
-                      mt5UserReducer.status === "loading"
+                      signupReducer.status === "loading"
                         ? `Loading...`
                         : `Sign Up`
                     }

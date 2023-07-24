@@ -19,7 +19,10 @@ const devTools =
     : undefined;
 
 const loginFilter = createFilter("login", ["isLoggedIn", "user"]);
-const signupFilter = createFilter("signup", ["user"]);
+const signupFilter = createFilter("signup", [
+  "user.detail.email",
+  "user.detail.id",
+]);
 const ctxFilter = createFilter("ctx", ["ctx"]);
 const persistConfig = {
   key: "sftAuth",

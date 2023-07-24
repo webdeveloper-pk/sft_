@@ -7,6 +7,7 @@ import Button from "../../../../components/common/Button";
 import logo from "../../../../assets/images/sign-in-logo.png";
 import { LoginProps } from "../../../../services/intefaces/auth";
 import userIcon from "../../../../assets/images/user-icon.png";
+import SpinnerGrow from "../../../../components/spinner/SpinnerGrow";
 
 const Login: React.FC<LoginProps> = ({
   user,
@@ -84,24 +85,35 @@ const Login: React.FC<LoginProps> = ({
               <div
                 className={`${
                   loginReducer.status === "failed" ? "mt-6" : "mt-0"
-                } text-red-500 font-semibold text-[14px]`}
+                } text-red-500 font-semibold text-[14px] text-left`}
               >
-                {loginReducer.status === "failed" ? (
-                  <span>
-                    <ExclamationCircleOutlined className="mr-1" /> No active
-                    account found with the given credentials
-                  </span>
-                ) : (
-                  ""
-                )}
+                {loginReducer.status === "failed"
+                  ? loginReducer.error &&
+                    typeof loginReducer.error === "object" &&
+                    Object.keys(loginReducer.error).length > 0 && (
+                      <span>
+                        <ExclamationCircleOutlined className="mr-1" />
+                        {
+                          loginReducer.error[
+                            Object.keys(loginReducer.error)[0]
+                          ][0]
+                        }
+                      </span>
+                    )
+                  : null}
               </div>
               <div className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-x-4">
                 <ButtonFilled
                   textSize="text-xs lg:text-sm"
                   buttonText={
-                    loginReducer.status === "loading"
-                      ? `Loading...`
-                      : `get started`
+                    loginReducer.status === "loading" ? (
+                      <div className="flex justify-center items-center gap-1">
+                        <SpinnerGrow />
+                        Loading...
+                      </div>
+                    ) : (
+                      `get started`
+                    )
                   }
                   paddingY="py-4"
                   paddingX="px-6 md:px-10 lg:px-12"

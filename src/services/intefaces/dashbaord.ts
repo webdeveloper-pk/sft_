@@ -1,4 +1,3 @@
 export interface dashboardProps {
-  dates: any;
-  balances: any;
+  balanceHistoryReducer: { status: string; balance: any; error: any };
 }

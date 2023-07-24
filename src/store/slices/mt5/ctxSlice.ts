@@ -1,19 +1,21 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getAdminCtx } from "../../../services/apis/mt5/user";
 
-export const ctxUser = createAsyncThunk("mt5/admin-login", async () => {
-  try {
-    const ctxdata = await getAdminCtx();
-    return ctxdata;
-  } catch {
-    // return thunkAPI.rejectWithValue(error.response.ctxdata);
-    return "Something went wrong";
+export const ctxUser = createAsyncThunk(
+  "mt5/admin-login",
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await getAdminCtx();
+      return data;
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
   }
-});
+);
 
 interface ctxState {
   status: "idle" | "loading" | "succeeded" | "failed";
-  error: string | null;
+  error: any;
   ctx: any;
 }
 

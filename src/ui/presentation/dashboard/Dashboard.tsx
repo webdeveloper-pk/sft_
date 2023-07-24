@@ -7,8 +7,9 @@ import sort from "../../../assets/images/order-sort-icon.png";
 import DashboardChallenges from "../../../components/DashboardChallenges";
 import DashboardChart from "../../../components/DashboardChart";
 import { dashboardProps } from "../../../services/intefaces/dashbaord";
-
-const Dashboard: React.FC<dashboardProps> = ({ dates, balances }) => {
+import {useNavigate} from "react-router-dom"
+const Dashboard: React.FC<dashboardProps> = ({ balanceHistoryReducer }) => {
+  const navigate=useNavigate()
   return (
     <>
       <div className="bg-medium-gray px-3.5 md:px-4 lg:px-8 layout-bg">
@@ -21,7 +22,9 @@ const Dashboard: React.FC<dashboardProps> = ({ dates, balances }) => {
               <div className="w-[100%]  lg:w-[65%] xl:w-[60%] ">
                 <p className="mb-3 font-bold text-xl">Common balance chart</p>
                 <div className="lg:min-h-[500px] bg-white rounded-md px-6 pt-6 pb-0">
-                  <DashboardChart dates={dates} balances={balances} />
+                  <DashboardChart
+                    balanceHistoryReducer={balanceHistoryReducer}
+                  />
                 </div>
               </div>
               <div className="w-[100%] lg:w-[35%] xl:w-[40%]">
@@ -30,7 +33,7 @@ const Dashboard: React.FC<dashboardProps> = ({ dates, balances }) => {
                   <p className="font-semibold text-sm text-light-green">All</p>
                 </div>
                 <div className="lg:min-h-[500px] flex flex-col justify-between gap-y-8">
-                  <button className="min-h-[100px] lg:min-h-[200px] xl:min-h-[200px] rounded-md border-2 border-dashed border-light-green flex justify-center items-center text-light-green py-4">
+                  <button className="min-h-[100px] lg:min-h-[200px] xl:min-h-[200px] rounded-md border-2 border-dashed border-light-green flex justify-center items-center text-light-green py-4" onClick={()=>{navigate('/checkout')}}>
                     <div className="flex flex-col font-bold">
                       <p className="text-5xl -mt-3">+</p>
                       <p className="text-lg mt-1 font-semibold">

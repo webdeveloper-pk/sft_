@@ -7,7 +7,7 @@ const api = axios.create({
 const config = (token: any) => {
   return {
     headers: {
-      Authorization: `Bearer ` + token,
+      Authorization: `Bearer ${token}`,
     },
   };
 };
@@ -20,12 +20,4 @@ export const mt5UserRegistration = (formData: any) =>
   api.post("/mt5/register", formData);
 
 export const getBalanceHistory = (token: any) =>
-  api.get("/mt5/balance-history");
-
-// other APIs
-
-export const getInfo = () => api.post("/manager/user/getinfo/");
-
-export const getUserInfo = () => api.post("/manager/user/get_accountinfo/");
-
-export const deals = () => api.post("/manager/user/deals/");
+  api.get("/mt5/balance-history/850844", config(token));

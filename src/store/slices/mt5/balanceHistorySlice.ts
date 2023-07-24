@@ -15,7 +15,7 @@ export const balanceHistoryUser = createAsyncThunk(
 
 interface balanceHistoryState {
   status: "idle" | "loading" | "succeeded" | "failed";
-  error: string | null;
+  error: any;
   balance: any;
 }
 

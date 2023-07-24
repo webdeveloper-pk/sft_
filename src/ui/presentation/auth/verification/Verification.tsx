@@ -11,6 +11,7 @@ import { VerificationProps } from "../../../../services/intefaces/auth";
 const Verification: React.FC<VerificationProps> = ({
   user,
   verificationReducer,
+  ctxReducer,
   handleChange,
   handleSubmit,
 }) => {
@@ -101,7 +102,8 @@ const Verification: React.FC<VerificationProps> = ({
                 <ButtonFilled
                   textSize="text-xs lg:text-sm"
                   buttonText={
-                    verificationReducer?.status === "loading"
+                    verificationReducer?.status === "loading" ||
+                    ctxReducer?.status === "loading"
                       ? `Loading...`
                       : `get started`
                   }

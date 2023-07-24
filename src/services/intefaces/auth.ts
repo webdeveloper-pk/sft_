@@ -21,12 +21,7 @@ export interface SignupProps {
   signupReducer: {
     status: "idle" | "loading" | "succeeded" | "failed";
     user: any;
-    error: string | null;
-  };
-  mt5UserReducer: {
-    status: "idle" | "loading" | "succeeded" | "failed";
-    mt5user: any;
-    error: string | null;
+    error: any;
   };
   handleChange: (
     e:
@@ -46,6 +41,11 @@ export interface VerificationProps {
     user: any;
     error: string | null;
   };
+  ctxReducer:{
+    status: "idle" | "loading" | "succeeded" | "failed";
+    ctx: any;
+    error: string | null;
+  }
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }

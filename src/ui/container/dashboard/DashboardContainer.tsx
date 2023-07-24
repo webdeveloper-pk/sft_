@@ -10,34 +10,26 @@ const DashboardContainer = () => {
   const dispatch = useAppDispatch();
 
   const loginReducer = useAppSelector((state) => ({
-    // isLoggedIn: state.login.isLoggedIn,
     user: state.login.user,
   }));
 
   const balanceHistoryReducer = useAppSelector((state) => ({
-    status: state.balanceHistorySlice.status,
-    balance: state.balanceHistorySlice.balance,
-    error: state.balanceHistorySlice.error,
+    status: state.balanceHistory.status,
+    balance: state.balanceHistory.balance,
+    error: state.balanceHistory.error,
   }));
 
   React.useEffect(() => {
-    // if (balanceHistoryReducer.status === "succeeded") {
-    dispatch(
-      balanceHistoryUser({
-        token: loginReducer?.user?.access,
-      })
-    );
-    dispatch(balanceResetStatus());
-    // }
-    // eslint-disable-next-line
+    dispatch(balanceHistoryUser(loginReducer?.user?.access));
   }, []);
 
-  const chartData = balanceHistoryReducer?.balance;
+  React.useEffect(() => {
+    if (balanceHistoryReducer.status === "succeeded") {
+      dispatch(balanceResetStatus());
+    }
+  }, [balanceHistoryReducer]);
 
-  const dates = chartData?.data?.map((item: any) => item.date);
-  const balances = chartData?.data?.map((item: any) => item.balance);
-
-  return <Dashboard dates={dates} balances={balances} />;
+  return <Dashboard balanceHistoryReducer={balanceHistoryReducer} />;
 };
 
 export default DashboardContainer;
